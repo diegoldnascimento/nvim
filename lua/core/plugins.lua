@@ -30,6 +30,7 @@ local modules = {
 	{ import = "core.plugins.bufferline" },
 	{ import = "core.plugins.lualine" },
 	{ import = "core.plugins.comment" },
+	{ import = "core.plugins.fileexplorer" },
 }
 
 return require("lazy").setup(modules)

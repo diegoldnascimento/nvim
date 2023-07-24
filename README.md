@@ -108,6 +108,7 @@ Below the list of the current plugins used in this configuration and how we are 
 ### File Explorer
 
 - [nvim-tree.nvim](https://github.com/nvim-tree/nvim-tree.lua) - Nvim-tree is a File Explorer For Neovim Written In Lua
+- [oil.nvim](https://github.com/stevearc/oil.nvim) - A vim-vinegar like file explorer that lets you edit your filesystem like a normal Neovim buffer.
 
 ### AI Completion
 
