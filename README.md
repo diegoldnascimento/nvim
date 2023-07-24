@@ -43,7 +43,7 @@ Below the list of the current plugins used in this configuration and how we are 
 
 ### Package Manager
 
-- [lazy.nvim]("https://github.com/folke/lazy.nvim") - lazy.nvim is a modern plugin manager for Neovim. 
+- [lazy.nvim]("https://github.com/folke/lazy.nvim") - lazy.nvim is a modern plugin manager for Neovim.
 
 ### Visual
 
@@ -52,8 +52,8 @@ Below the list of the current plugins used in this configuration and how we are 
 - [lualine.nvim](https://github.com/shadmansaleh/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua.
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - A snazzy 💅 buffer line (with tabpage integration) for Neovim built using lua.
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) - A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
-- [vim-illuminate](https://github.com/RRethy/vim-illuminate) - Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching. 
-- [fine-cdmline.nvim](https://github.com/VonHeikemen/fine-cmdline.nvim) - A floating input shows up, you a enter a command and you're done. You can use <Tab> completion like the regular cmdline, and can also navigate the command history with <Up> and <Down> arrows. That's it.
+- [vim-illuminate](https://github.com/RRethy/vim-illuminate) - Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
+- [noice.vim](https://github.com/folke/noice.nvim) - Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 
 ### LSP
 
@@ -114,7 +114,6 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [copilot.lua](https://github.com/zbirenbaum/copilot.lua) - GitHub Copilot is an AI pair programmer that helps you write code faster and with less work.
 
-
 ### Others
 
 - [Comment](https://github.com/numToStr/Comment.nvim) - Shortcut for commenting in and out code snippets
@@ -123,7 +122,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Use treesitter to autoclose and autorename HTML tag.
 - [indent blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Adds indentation guides to all lines, including empty lines
 - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) - Preview markdown on your modern browser with synchronised scrolling and flexible configuration.
-- [flash.nvim](https://github.com/folke/flash.nvim)- Flash.nvim lets you navigate your code with search labels, enhanced character motions, and Treesitter integration. 
+- [flash.nvim](https://github.com/folke/flash.nvim)- Flash.nvim lets you navigate your code with search labels, enhanced character motions, and Treesitter integration.
 
 ### Plugin development
 
