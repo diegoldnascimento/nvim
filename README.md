@@ -1,6 +1,8 @@
 <h1 align="center">Neovim</h1>
 
 <div align="center">
+  <a href="KEYMAPS.md">Keymaps</a>
+  <span> • </span>
   <a href="#install">Install</a>
   <span> • </span>
   <a href="#overview">Overview</a>
@@ -105,7 +107,7 @@ Below the list of the current plugins used in this configuration and how we are 
 
 ### File Explorer
 
-- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - Neo-tree is a Neovim plugin to browse the file system and other tree like structures in whatever style suits you, including sidebars, floating windows, netrw split style, or all of them at once!
+- [nvim-tree.nvim](https://github.com/nvim-tree/nvim-tree.lua) - Nvim-tree is a File Explorer For Neovim Written In Lua
 
 ### AI Completion
 
@@ -116,12 +118,11 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [Comment](https://github.com/numToStr/Comment.nvim) - Shortcut for commenting in and out code snippets
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Used on syntax highlight and custom motions
-- [ctrlsf](https://github.com/dyng/ctrlsf.vim) - An ack/ag/pt/rg powered code search and view tool, takes advantage of Vim 8's power to support asynchronous searching, and lets you edit file in-place with Edit Mode.
 - [which-key](https://github.com/folke/which-key.nvim/) - WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible key bindings of the command you started typing
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Use treesitter to autoclose and autorename HTML tag.
 - [indent blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Adds indentation guides to all lines, including empty lines
-- [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) - Preview markdown on your modern browser with synchronised scrolling and flexible configuration
-- [leap.nvim](https://github.com/ggandor/leap.nvim) - Leap is a general-purpose motion plugin for Neovim, with the ultimate goal of establishing a new standard interface for moving around in the visible area in Vim-like modal editors. 
+- [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) - Preview markdown on your modern browser with synchronised scrolling and flexible configuration.
+- [flash.nvim](https://github.com/folke/flash.nvim)- Flash.nvim lets you navigate your code with search labels, enhanced character motions, and Treesitter integration. 
 
 ### Plugin development
 
