@@ -27,6 +27,7 @@ local modules = {
 	{ import = "core.plugins.treesitter" },
 	{ import = "core.plugins.markdown" },
 	{ import = "core.plugins.formatter" },
+	{ import = "core.plugins.linter" },
 	{ import = "core.plugins.bufferline" },
 	{ import = "core.plugins.lualine" },
 	{ import = "core.plugins.comment" },
