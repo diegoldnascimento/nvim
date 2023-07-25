@@ -10,7 +10,7 @@ return {
 				javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
 				css = { require("formatter.filetypes.css").prettier },
 				json = { require("formatter.filetypes.json").jq },
-				go = { require("formatter.filetypes.go").gofmt },
+				go = { require("formatter.filetypes.go").gofumpt },
 				sh = { require("formatter.filetypes.sh").shfmt },
 				terraform = { require("formatter.filetypes.terraform").terraform },
 
