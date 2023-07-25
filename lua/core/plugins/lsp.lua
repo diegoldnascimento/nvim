@@ -70,6 +70,9 @@ return {
 				"black",
 				"jq",
 				"gofumpt",
+				"tflint",
+				"jsonlint",
+        "vale"
 			}
 
 			mason.setup({
