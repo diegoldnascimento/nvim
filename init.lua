@@ -1,7 +1,6 @@
 require("core.options")
 require("core.keymaps")
 require("core.plugins")
-require("core.formatter")
 require("core.alpha")
 require("core.autopairs")
 require("core.colorscheme")

@@ -7,6 +7,12 @@
 | `<C-k>` | Move cursor up    | n    |
 | `<C-l>` | Move cursor right | n    |
 
+## Formatter
+
+| Key     | Description       | Mode |
+| ------- | ----------------- | ---- |
+| `<C-f>` | Format and Save | n    |
+
 ## Flash
 
 | Key     | Description          | Mode         |

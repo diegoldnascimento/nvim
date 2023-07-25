@@ -53,10 +53,10 @@ keymap("n", "<c-k>", "<cmd>NvimTreeFindFile<CR>", opts)
 keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<Space>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap(
-  "n",
-  "<Space>fa",
-  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>",
-  opts
+	"n",
+	"<Space>fa",
+	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>",
+	opts
 )
 keymap("n", "<Space>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Space>fh", "<cmd>Telescope help_tags<cr>", opts)
@@ -100,9 +100,6 @@ keymap("n", "<Space>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
 --
 keymap("n", "<space><space>", "<cmd>WhichKey ", opts)
 
--- Text Formatting
-keymap("n", "<C-F>", "<Cmd>lua vim.lsp.buf.format() <CR>", opts)
-
 -- Comments
 keymap("n", "<C-_>", "<Cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 
@@ -116,33 +113,33 @@ keymap("v", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap(
-  "n",
-  "gd",
-  "<cmd>lua require('telescope.builtin').lsp_definitions({ reuse_win = true })<CR>",
-  opts
+	"n",
+	"gd",
+	"<cmd>lua require('telescope.builtin').lsp_definitions({ reuse_win = true })<CR>",
+	opts
 )
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap(
-  "n",
-  "gi",
-  "<cmd>lua require('telescope.builtin').lsp_implementations({ reuse_win = true })<CR>",
-  opts
+	"n",
+	"gi",
+	"<cmd>lua require('telescope.builtin').lsp_implementations({ reuse_win = true })<CR>",
+	opts
 )
 keymap("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap(
-  "n",
-  "gt",
-  "<cmd>lua require('telescope.builtin').lsp_type_definitions({ reuse_win = true })<CR>",
-  opts
+	"n",
+	"gt",
+	"<cmd>lua require('telescope.builtin').lsp_type_definitions({ reuse_win = true })<CR>",
+	opts
 )
 keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", "gx", "<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>", opts)
 keymap(
-  "n",
-  "gw",
-  "<cmd>lua require('telescope.builtin').lsp_document_symbols({ reuse_win = true })<CR>",
-  opts
+	"n",
+	"gw",
+	"<cmd>lua require('telescope.builtin').lsp_document_symbols({ reuse_win = true })<CR>",
+	opts
 )
 
 keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
