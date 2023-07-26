@@ -7,22 +7,32 @@
 | `<C-k>` | Move cursor up    | n    |
 | `<C-l>` | Move cursor right | n    |
 
+## File Explorer
+
+| Key     | Description                    | Mode |
+| ------- | ------------------------------ | ---- |
+| `-`     | Open File Explorer window      | n    |
+| `<C-c>` | Close File Explorer window     | n    |
+| `<CR>`  | Select the file to be open     | n    |
+| `_`     | Open Current Working Directory | n    |
+| `g.`    | Toggle hidden files            | n    |
+| `<C-p>` | Preview File                   | n    |
+
 ## Formatter
 
-| Key     | Description       | Mode |
-| ------- | ----------------- | ---- |
+| Key     | Description     | Mode |
+| ------- | --------------- | ---- |
 | `<C-f>` | Format and Save | n    |
 
 ## Flash
 
-| Key     | Description          | Mode         |
-|---------|----------------------|--------------|
-| s       | Flash                | n, x, o     |
-| S       | Flash Treesitter     | n, o, x     |
-| r       | Remote Flash         | o            |
-| R       | Treesitter Search    | o, x         |
-| <c-s>   | Toggle Flash Search  | c into mr    |
-
+| Key   | Description         | Mode      |
+| ----- | ------------------- | --------- |
+| s     | Flash               | n, x, o   |
+| S     | Flash Treesitter    | n, o, x   |
+| r     | Remote Flash        | o         |
+| R     | Treesitter Search   | o, x      |
+| <c-s> | Toggle Flash Search | c into mr |
 
 ## Neotest
 

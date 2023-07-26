@@ -72,7 +72,7 @@ return {
 				"gofumpt",
 				"tflint",
 				"jsonlint",
-        "vale"
+				"markdownlint",
 			}
 
 			mason.setup({
