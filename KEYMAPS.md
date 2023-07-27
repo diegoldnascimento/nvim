@@ -1,3 +1,10 @@
+## Basic Commands
+
+| Key     | Description   | Mode |
+| ------- | ------------- | ---- |
+| `<C-s>` | Save          | n    |
+| `<C-q>` | Save and Quit | n    |
+
 ## Navigation
 
 | Key     | Description       | Mode |
@@ -6,13 +13,6 @@
 | `<C-h>` | Move cursor left  | n    |
 | `<C-k>` | Move cursor up    | n    |
 | `<C-l>` | Move cursor right | n    |
-
-## Commands
-
-| Key     | Description   | Mode |
-| ------- | ------------- | ---- |
-| `<C-s>` | Save          | n    |
-| `<C-q>` | Save and Quit | n    |
 
 ## File Explorer
 
@@ -24,6 +24,16 @@
 | `_`     | Open Current Working Directory | n    |
 | `g.`    | Toggle hidden files            | n    |
 | `<C-p>` | Preview File                   | n    |
+
+## Telescope
+
+| Key         | Description            | Mode |
+| ----------- | ---------------------- | ---- |
+| `<Space>fg` | Telescope Live Grep    | n    |
+| `<Space>fh` | Telescope Help Tags    | n    |
+| `<Space>fb` | Telescope File Browser | n    |
+| `<Space>fp` | Telescope Buffers      | n    |
+| `<Space>fo` | Telescope Old Files    | n    |
 
 ## Formatter
 

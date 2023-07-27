@@ -60,9 +60,9 @@ keymap(
 )
 keymap("n", "<Space>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Space>fh", "<cmd>Telescope help_tags<cr>", opts)
-keymap("n", "<Space>fb", "<cmd>Telescope file_browser<cr>", opts)
 keymap("n", "<Space>fp", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<Space>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<Space>fo", "<cmd>Telescope oldfiles<cr>", opts)
 
 -- BlamerToggle
 keymap("n", "<Space>bt", "<cmd>BlamerToggle<cr>", opts)
