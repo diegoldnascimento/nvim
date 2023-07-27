@@ -38,7 +38,7 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- Save
-
+keymap("n", "<C-q>", "<cmd> wq <CR>", opts)
 keymap("n", "<C-s>", "<cmd> w <CR>", opts)
 
 -- Select the whole buffer

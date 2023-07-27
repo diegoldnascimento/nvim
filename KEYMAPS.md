@@ -7,6 +7,13 @@
 | `<C-k>` | Move cursor up    | n    |
 | `<C-l>` | Move cursor right | n    |
 
+## Commands
+
+| Key     | Description   | Mode |
+| ------- | ------------- | ---- |
+| `<C-s>` | Save          | n    |
+| `<C-q>` | Save and Quit | n    |
+
 ## File Explorer
 
 | Key     | Description                    | Mode |
