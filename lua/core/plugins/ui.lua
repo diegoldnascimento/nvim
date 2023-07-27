@@ -14,6 +14,7 @@ return {
 	{ "norcalli/nvim-colorizer.lua" },
 	{ "p00f/nvim-ts-rainbow" },
 	{ "max397574/better-escape.nvim", name = "better_escape", event = "VeryLazy" },
+	{ "ojroques/nvim-bufdel", event = "VeryLazy" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",

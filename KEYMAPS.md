@@ -1,9 +1,10 @@
 ## Basic Commands
 
-| Key     | Description   | Mode |
-| ------- | ------------- | ---- |
-| `<C-s>` | Save          | n    |
-| `<C-q>` | Save and Quit | n    |
+| Key     | Description          | Mode |
+| ------- | -------------------- | ---- |
+| `<C-s>` | Save                 | n    |
+| `<C-q>` | Save and Quit        | n    |
+| `<C-w>` | Close Current Buffer | n    |
 
 ## Navigation
 

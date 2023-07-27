@@ -40,6 +40,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- Save
 keymap("n", "<C-q>", "<cmd> wq <CR>", opts)
 keymap("n", "<C-s>", "<cmd> w <CR>", opts)
+keymap("n", "<C-w>", "<cmd> BufDel <CR>", opts)
 
 -- Select the whole buffer
 
@@ -77,7 +78,6 @@ keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
 -- Bufferline
 keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts)
-keymap("n", "<Space>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
 keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
 keymap("n", "<A-<>", "<Cmd>BufferLineMovePrevious<CR>", opts)
 keymap("n", "<A->>", "<Cmd>BufferLineMoveNext<CR>", opts)
@@ -88,6 +88,7 @@ keymap("n", "<Space>4", "<cmd>BufferLineGoToBuffer 4<cr>", opts)
 keymap("n", "<Space>5", "<cmd>BufferLineGoToBuffer 5<cr>", opts)
 keymap("n", "<Space>6", "<cmd>BufferLineGoToBuffer 6<cr>", opts)
 keymap("n", "<Space>7", "<cmd>BufferLineGoToBuffer 7<cr>", opts)
+keymap("n", "<Space>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
 keymap("n", "<Space>9", "<cmd>BufferLineGoToBuffer 9<cr>", opts)
 keymap("n", "<Space>c", "<cmd>BufferLineCloseLeft<cr>", opts)
 keymap("n", "<Space>w", "<cmd>BufferLinePickClose<cr>", opts)
