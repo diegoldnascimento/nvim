@@ -24,6 +24,7 @@ end
 
 -- Using the Dracula base and creating the Illusion theme colorscheme
 -- https://github.com/rwietter/illusion-vscode-theme
+vim.opt.termguicolors = true
 
 dracula.setup({
 	colors = {

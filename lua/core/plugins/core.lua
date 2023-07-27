@@ -1,5 +1,5 @@
 return {
-  { "folke/lazy.nvim" },
+	{ "folke/lazy.nvim" },
 	{ "goolord/alpha-nvim" },
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "windwp/nvim-autopairs", event = "VeryLazy" },
@@ -11,9 +11,8 @@ return {
 	{ "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy" },
-	-- Colorize
-	"norcalli/nvim-colorizer.lua",
-	"p00f/nvim-ts-rainbow",
+	{ "norcalli/nvim-colorizer.lua" },
+	{ "p00f/nvim-ts-rainbow" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -48,5 +47,14 @@ return {
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
+	},
+	{
+		"rcarriga/nvim-notify",
+    event = "VeryLazy",
+		config = function()
+			require("notify").setup({
+				background_colour = "#1E1D22",
+			})
+		end,
 	},
 }
