@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 local modules = {
-	{ import = "core.plugins.core" },
+	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.telescope" },
 	{ import = "core.plugins.lsp" },

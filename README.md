@@ -10,7 +10,7 @@
 </div>
 
 <div align="center">
-	
+
 ![Lua](https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua)
 
 </div>
@@ -55,6 +55,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate) - Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
 - [noice.vim](https://github.com/folke/noice.nvim) - Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 - [nvim-notify](https://github.com/rcarriga/nvim-notify) - A fancy, configurable, notification manager for NeoVim
+- [better-escape.nvim](https://github.com/max397574/better-escape.nvim) - This plugin is the lua version of better_escape.vim, with some additional features and optimizations A lot of people have mappings like jk or jj to escape insert mode
 
 ### LSP
 

@@ -13,6 +13,7 @@ return {
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy" },
 	{ "norcalli/nvim-colorizer.lua" },
 	{ "p00f/nvim-ts-rainbow" },
+	{ "max397574/better-escape.nvim", name = "better_escape", event = "VeryLazy" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -50,7 +51,7 @@ return {
 	},
 	{
 		"rcarriga/nvim-notify",
-    event = "VeryLazy",
+		event = "VeryLazy",
 		config = function()
 			require("notify").setup({
 				background_colour = "#1E1D22",
