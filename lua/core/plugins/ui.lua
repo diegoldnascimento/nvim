@@ -6,11 +6,20 @@ return {
 	{ "lewis6991/gitsigns.nvim", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
 	{ "ahmedkhalf/project.nvim", event = "VeryLazy" },
-	{ "folke/which-key.nvim", event = "VeryLazy" },
+	{ "folke/which-key.nvim", event = "VeryLazy"}, 
 	{ "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy" },
-	{ "norcalli/nvim-colorizer.lua", event = "VeryLazy" },
+	{
+		"norcalli/nvim-colorizer.lua",
+		event = "VeryLazy",
+		config = function()
+			require("colorizer").setup({
+				"*",
+				"!vim",
+			})
+		end,
+	},
 	{ "p00f/nvim-ts-rainbow" },
 	{ "max397574/better-escape.nvim", name = "better_escape", event = "VeryLazy" },
 	{ "ojroques/nvim-bufdel", event = "VeryLazy" },

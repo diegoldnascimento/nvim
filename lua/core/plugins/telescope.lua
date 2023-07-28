@@ -2,11 +2,7 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		config = function()
-			local status_ok, telescope = pcall(require, "telescope")
-
-			if not status_ok then
-				return
-			end
+			local telescope = require("telescope")
 
 			telescope.setup({
 				pickers = {
@@ -33,18 +29,42 @@ return {
 						"%.DS_Store",
 					},
 					fzf = {
-						fuzzy = true, -- false will only do exact matching
-						override_generic_sorter = false, -- override the generic sorter
-						override_file_sorter = true, -- override the file sorter
-						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-						-- the default case_mode is "smart_case"
+						fuzzy = true,
+						override_generic_sorter = false,
+						override_file_sorter = true,
+						case_mode = "smart_case",
 					},
 				},
 			})
+
+			local project = require("project_nvim")
+
+			project.setup({
+				active = true,
+				on_config_done = nil,
+				manual_mode = false,
+				detection_methods = { "pattern" },
+				patterns = {
+					".git",
+					"_darcs",
+					".hg",
+					".bzr",
+					".svn",
+					"Makefile",
+					"package.json",
+				},
+				show_hidden = false,
+				silent_chdir = true,
+				ignore_lsp = {},
+				datapath = vim.fn.stdpath("data"),
+			})
+
 			telescope.load_extension("fzf")
+			telescope.load_extension("projects")
 		end,
 		dependencies = {
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			{ "ahmedkhalf/project.nvim" },
 		},
 	},
 }
