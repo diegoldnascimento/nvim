@@ -10,7 +10,7 @@ return {
 	{ "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy" },
-	{ "norcalli/nvim-colorizer.lua" },
+	{ "norcalli/nvim-colorizer.lua", event = "VeryLazy" },
 	{ "p00f/nvim-ts-rainbow" },
 	{ "max397574/better-escape.nvim", name = "better_escape", event = "VeryLazy" },
 	{ "ojroques/nvim-bufdel", event = "VeryLazy" },
