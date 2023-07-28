@@ -5,7 +5,6 @@ return {
 	{ "windwp/nvim-autopairs", event = "VeryLazy" },
 	{ "lewis6991/gitsigns.nvim", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
-	{ "ahmedkhalf/project.nvim", event = "VeryLazy" },
 	{ "folke/which-key.nvim", event = "VeryLazy"}, 
 	{ "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
