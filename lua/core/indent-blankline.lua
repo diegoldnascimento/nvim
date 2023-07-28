@@ -23,7 +23,6 @@ local opts = {
 		"alpha",
 		"dashboard",
 		"NvimTree",
-		"Trouble",
 		"mason",
 		"toggleterm",
 	},

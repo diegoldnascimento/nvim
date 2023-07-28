@@ -68,14 +68,6 @@ keymap("n", "<Space>fo", "<cmd>Telescope oldfiles<cr>", opts)
 -- BlamerToggle
 keymap("n", "<Space>bt", "<cmd>BlamerToggle<cr>", opts)
 
--- Trouble
-keymap("n", "<Space>xx", "<cmd>TroubleToggle<cr>", opts)
-keymap("n", "<Space>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
-keymap("n", "<Space>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
-keymap("n", "<Space>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
-keymap("n", "<Space>xl", "<cmd>TroubleToggle loclist<cr>", opts)
-keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
-
 -- Bufferline
 keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts)
 keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
@@ -99,7 +91,7 @@ keymap("n", "<Space>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
 
 -- Which Keys
 --
-keymap("n", "<space><space>", "<cmd>WhichKey ", opts)
+keymap("n", "<space>?", "<cmd>WhichKey <CR>", opts)
 
 -- Comments
 keymap("n", "<C-_>", "<Cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)

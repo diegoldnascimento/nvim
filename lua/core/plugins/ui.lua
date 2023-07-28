@@ -7,7 +7,6 @@ return {
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
 	{ "ahmedkhalf/project.nvim", event = "VeryLazy" },
 	{ "folke/which-key.nvim", event = "VeryLazy" },
-	{ "folke/trouble.nvim", event = "VeryLazy" },
 	{ "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy" },
