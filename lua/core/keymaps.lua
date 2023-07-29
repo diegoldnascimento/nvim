@@ -59,6 +59,12 @@ keymap(
 	opts
 )
 keymap("n", "<Space>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap(
+	"n",
+	"<Space>fG",
+	"<cmd>lua require'telescope.builtin'.live_grep{ search_dirs={'%:p'} }<cr>",
+	opts
+)
 keymap("n", "<Space>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<Space>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<Space>fo", "<cmd>Telescope oldfiles<cr>", opts)
@@ -137,3 +143,4 @@ keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 keymap("n", "X", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "<Space>cl", "<cmd>LspInfo<CR>", opts)
+keymap("n", "<Space>cm", "<cmd>Mason<CR>", opts)

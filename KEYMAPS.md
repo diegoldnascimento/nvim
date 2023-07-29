@@ -28,13 +28,14 @@
 
 ## Telescope
 
-| Key         | Description            | Mode |
-| ----------- | ---------------------- | ---- |
-| `<Space>fg` | Telescope Live Grep    | n    |
-| `<Space>fh` | Telescope Help Tags    | n    |
-| `<Space>fb` | Telescope File Browser | n    |
-| `<Space>fp` | Telescope Buffers      | n    |
-| `<Space>fo` | Telescope Old Files    | n    |
+| Key         | Description                              | Mode |
+| ----------- | ---------------------------------------- | ---- |
+| `<Space>fg` | Telescope Live Grep                      | n    |
+| `<Space>fG` | Telescope Live Grep Current Working File | n    |
+| `<Space>fh` | Telescope Help Tags                      | n    |
+| `<Space>fb` | Telescope File Browser                   | n    |
+| `<Space>fp` | Telescope Buffers                        | n    |
+| `<Space>fo` | Telescope Old Files                      | n    |
 
 ## Formatter
 
