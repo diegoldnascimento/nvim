@@ -132,6 +132,7 @@ keymap(
 keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", "gx", "<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>", opts)
+keymap("n", "<space>fx", "<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>", opts)
 keymap(
 	"n",
 	"gw",

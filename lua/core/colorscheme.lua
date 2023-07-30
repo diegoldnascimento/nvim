@@ -51,7 +51,7 @@ dracula.setup({
 		gutter_fg = "#4B5263",
 		nontext = "#3B4048",
 	},
-	show_end_of_buffer = true,
+	show_end_of_buffer = false,
 	transparent_bg = true,
 	italic_comment = true,
 	overrides = {},
