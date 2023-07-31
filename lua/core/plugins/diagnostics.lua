@@ -4,9 +4,7 @@ return {
 		require("trouble").setup({})
 		local keymap = vim.keymap
 
-		keymap.set("n", "<leader>xx", function()
-			require("trouble").open()
-		end)
+		keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
 		keymap.set("n", "<leader>xw", function()
 			require("trouble").open("workspace_diagnostics")
 		end)
