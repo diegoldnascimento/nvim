@@ -64,3 +64,13 @@
 | `<leader>to` | Show Output         | n    |
 | `<leader>tO` | Toggle Output Panel | n    |
 | `<leader>tS` | Stop                | n    |
+
+## Trouble
+
+| Key         | Description                          | Mode |
+| ----------- | ------------------------------------ | ---- |
+| `<Space>xx` | Trouble Toggle                       | n    |
+| `<Space>xw` | Trouble Toggle Workspace Diagnostics | n    |
+| `<Space>xw` | Trouble Toggle Document Diagnostics  | n    |
+| `<Space>xq` | Trouble Toggle Quick Fix             | n    |
+| `<Space>xl` | Trouble Toggle Loclist               | n    |
