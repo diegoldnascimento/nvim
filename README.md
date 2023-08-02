@@ -93,7 +93,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - nvim-cmp source for neovim's built-in language server client.
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua) - nvim-cmp source for neovim Lua API.
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) - nvim-cmp source for vim's cmdline.
-- [cmp-tabnine](https://github.com/tzachar/cmp-tabnine) - Tabnine source for hrsh7th/nvim-cmp
+- [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) - nvim-cmp source for displaying function signatures with the current parameter emphasized:
 - [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp) - Copilot suggestions will automatically be loaded into your cmp menu as snippets and display their full contents when a copilot suggestion is hovered.
 
 ### Code Tests
