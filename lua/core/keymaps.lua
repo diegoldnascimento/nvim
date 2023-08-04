@@ -25,6 +25,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Stay in indent mode
+--
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
@@ -145,3 +146,10 @@ keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 keymap("n", "X", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "<Space>cl", "<cmd>LspInfo<CR>", opts)
 keymap("n", "<Space>cm", "<cmd>Mason<CR>", opts)
+
+-- Vim Arrows remap to do nothing
+keymap("n", "<up>", "", opts)
+keymap("n", "<down>", "", opts)
+keymap("n", "<right>", "", opts)
+keymap("n", "<left>", "", opts)
+
