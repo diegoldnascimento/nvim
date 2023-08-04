@@ -73,6 +73,7 @@ return {
 				"tflint",
 				"jsonlint",
 				"markdownlint",
+        "yamlfmt"
 			}
 
 			mason.setup({

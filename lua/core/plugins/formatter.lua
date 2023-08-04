@@ -14,6 +14,7 @@ return {
 				sh = { require("formatter.filetypes.sh").shfmt },
 				terraform = { require("formatter.filetypes.terraform").terraform },
 				markdown = { require("formatter.filetypes.markdown").prettier },
+				yaml = { require("formatter.filetypes.yaml").yamlfmt },
 
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
