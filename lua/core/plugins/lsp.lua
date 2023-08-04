@@ -63,7 +63,7 @@ return {
 
 			local null_ls = {
 				"stylua",
-				"prettier",
+				"prettierd",
 				"shfmt",
 				"eslint_d",
 				"flake8",
@@ -73,7 +73,6 @@ return {
 				"tflint",
 				"jsonlint",
 				"markdownlint",
-        "yamlfmt"
 			}
 
 			mason.setup({

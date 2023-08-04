@@ -5,16 +5,16 @@ return {
 		config = function()
 			local opts = {
 				lua = { require("formatter.filetypes.lua").stylua },
-				typescript = { require("formatter.filetypes.typescript").prettier },
-				javascript = { require("formatter.filetypes.javascript").prettier },
-				javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
-				css = { require("formatter.filetypes.css").prettier },
+				typescript = { require("formatter.filetypes.typescript").prettierd },
+				javascript = { require("formatter.filetypes.javascript").prettierd },
+				javascriptreact = { require("formatter.filetypes.javascriptreact").prettierd },
+				css = { require("formatter.filetypes.css").prettierd },
 				json = { require("formatter.filetypes.json").jq },
 				go = { require("formatter.filetypes.go").gofumpt },
 				sh = { require("formatter.filetypes.sh").shfmt },
 				terraform = { require("formatter.filetypes.terraform").terraform },
-				markdown = { require("formatter.filetypes.markdown").prettier },
-				yaml = { require("formatter.filetypes.yaml").yamlfmt },
+				markdown = { require("formatter.filetypes.markdown").prettierd },
+				yaml = { require("formatter.filetypes.yaml").prettierd },
 
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
