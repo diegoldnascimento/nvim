@@ -7,7 +7,6 @@ return {
 	{ "hrsh7th/cmp-nvim-lua", event = "VeryLazy" },
 	{ "hrsh7th/cmp-cmdline", event = "VeryLazy" },
 	{ "hrsh7th/cmp-buffer", event = "VeryLazy" },
-	{ "onsails/lspkind.nvim", event = "VeryLazy" },
 	{ "zbirenbaum/copilot.lua", event = "VeryLazy", build = ":Copilot auth" },
 	{
 		"zbirenbaum/copilot-cmp",
