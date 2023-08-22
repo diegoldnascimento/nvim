@@ -131,6 +131,10 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Lua helpers for general usage
 
+### Hardtime 
+
+- [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim) - A Neovim plugin helping you establish good command workflow and habit 
+
 ## Screenshots
 
 ![](https://i.postimg.cc/BZM9b68J/Screen-Shot-2022-09-19-at-9-50-10-PM.png)
