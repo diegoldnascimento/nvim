@@ -19,7 +19,7 @@ return {
 			})
 		end,
 	},
-	{ "p00f/nvim-ts-rainbow" },
+	{ "HiPhish/rainbow-delimiters.nvim" },
 	{ "max397574/better-escape.nvim", name = "better_escape", event = "VeryLazy" },
 	{ "ojroques/nvim-bufdel", event = "VeryLazy" },
 	{

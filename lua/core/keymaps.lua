@@ -98,8 +98,6 @@ keymap("n", "<Space>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
 --
 keymap("n", "<space>?", "<cmd>WhichKey <CR>", opts)
 
--- Comments
-keymap("n", "<C-_>", "<Cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 
 -- Move current line / block with Alt-j/k a la vscode.
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)

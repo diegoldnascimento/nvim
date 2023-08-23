@@ -48,11 +48,6 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		additional_vim_regex_highlighting = true,
 	},
-	rainbow = {
-		enable = true,
-		extended_mode = false,
-		max_file_lines = nil,
-	},
 	incremental_selection = {
 		enable = true,
 		keymaps = {
@@ -63,3 +58,25 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
+
+local rainbow_delimiters = require("rainbow-delimiters")
+
+vim.g.rainbow_delimiters = {
+	strategy = {
+		[""] = rainbow_delimiters.strategy["global"],
+		vim = rainbow_delimiters.strategy["local"],
+	},
+	query = {
+		[""] = "rainbow-delimiters",
+		lua = "rainbow-blocks",
+	},
+	highlight = {
+		"RainbowDelimiterViolet",
+		"RainbowDelimiterYellow",
+		"RainbowDelimiterCyan",
+		"RainbowDelimiterBlue",
+		"RainbowDelimiterOrange",
+		"RainbowDelimiterGreen",
+		"RainbowDelimiterRed",
+	},
+}
