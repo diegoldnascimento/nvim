@@ -57,7 +57,6 @@ Below the list of the current plugins used in this configuration and how we are 
 - [nvim-notify](https://github.com/rcarriga/nvim-notify) - A fancy, configurable, notification manager for NeoVim
 - [better-escape.nvim](https://github.com/max397574/better-escape.nvim) - This plugin is the lua version of better_escape.vim, with some additional features and optimizations A lot of people have mappings like jk or jj to escape insert mode
 - [nvim-bufedel.nvim](https://github.com/ojroques/nvim-bufdel) - A small Neovim plugin to improve the deletion of buffers.
-- [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
 
 ### LSP
 

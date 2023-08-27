@@ -1,11 +1,10 @@
 ## Basic Commands
 
-| Key     | Description          | Mode |
-| ------- | -------------------- | ---- |
-| `<C-s>` | Save                 | n    |
-| `<C-q>` | Save and Quit        | n    |
-| `<C-w>` | Close Current Buffer | n    |
-| `<C-n>` | Multi-line Cursor on Word | n    |
+| Key     | Description               | Mode |
+| ------- | ------------------------- | ---- |
+| `<C-s>` | Save                      | n    |
+| `<C-q>` | Save and Quit             | n    |
+| `<C-w>` | Close Current Buffer      | n    |
 
 ## Navigation
 
@@ -31,19 +30,19 @@
 
 | Key         | Description                              | Mode |
 | ----------- | ---------------------------------------- | ---- |
-| `<Space>fg` | Telescope Live Grep                      | n    |
-| `<Space>fG` | Telescope Live Grep Current Working File | n    |
-| `<Space>fh` | Telescope Help Tags                      | n    |
-| `<Space>fb` | Telescope File Browser                   | n    |
-| `<Space>fp` | Telescope Buffers                        | n    |
-| `<Space>fo` | Telescope Old Files                      | n    |
+| `<Leader>fg` | Telescope Live Grep                      | n    |
+| `<Leader>fG` | Telescope Live Grep Current Working File | n    |
+| `<Leader>fh` | Telescope Help Tags                      | n    |
+| `<Leader>fb` | Telescope File Browser                   | n    |
+| `<Leader>fp` | Telescope Buffers                        | n    |
+| `<Leader>fo` | Telescope Old Files                      | n    |
 
 ## Replacer
 
 | Key         | Description                     | Mode |
 | ----------- | ------------------------------- | ---- |
-| `<Space>fr` | Open the Renamer window         | n    |
-| `<Space>fR` | Save the Renamer window session | n    |
+| `<Leader>fr` | Open the Renamer window         | n    |
+| `<Leader>fR` | Save the Renamer window session | n    |
 
 ## Formatter
 
@@ -77,8 +76,8 @@
 
 | Key         | Description                          | Mode |
 | ----------- | ------------------------------------ | ---- |
-| `<Space>xx` | Trouble Toggle                       | n    |
-| `<Space>xw` | Trouble Toggle Workspace Diagnostics | n    |
-| `<Space>xw` | Trouble Toggle Document Diagnostics  | n    |
-| `<Space>xq` | Trouble Toggle Quick Fix             | n    |
-| `<Space>xl` | Trouble Toggle Loclist               | n    |
+| `<Leader>xx` | Trouble Toggle                       | n    |
+| `<Leader>xw` | Trouble Toggle Workspace Diagnostics | n    |
+| `<Leader>xw` | Trouble Toggle Document Diagnostics  | n    |
+| `<Leader>xq` | Trouble Toggle Quick Fix             | n    |
+| `<Leader>xl` | Trouble Toggle Loclist               | n    |

@@ -52,47 +52,47 @@ keymap("n", "<c-m>", "<cmd>NvimTreeFocus<CR>", opts)
 keymap("n", "<c-k>", "<cmd>NvimTreeFindFile<CR>", opts)
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<Space>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap(
 	"n",
-	"<Space>fa",
+	"<Leader>fa",
 	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 	opts
 )
-keymap("n", "<Space>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<Leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap(
 	"n",
-	"<Space>fG",
+	"<Leader>fG",
 	"<cmd>lua require'telescope.builtin'.live_grep{ search_dirs={'%:p'} }<cr>",
 	opts
 )
-keymap("n", "<Space>fh", "<cmd>Telescope help_tags<cr>", opts)
-keymap("n", "<Space>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<Space>fo", "<cmd>Telescope oldfiles<cr>", opts)
+keymap("n", "<Leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<Leader>fo", "<cmd>Telescope oldfiles<cr>", opts)
 
 -- BlamerToggle
-keymap("n", "<Space>bt", "<cmd>BlamerToggle<cr>", opts)
+keymap("n", "<Leader>bt", "<cmd>BlamerToggle<cr>", opts)
 
 -- Bufferline
 keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts)
 keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
 keymap("n", "<A-<>", "<Cmd>BufferLineMovePrevious<CR>", opts)
 keymap("n", "<A->>", "<Cmd>BufferLineMoveNext<CR>", opts)
-keymap("n", "<Space>1", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
-keymap("n", "<Space>2", "<cmd>BufferLineGoToBuffer 2<cr>", opts)
-keymap("n", "<Space>3", "<cmd>BufferLineGoToBuffer 3<cr>", opts)
-keymap("n", "<Space>4", "<cmd>BufferLineGoToBuffer 4<cr>", opts)
-keymap("n", "<Space>5", "<cmd>BufferLineGoToBuffer 5<cr>", opts)
-keymap("n", "<Space>6", "<cmd>BufferLineGoToBuffer 6<cr>", opts)
-keymap("n", "<Space>7", "<cmd>BufferLineGoToBuffer 7<cr>", opts)
-keymap("n", "<Space>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
-keymap("n", "<Space>9", "<cmd>BufferLineGoToBuffer 9<cr>", opts)
-keymap("n", "<Space>c", "<cmd>BufferLineCloseLeft<cr>", opts)
-keymap("n", "<Space>w", "<cmd>BufferLinePickClose<cr>", opts)
-keymap("n", "<Space>bb", "<cmd>BufferOrderByBufferNumber<cr>", opts)
-keymap("n", "<Space>bd", "<cmd>BufferOrderByDirectory<cr>", opts)
-keymap("n", "<Space>bl", "<cmd>BufferOrderByLanguage<cr>", opts)
-keymap("n", "<Space>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
+keymap("n", "<Leader>1", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
+keymap("n", "<Leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", opts)
+keymap("n", "<Leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", opts)
+keymap("n", "<Leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", opts)
+keymap("n", "<Leader>5", "<cmd>BufferLineGoToBuffer 5<cr>", opts)
+keymap("n", "<Leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", opts)
+keymap("n", "<Leader>7", "<cmd>BufferLineGoToBuffer 7<cr>", opts)
+keymap("n", "<Leader>8", "<cmd>BufferLineGoToBuffer 8<cr>", opts)
+keymap("n", "<Leader>9", "<cmd>BufferLineGoToBuffer 9<cr>", opts)
+keymap("n", "<Leader>c", "<cmd>BufferLineCloseLeft<cr>", opts)
+keymap("n", "<Leader>w", "<cmd>BufferLinePickClose<cr>", opts)
+keymap("n", "<Leader>bb", "<cmd>BufferOrderByBufferNumber<cr>", opts)
+keymap("n", "<Leader>bd", "<cmd>BufferOrderByDirectory<cr>", opts)
+keymap("n", "<Leader>bl", "<cmd>BufferOrderByLanguage<cr>", opts)
+keymap("n", "<Leader>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
 
 -- Which Keys
 --
@@ -144,8 +144,8 @@ keymap(
 keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 keymap("n", "X", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-keymap("n", "<Space>cl", "<cmd>LspInfo<CR>", opts)
-keymap("n", "<Space>cm", "<cmd>Mason<CR>", opts)
+keymap("n", "<Leader>cl", "<cmd>LspInfo<CR>", opts)
+keymap("n", "<Leader>cm", "<cmd>Mason<CR>", opts)
 
 -- Vim Arrows remap to do nothing
 keymap("n", "<up>", "", opts)

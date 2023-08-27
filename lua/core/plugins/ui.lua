@@ -9,7 +9,6 @@ return {
 	{ "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
 	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy" },
-	{ "mg979/vim-visual-multi", event = "VeryLazy" },
 	{
 		"norcalli/nvim-colorizer.lua",
 		event = "VeryLazy",
