@@ -106,7 +106,7 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - telescope.nvim is a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core. Telescope is centered around modularity, allowing for easy customization.
 - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
-- [project.nvim](https://github.com/ahmedkhalf/project.nvim) - project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+- [renamer.nvim](https://github.com/gabrielpoca/replacer.nvim) - replacer.nvim makes quickfix windows editable, allowing changes to both the content of a file and its path. You can use this to rename variables and files easily. When moving a file around, if the origin folder gets empty, it's deleted.
 
 ### File Explorer
 

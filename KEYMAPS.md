@@ -37,6 +37,13 @@
 | `<Space>fp` | Telescope Buffers                        | n    |
 | `<Space>fo` | Telescope Old Files                      | n    |
 
+## Replacer
+
+| Key         | Description                     | Mode |
+| ----------- | ------------------------------- | ---- |
+| `<Space>fr` | Open the Renamer window         | n    |
+| `<Space>fR` | Save the Renamer window session | n    |
+
 ## Formatter
 
 | Key     | Description     | Mode |

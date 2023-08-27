@@ -32,6 +32,7 @@ local modules = {
 	{ import = "core.plugins.treesitter" },
 	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
+	{ import = "core.plugins.replacer" },
 	{ "ThePrimeagen/vim-be-good", event = "VeryLazy" },
 }
 
