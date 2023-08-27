@@ -5,6 +5,7 @@
 | `<C-s>` | Save                 | n    |
 | `<C-q>` | Save and Quit        | n    |
 | `<C-w>` | Close Current Buffer | n    |
+| `<C-n>` | Multi-line Cursor on Word | n    |
 
 ## Navigation
 
