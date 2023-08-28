@@ -15,17 +15,6 @@
 | `<C-k>` | Move cursor up    | n    |
 | `<C-l>` | Move cursor right | n    |
 
-## File Explorer
-
-| Key     | Description                    | Mode |
-| ------- | ------------------------------ | ---- |
-| `-`     | Open File Explorer window      | n    |
-| `<C-c>` | Close File Explorer window     | n    |
-| `<CR>`  | Select the file to be open     | n    |
-| `_`     | Open Current Working Directory | n    |
-| `g.`    | Toggle hidden files            | n    |
-| `<C-p>` | Preview File                   | n    |
-
 ## Telescope
 
 | Key          | Description                              | Mode |
