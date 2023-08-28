@@ -57,6 +57,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [nvim-notify](https://github.com/rcarriga/nvim-notify) - A fancy, configurable, notification manager for NeoVim
 - [better-escape.nvim](https://github.com/max397574/better-escape.nvim) - This plugin is the lua version of better_escape.vim, with some additional features and optimizations A lot of people have mappings like jk or jj to escape insert mode
 - [nvim-bufedel.nvim](https://github.com/ojroques/nvim-bufdel) - A small Neovim plugin to improve the deletion of buffers.
+- [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
 
 ### LSP
 
@@ -122,7 +123,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [Comment](https://github.com/numToStr/Comment.nvim) - Shortcut for commenting in and out code snippets
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Used on syntax highlight and custom motions
 - [rainbow-delimiters](https://gitlab.com/HiPhish/rainbow-delimiters.nvim) - This Neovim plugin provides alternating syntax highlighting (“rainbow
-parentheses”) for Neovim, powered by Tree-sitter.
+  parentheses”) for Neovim, powered by Tree-sitter.
 - [which-key](https://github.com/folke/which-key.nvim/) - WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible key bindings of the command you started typing
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Use treesitter to autoclose and autorename HTML tag.
 - [indent blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Adds indentation guides to all lines, including empty lines

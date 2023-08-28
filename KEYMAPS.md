@@ -1,10 +1,10 @@
 ## Basic Commands
 
-| Key     | Description               | Mode |
-| ------- | ------------------------- | ---- |
-| `<C-s>` | Save                      | n    |
-| `<C-q>` | Save and Quit             | n    |
-| `<C-w>` | Close Current Buffer      | n    |
+| Key     | Description          | Mode |
+| ------- | -------------------- | ---- |
+| `<C-s>` | Save                 | n    |
+| `<C-q>` | Save and Quit        | n    |
+| `<C-w>` | Close Current Buffer | n    |
 
 ## Navigation
 
@@ -28,8 +28,8 @@
 
 ## Telescope
 
-| Key         | Description                              | Mode |
-| ----------- | ---------------------------------------- | ---- |
+| Key          | Description                              | Mode |
+| ------------ | ---------------------------------------- | ---- |
 | `<Leader>fg` | Telescope Live Grep                      | n    |
 | `<Leader>fG` | Telescope Live Grep Current Working File | n    |
 | `<Leader>fh` | Telescope Help Tags                      | n    |
@@ -39,8 +39,8 @@
 
 ## Replacer
 
-| Key         | Description                     | Mode |
-| ----------- | ------------------------------- | ---- |
+| Key          | Description                     | Mode |
+| ------------ | ------------------------------- | ---- |
 | `<Leader>fr` | Open the Renamer window         | n    |
 | `<Leader>fR` | Save the Renamer window session | n    |
 
@@ -72,10 +72,16 @@
 | `<leader>tO` | Toggle Output Panel | n    |
 | `<leader>tS` | Stop                | n    |
 
+## Visual Multi Line
+
+| Key     | Description                    | Mode |
+| ------- | ------------------------------ | ---- |
+| `<C-d>` | Select multi line under cursor | n    |
+
 ## Trouble
 
-| Key         | Description                          | Mode |
-| ----------- | ------------------------------------ | ---- |
+| Key          | Description                          | Mode |
+| ------------ | ------------------------------------ | ---- |
 | `<Leader>xx` | Trouble Toggle                       | n    |
 | `<Leader>xw` | Trouble Toggle Workspace Diagnostics | n    |
 | `<Leader>xw` | Trouble Toggle Document Diagnostics  | n    |

@@ -8,7 +8,10 @@ keymap("", "<Space>", "<Nop>", opts)
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
+--
+--    ]],
+-- 	false
+-- )
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -98,7 +101,6 @@ keymap("n", "<Leader>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
 --
 keymap("n", "<space>?", "<cmd>WhichKey <CR>", opts)
 
-
 -- Move current line / block with Alt-j/k a la vscode.
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
@@ -131,7 +133,12 @@ keymap(
 keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", "gx", "<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>", opts)
-keymap("n", "<space>fx", "<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>", opts)
+keymap(
+	"n",
+	"<space>fx",
+	"<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>",
+	opts
+)
 keymap(
 	"n",
 	"gw",
@@ -150,4 +157,3 @@ keymap("n", "<up>", "", opts)
 keymap("n", "<down>", "", opts)
 keymap("n", "<right>", "", opts)
 keymap("n", "<left>", "", opts)
-
