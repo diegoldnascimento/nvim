@@ -18,5 +18,5 @@ return {
 			desc = "save replacer.nvim",
 		},
 	},
-	Event = "VeryLazy",
+	event = "VeryLazy",
 }
