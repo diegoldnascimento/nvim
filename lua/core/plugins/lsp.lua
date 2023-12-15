@@ -73,6 +73,7 @@ return {
 				"tflint",
 				"jsonlint",
 				"markdownlint",
+				"php-cs-fixer",
 			}
 
 			mason.setup({
