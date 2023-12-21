@@ -8,19 +8,19 @@ end
 --
 --
 
- -- "#1E1D22",
- --      "#1F1F23",
- --      "#F8F8F2",
- --      "#44475A",
- --      "#5F5076",
- --      "#C53788",
- --      "#8BE9FD",
- --      "#50FA7B",
- --      "#FFB86C",
- --      "#FF79C6",
- --      "#BD93F9",
- --      "#FF5555",
- --      "#F1FA8C"
+-- "#1E1D22",
+--      "#1F1F23",
+--      "#F8F8F2",
+--      "#44475A",
+--      "#5F5076",
+--      "#C53788",
+--      "#8BE9FD",
+--      "#50FA7B",
+--      "#FFB86C",
+--      "#FF79C6",
+--      "#BD93F9",
+--      "#FF5555",
+--      "#F1FA8C"
 
 -- Using the Dracula base and creating the Illusion theme colorscheme
 -- https://github.com/rwietter/illusion-vscode-theme
