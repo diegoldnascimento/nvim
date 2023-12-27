@@ -17,7 +17,15 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 			{ "jay-babu/mason-nvim-dap.nvim" },
 			{ "jose-elias-alvarez/null-ls.nvim" },
-		},
+		{
+            "SmiteshP/nvim-navbuddy",
+            dependencies = {
+                "SmiteshP/nvim-navic",
+                "MunifTanjim/nui.nvim"
+            },
+            opts = { lsp = { auto_attach = true } }
+        },
+    },
 		init = function()
 			local lsp = require("lsp-zero").preset({})
 

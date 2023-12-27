@@ -86,7 +86,7 @@ end
 
 ins_left {
   function()
-    return '▊'
+    return ''
   end,
   color = { fg = colors.blue }, -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
@@ -224,14 +224,6 @@ ins_right {
     removed = { fg = colors.red },
   },
   cond = conditions.hide_in_width,
-}
-
-ins_right {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.blue },
-  padding = { left = 1 },
 }
 
 -- Now don't forget to initialize lualine
