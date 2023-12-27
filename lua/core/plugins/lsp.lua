@@ -17,20 +17,26 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 			{ "jay-babu/mason-nvim-dap.nvim" },
 			{ "jose-elias-alvarez/null-ls.nvim" },
-		{
-            "SmiteshP/nvim-navbuddy",
-            dependencies = {
-                "SmiteshP/nvim-navic",
-                "MunifTanjim/nui.nvim"
-            },
-            opts = { lsp = { auto_attach = true } }
-        },
-    },
+			{
+				"SmiteshP/nvim-navbuddy",
+				dependencies = {
+					"SmiteshP/nvim-navic",
+					"MunifTanjim/nui.nvim",
+				},
+				opts = { lsp = { auto_attach = true } },
+			},
+		},
 		init = function()
 			local lsp = require("lsp-zero").preset({})
+			local navic = require("nvim-navic")
 
 			lsp.on_attach(function(client, bufnr)
 				lsp.default_keymaps({ buffer = bufnr })
+
+				if client.name == "copilot" or client.name == "tailwindcss" then
+					return
+				end
+				navic.attach(client, bufnr)
 			end)
 			lsp.setup()
 
@@ -55,13 +61,13 @@ return {
 				"dockerls",
 				"cssls",
 				"html",
-				"tailwindcss",
 				"graphql",
 				"prismals",
 				"marksman",
 				"rust_analyzer",
 				"intelephense",
 				"pyright",
+        "tailwindcss",
 			}
 
 			local daps = {
