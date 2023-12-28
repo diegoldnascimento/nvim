@@ -1,3 +1,3 @@
 return {
-  { 'rose-pine/neovim', name = 'rose-pine' },
+	{ "Mofiqul/dracula.nvim", lazy = false, priority = 1000 },
 }
