@@ -17,27 +17,22 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 			{ "jay-babu/mason-nvim-dap.nvim" },
 			{ "jose-elias-alvarez/null-ls.nvim" },
+
 			{
-				"SmiteshP/nvim-navbuddy",
-				dependencies = {
-					"SmiteshP/nvim-navic",
-					"MunifTanjim/nui.nvim",
-				},
-				opts = { lsp = { auto_attach = true } },
+				"nvimdev/lspsaga.nvim",
+				config = function()
+					require("lspsaga").setup({})
+				end,
 			},
 		},
 		init = function()
 			local lsp = require("lsp-zero").preset({})
-			local navic = require("nvim-navic")
 
 			lsp.on_attach(function(client, bufnr)
 				lsp.default_keymaps({ buffer = bufnr })
 
-				if client.name == "copilot" or client.name == "tailwindcss" then
-					return
-				end
-				navic.attach(client, bufnr)
 			end)
+
 			lsp.setup()
 
 			local status_mason_ok, mason = pcall(require, "mason")
@@ -67,7 +62,7 @@ return {
 				"rust_analyzer",
 				"intelephense",
 				"pyright",
-        "tailwindcss",
+				"tailwindcss",
 			}
 
 			local daps = {

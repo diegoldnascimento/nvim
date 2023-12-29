@@ -67,6 +67,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [mason-null-ls.nvim](https://github.com/jay-babu/mason-null-ls.nvim) - mason-null-ls bridges mason.nvim with the null-ls plugin - making it easier to use both plugins together.
 - [formatter.nvim](https://github.com/mhartington/formatter.nvim) - We want to thank the neoformat contributors. They developed a lot of formatter configurations that we used as a reference to create our own opt-in default formatter configurations.
 - [nvim-lint](https://github.com/mfussenegger/nvim-lint) - An asynchronous linter plugin for Neovim (>= 0.6.0) complementary to the built-in Language Server Protocol support
+- [lspsaga](https://github.com/nvimdev/lspsaga.nvim?tab=readme-ov-file) - Improves the Neovim built-in LSP experience.
 
 ### Git
 
