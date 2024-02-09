@@ -62,7 +62,6 @@ return {
 				"rust_analyzer",
 				"intelephense",
 				"pyright",
-				"tailwindcss",
 			}
 
 			local daps = {

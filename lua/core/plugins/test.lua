@@ -1,7 +1,6 @@
 return {
 	{
-		"rcarriga/neotest",
-		event = "VeryLazy",
+		"nvim-neotest/neotest",
 		config = function()
 			local status_ok, neotest = pcall(require, "neotest")
 
@@ -32,8 +31,7 @@ return {
 					"<leader>tT",
 					function()
 						require("neotest").run.run(vim.loop.cwd())
-					end,
-					opts,
+					end, opts,
 				},
 				{
 					"n",
@@ -75,6 +73,14 @@ return {
 					end,
 					opts,
 				},
+				{
+					"n",
+					"<leader>tw",
+					function()
+						require("neotest").run.run({ jestCommand = 'jest --watch ' })
+					end,
+					opts,
+				},
 			}
 
 			for _, m in pairs(mappings) do
@@ -84,7 +90,13 @@ return {
 			neotest.setup({
 				adapters = {
 					require("neotest-go"),
-					require("neotest-jest"),
+					require("neotest-jest")({
+						jestCommand = "yarn test --",
+						env = { CI = true },
+						cwd = function(path)
+							return vim.fn.getcwd()
+						end,
+					}),
 					require("neotest-vitest"),
 				},
 				consumers = {
@@ -108,9 +120,10 @@ return {
 			})
 		end,
 		dependencies = {
-			{ "haydenmeade/neotest-jest", event = "VeryLazy" },
-			{ "marilari88/neotest-vitest", event = "VeryLazy" },
-			{ "nvim-neotest/neotest-go", event = "VeryLazy" },
+      { "nvim-neotest/neotest-jest" },
+			{ "marilari88/neotest-vitest" },
+			{ "nvim-neotest/neotest-go" },
+      { "antoinemadec/FixCursorHold.nvim"},
 		},
 	},
 }
