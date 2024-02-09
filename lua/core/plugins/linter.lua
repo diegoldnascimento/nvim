@@ -4,8 +4,8 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("lint").linters_by_ft = {
-				typescript = { "eslint_d" },
-				javascript = { "eslint_d" },
+				typescript = { "eslint" },
+				javascript = { "eslint" },
 				json = { "jsonlint" },
 				python = { "flake8" },
 				terraform = { "tflint" },
