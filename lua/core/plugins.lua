@@ -16,8 +16,8 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 
 local modules = {
 	{ import = "core.plugins.bufferline" },
-	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.comment" },
+	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.completion" },
 	{ import = "core.plugins.debug" },
 	{ import = "core.plugins.diagnostics" },
@@ -32,8 +32,10 @@ local modules = {
 	{ import = "core.plugins.treesitter" },
 	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
-	{ import = "core.plugins.replacer" },
-	{ "ThePrimeagen/vim-be-good", event = "VeryLazy" },
+	{ import = "core.plugins.spectre" },
+  { import = "core.plugins.mini" },
+  { import = "core.plugins.autopairs" },
+  { import = "core.plugins.notify" },
 }
 
 return require("lazy").setup(modules)

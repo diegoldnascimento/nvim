@@ -6,7 +6,11 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-		local options = {
+		-- disable netrw at the very start of your init.lua
+		vim.g.loaded_netrw = 1
+		vim.g.loaded_netrwPlugin = 1
+
+		local opts = {
 			sort_by = "case_sensitive",
 			auto_reload_on_write = true,
 			create_in_closed_folder = false,
@@ -21,7 +25,7 @@ return {
 				adaptive_size = true,
 			},
 			git = {
-				enable = false,
+				enable = true,
 				ignore = true,
 			},
 			filesystem_watchers = {
@@ -38,19 +42,17 @@ return {
 			},
 			renderer = {
 				root_folder_label = false,
-				highlight_git = false,
-				highlight_opened_files = "none",
-
-				indent_markers = {
-					enable = false,
-				},
+				highlight_git = "all",
+				highlight_opened_files = "all",
+				highlight_diagnostics = "all",
+				highlight_modified = "all",
 
 				icons = {
 					show = {
 						file = true,
 						folder = true,
 						folder_arrow = true,
-						git = false,
+						git = true,
 					},
 
 					glyphs = {
@@ -80,11 +82,10 @@ return {
 			},
 		}
 
-    require("nvim-tree").setup(options)
+		require("nvim-tree").setup(opts)
 
 		-- Remap Enter key to do nothing
 		vim.api.nvim_set_keymap("n", "<CR>", "<NOP>", { noremap = true, silent = true })
 		vim.api.nvim_set_keymap("v", "<CR>", "<NOP>", { noremap = true, silent = true })
-		-- empty setup using defaults
 	end,
 }

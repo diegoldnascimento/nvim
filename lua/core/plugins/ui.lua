@@ -6,7 +6,7 @@ return {
 	{ "lewis6991/gitsigns.nvim", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
 	{ "folke/which-key.nvim", event = "VeryLazy" },
-	{ "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
+	-- { "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -80,11 +80,29 @@ return {
 		},
 	},
 	{
-		"rcarriga/nvim-notify",
+		"RRethy/vim-illuminate",
 		event = "VeryLazy",
 		config = function()
-			require("notify").setup({
-				background_colour = "#1E1D22",
+			require("illuminate").configure({
+				providers = {
+					"lsp",
+					"treesitter",
+					"regex",
+				},
+				enabled = true,
+				extended_mode = true,
+				color = "Blue",
+				highlight_under_cursor = true,
+				word_match = true,
+				delay = 100,
+				filetypes_denylist = {
+					"dirbuf",
+					"dirvish",
+					"nvimtree",
+					"alpha",
+					"NvimTree",
+					"Alpha",
+				},
 			})
 		end,
 	},

@@ -48,4 +48,4 @@ local opts = {
 	show_end_of_line = false,
 }
 
-indentBlankLine.setup(opts)
+-- indentBlankLine.setup(opts)
