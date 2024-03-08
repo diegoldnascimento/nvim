@@ -108,7 +108,14 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - telescope.nvim is a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core. Telescope is centered around modularity, allowing for easy customization.
 - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
-- [renamer.nvim](https://github.com/gabrielpoca/replacer.nvim) - replacer.nvim makes quickfix windows editable, allowing changes to both the content of a file and its path. You can use this to rename variables and files easily. When moving a file around, if the origin folder gets empty, it's deleted.
+
+### Search and Replace
+
+- [nvim-spectre](https://github.com/nvim-pack/nvim-spectre) - A search panel for neovim.
+
+### Mini
+
+- [mini.indentscope](https://github.com/echasnovski/mini.indentscope) - Visualize scope with animated vertical line. It is very fast and done automatically in a non-blocking way (other operations can be performed, like moving cursor). You can customize debounce delay and animation rule.
 
 ### File Explorer
 
@@ -127,7 +134,6 @@ Below the list of the current plugins used in this configuration and how we are 
   parentheses”) for Neovim, powered by Tree-sitter.
 - [which-key](https://github.com/folke/which-key.nvim/) - WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible key bindings of the command you started typing
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Use treesitter to autoclose and autorename HTML tag.
-- [indent blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Adds indentation guides to all lines, including empty lines
 - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) - Preview markdown on your modern browser with synchronised scrolling and flexible configuration.
 - [flash.nvim](https://github.com/folke/flash.nvim)- Flash.nvim lets you navigate your code with search labels, enhanced character motions, and Treesitter integration.
 
