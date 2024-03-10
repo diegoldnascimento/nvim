@@ -2,6 +2,7 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		event = { "InsertEnter", "LspAttach" },
+		fix_pairs = true,
 		build = ":Copilot auth",
 		opts = {
 			suggestion = {
