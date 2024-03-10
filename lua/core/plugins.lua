@@ -19,6 +19,7 @@ local modules = {
 	{ import = "core.plugins.comment" },
 	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.completion" },
+	{ import = "core.plugins.copilot" },
 	{ import = "core.plugins.debug" },
 	{ import = "core.plugins.diagnostics" },
 	{ import = "core.plugins.filetree" },

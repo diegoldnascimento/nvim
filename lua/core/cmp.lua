@@ -15,6 +15,15 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
+local has_words_before = function()
+	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+		return false
+	end
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	return col ~= 0
+		and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
+end
+
 local compare = require("cmp.config.compare")
 
 cmp.setup({
@@ -36,7 +45,7 @@ cmp.setup({
 		}),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
+			if cmp.visible() and has_words_before() then
 				cmp.select_next_item()
 			elseif luasnip.expandable() then
 				luasnip.expand()
@@ -65,22 +74,23 @@ cmp.setup({
 		}),
 	},
 	sources = {
-    { name = "copilot" },
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
-    { name = "nvim_lsp_signature_help" },
+		{ name = "nvim_lsp_signature_help" },
 		{ name = "path" },
-    { name = "buffer" },
-    { name = "luasnip" },
+		{ name = "luasnip" },
+		{ name = "buffer" },
 	},
 	sorting = {
-		priority_weight = 10,
+		priority_weight = 2,
 		comparators = {
-			compare.kind,
+			require("copilot_cmp.comparators").prioritize,
 			compare.offset,
 			compare.exact,
 			compare.score,
 			compare.recently_used,
 			compare.sort_text,
+			compare.kind,
 			compare.length,
 			compare.order,
 		},
@@ -121,4 +131,4 @@ cmp.setup.cmdline("/", {
 	},
 })
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
