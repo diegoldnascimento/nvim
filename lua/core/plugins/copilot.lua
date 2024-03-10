@@ -1,15 +1,15 @@
 return {
 	{
 		"zbirenbaum/copilot.lua",
-		event = "InsertEnter",
+		event = { "InsertEnter", "LspAttach" },
 		build = ":Copilot auth",
 		opts = {
 			suggestion = {
-        enabled = false,
+				enabled = false,
 			},
-      panel = {
-        enabled = false,
-      },
+			panel = {
+				enabled = false,
+			},
 		},
 		config = function(_, opts)
 			require("copilot").setup(opts)
