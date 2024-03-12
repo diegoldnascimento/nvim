@@ -74,7 +74,6 @@ cmp.setup({
 		}),
 	},
 	sources = {
-		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "path" },
@@ -84,7 +83,6 @@ cmp.setup({
 	sorting = {
 		priority_weight = 2,
 		comparators = {
-			require("copilot_cmp.comparators").prioritize,
 			compare.offset,
 			compare.exact,
 			compare.score,
@@ -131,4 +129,17 @@ cmp.setup.cmdline("/", {
 	},
 })
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+cmp.event:on("menu_opened", function()
+	vim.b.copilot_suggestion_hidden = true
+end)
+
+cmp.event:on("menu_closed", function()
+	vim.b.copilot_suggestion_hidden = false
+end)
+
+cmp.event:on("confirm_done", function(evt)
+	if evt.entry.completion_item then
+		require("nvim-autopairs.completion.cmp").on_confirm_done()(evt)
+		vim.api.nvim_exec_autocmds("CompleteChanged", {})
+	end
+end)

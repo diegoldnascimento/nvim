@@ -2,12 +2,6 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
-			local status_ok, lualine = pcall(require, "lualine")
-
-			if not status_ok then
-				return
-			end
-
 			local colors = {
 				blue = "#80a0ff",
 				cyan = "#8BE9FD",
@@ -19,11 +13,11 @@ return {
 				green = "#50FA7B",
 			}
 
-			local illusion_theme = {
+			local dracula = {
 				normal = {
 					a = { fg = colors.black, bg = colors.violet },
 					b = { fg = colors.white, bg = colors.grey },
-					c = { fg = colors.black, bg = colors.black },
+					c = { fg = colors.white, bg = colors.black },
 				},
 
 				insert = { a = { fg = colors.black, bg = colors.green } },
@@ -36,11 +30,25 @@ return {
 					c = { fg = colors.black, bg = colors.black },
 				},
 			}
-
-			lualine.setup({
+			--
+			require("lualine").setup({
 				options = {
-					theme = illusion_theme,
-					disabled_filetypes = { statusline = { "dashboard", "alpha", "NvimTree", "packer" } },
+					theme = dracula,
+					globalstatus = true,
+					disabled_filetypes = { statusline = { "dashboard", "alpha", "NvimTree", "lazyvim" } },
+				},
+				sections = {
+					lualine_b = {
+						"branch",
+						"diff",
+						"diagnostics",
+					},
+					lualine_c = {
+						{ "filename", path = 1 },
+					},
+					lualine_x = {
+						"filetype",
+					},
 				},
 			})
 		end,

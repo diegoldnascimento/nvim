@@ -33,6 +33,7 @@ local modules = {
 	{ import = "core.plugins.treesitter" },
 	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
+	{ import = "core.plugins.treesitter" },
 	{ import = "core.plugins.spectre" },
   { import = "core.plugins.mini" },
   { import = "core.plugins.autopairs" },
