@@ -1,6 +1,5 @@
 return {
 	{ "folke/lazy.nvim" },
-	{ "goolord/alpha-nvim" },
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "windwp/nvim-autopairs", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },

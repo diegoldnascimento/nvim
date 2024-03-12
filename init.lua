@@ -1,7 +1,5 @@
 require("core.options")
 require("core.keymaps")
 require("core.plugins")
-require("core.alpha")
-require("core.colorscheme")
 require("core.cmp")
 require("core.dap")
