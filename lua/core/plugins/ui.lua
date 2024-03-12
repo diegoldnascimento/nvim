@@ -3,7 +3,6 @@ return {
 	{ "goolord/alpha-nvim" },
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "windwp/nvim-autopairs", event = "VeryLazy" },
-	{ "lewis6991/gitsigns.nvim", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
 	{ "folke/which-key.nvim", event = "VeryLazy" },
 	-- { "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },

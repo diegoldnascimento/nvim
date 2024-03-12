@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -21,23 +21,22 @@ local modules = {
 	{ import = "core.plugins.completion" },
 	{ import = "core.plugins.copilot" },
 	{ import = "core.plugins.debug" },
-	{ import = "core.plugins.diagnostics" },
-	{ import = "core.plugins.filetree" },
+	{ import = "core.plugins.trouble" },
+	{ import = "core.plugins.nvim_tree" },
+	{ import = "core.plugins.nvim_notify" },
+	{ import = "core.plugins.nvim_treesitter" },
 	{ import = "core.plugins.formatter" },
 	{ import = "core.plugins.linter" },
 	{ import = "core.plugins.lualine" },
 	{ import = "core.plugins.lsp" },
 	{ import = "core.plugins.markdown" },
-	{ import = "core.plugins.motion" },
+	{ import = "core.plugins.flash" },
 	{ import = "core.plugins.test" },
-	{ import = "core.plugins.treesitter" },
 	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
-	{ import = "core.plugins.treesitter" },
 	{ import = "core.plugins.spectre" },
-  { import = "core.plugins.mini" },
-  { import = "core.plugins.autopairs" },
-  { import = "core.plugins.notify" },
+	{ import = "core.plugins.mini" },
+	{ import = "core.plugins.autopairs" },
 }
 
 return require("lazy").setup(modules)
