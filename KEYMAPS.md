@@ -26,6 +26,13 @@
 | `<Leader>fp` | Telescope Buffers                        | n    |
 | `<Leader>fo` | Telescope Old Files                      | n    |
 
+## Rest
+
+| Key          | Description                      | Mode |
+| ------------ | -------------------------------- | ---- |
+| `<Leader>fr` | Run the request under the cursor | n    |
+| `<Leader>fl` | Re-run the last request          | n    |
+
 ## Replacer
 
 | Key          | Description                     | Mode |

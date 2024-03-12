@@ -25,7 +25,9 @@ local modules = {
 	{ import = "core.plugins.debug" },
 	{ import = "core.plugins.flash" },
 	{ import = "core.plugins.formatter" },
-  { import = "core.plugins.illuminate" },
+	{ import = "core.plugins.illuminate" },
+	{ import = "core.plugins.mini" },
+	{ import = "core.plugins.neotest" },
 	{ import = "core.plugins.nvim_tree" },
 	{ import = "core.plugins.nvim_notify" },
 	{ import = "core.plugins.nvim_treesitter" },
@@ -33,12 +35,11 @@ local modules = {
 	{ import = "core.plugins.lualine" },
 	{ import = "core.plugins.lsp" },
 	{ import = "core.plugins.markdown" },
-	{ import = "core.plugins.test" },
 	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
 	{ import = "core.plugins.trouble" },
 	{ import = "core.plugins.spectre" },
-	{ import = "core.plugins.mini" },
+	{ import = "core.plugins.rest" },
 }
 
 return require("lazy").setup(modules)

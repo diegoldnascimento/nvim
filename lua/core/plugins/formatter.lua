@@ -15,7 +15,7 @@ return {
 				terraform = { require("formatter.filetypes.terraform").terraform },
 				markdown = { require("formatter.filetypes.markdown").prettierd },
 				yaml = { require("formatter.filetypes.yaml").prettierd },
-				php = { require("formatter.filetypes.php").php_cs_fixer},
+				php = { require("formatter.filetypes.php").php_cs_fixer },
 
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
