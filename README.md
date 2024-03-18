@@ -95,6 +95,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua) - nvim-cmp source for neovim Lua API.
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) - nvim-cmp source for vim's cmdline.
 - [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) - nvim-cmp source for displaying function signatures with the current parameter emphasized:
+- [cmp-emoji](https://github.com/hrsh7th/cmp-emoji) - nvim-emoji source for displaying emoji with the current parameter emphasized:
 
 ### Code Tests
 
