@@ -2,11 +2,7 @@ return {
 	{
 		"nvim-neotest/neotest",
 		config = function()
-			local status_ok, neotest = pcall(require, "neotest")
-
-			if not status_ok then
-				return
-			end
+			local neotest = require("neotest")
 
 			local opts = { noremap = true, silent = true }
 			local mappings = {
@@ -125,6 +121,7 @@ return {
 			{ "marilari88/neotest-vitest" },
 			{ "nvim-neotest/neotest-go" },
 			{ "antoinemadec/FixCursorHold.nvim" },
+			{ "nvim-neotest/nvim-nio" },
 		},
 	},
 }

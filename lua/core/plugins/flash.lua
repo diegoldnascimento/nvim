@@ -2,7 +2,20 @@ return {
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
-		opts = {},
+		opts = {
+			labels = "asdfghjklqwertyuiopzxcvbnm",
+			search = {
+				exclude = {
+					"notify",
+					"cmp_menu",
+					"noice",
+					"flash_prompt",
+					function(win)
+						return not vim.api.nvim_win_get_config(win).focusable
+					end,
+				},
+			},
+		},
 		keys = {
 			{
 				"s",

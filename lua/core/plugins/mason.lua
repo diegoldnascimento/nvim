@@ -76,6 +76,7 @@ return {
 				"php-cs-fixer",
 				"codespell",
 				"yamlfix",
+				"hadolint",
 			},
 			automatic_installation = true,
 		},

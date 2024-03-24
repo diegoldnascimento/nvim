@@ -7,7 +7,9 @@ return {
 				typescript = { "eslint_d" },
 				javascript = { "eslint_d" },
 				json = { "jsonlint" },
-				python = { "flake8" }
+				dockerfile = { "hadolint" },
+				python = { "flake8" },
+				markdown = { "markdownlint" },
 			},
 
 			linters = {
@@ -26,6 +28,11 @@ return {
 			},
 		},
 		config = function()
+			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+				callback = function()
+					require("lint").try_lint()
+				end,
+			})
 		end,
 	},
 }
