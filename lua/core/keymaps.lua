@@ -109,17 +109,9 @@ keymap("v", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 
 -- LSP finder - Find the symbol's definition
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap(
 	"n",
-	"gd",
-	"<cmd>lua require('telescope.builtin').lsp_definitions({ reuse_win = true })<CR>",
-	opts
-)
-keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-keymap(
-	"n",
-	"gi",
+	"gI",
 	"<cmd>lua require('telescope.builtin').lsp_implementations({ reuse_win = true })<CR>",
 	opts
 )
@@ -132,7 +124,6 @@ keymap(
 )
 keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
-keymap("n", "gx", "<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>", opts)
 keymap(
 	"n",
 	"<space>fx",
