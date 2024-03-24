@@ -7,8 +7,7 @@ return {
 				typescript = { "eslint_d" },
 				javascript = { "eslint_d" },
 				json = { "jsonlint" },
-				python = { "flake8" },
-				terraform = { "tflint" },
+				python = { "flake8" }
 			},
 
 			linters = {

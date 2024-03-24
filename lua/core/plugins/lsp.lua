@@ -17,14 +17,5 @@ return {
 
 			lsp_zero.setup()
 		end,
-	},
-	{
-		"nvimdev/lspsaga.nvim",
-		opts = {
-			-- custom option
-		},
-		config = function(_, opts)
-			require("lspsaga").setup(opts)
-		end,
-	},
+	}
 }

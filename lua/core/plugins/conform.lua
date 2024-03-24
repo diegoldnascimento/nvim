@@ -29,7 +29,6 @@ return {
 				json = { "jq" },
 				go = { "goimports", "gofmt" },
 				sh = { "shfmt" },
-				terraform = { "terraform" },
 				markdown = { "prettierd", "codespell" },
 				yaml = { "yamlfix" },
 				php = { "php-cs-fixer" },
