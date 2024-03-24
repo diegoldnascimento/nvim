@@ -3,7 +3,7 @@ return {
 		"nvimdev/lspsaga.nvim",
 		keys = {
 			{
-				"gd",
+				"gD",
 				"<cmd>Lspsaga goto_definition<CR>",
 				mode = { "n", "v" },
 				desc = "Go to definition",

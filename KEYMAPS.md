@@ -30,7 +30,8 @@
 
 | Key  | Description                     | Mode |
 | ---- | ------------------------------- | ---- |
-| `gd` | Go to definition                | n,v  |
+| `gD` | Go to definition                | n,v  |
+| `gd` | Show LSP references             | n,v  |
 | `gr` | Show references                 | n,v  |
 | `[e` | Go to previous error diagnostic | n,v  |
 | `]e` | Go to next error diagnostic     | n,v  |
