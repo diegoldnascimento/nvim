@@ -58,6 +58,20 @@ return {
 				mode = { "n", "v" },
 				desc = "Show hover documentation",
 			},
+			{
+				"gk",
+				function()
+					vim.lsp.buf.signature_help()
+				end,
+				mode = { "n", "v" },
+				desc = "Show hover documentation",
+			},
+			{
+				"gx",
+				"<cmd>Lspsaga show_workspace_diagnostics<CR>",
+				mode = { "n", "v" },
+				desc = "Show workspace diagnostics",
+			},
 		},
 		opts = {
 			show_code_action = true,
@@ -94,7 +108,6 @@ return {
 			},
 		},
 		config = function(_, opts)
-			local M = {}
 			require("lspsaga").setup(opts)
 		end,
 	},
