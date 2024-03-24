@@ -12,20 +12,20 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
-
 local modules = {
 	{ import = "core.plugins.autopairs" },
 	{ import = "core.plugins.alpha" },
 	{ import = "core.plugins.bufferline" },
 	{ import = "core.plugins.comment" },
+	{ import = "core.plugins.conform" },
 	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.cmp" },
 	{ import = "core.plugins.copilot" },
 	{ import = "core.plugins.flash" },
-	{ import = "core.plugins.formatter" },
+	{ import = "core.plugins.gitsigns" },
 	{ import = "core.plugins.illuminate" },
 	{ import = "core.plugins.mini" },
+	{ import = "core.plugins.mason" },
 	{ import = "core.plugins.neotest" },
 	{ import = "core.plugins.nvim_dap" },
 	{ import = "core.plugins.nvim_tree" },
