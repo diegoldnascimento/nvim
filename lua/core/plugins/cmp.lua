@@ -24,13 +24,18 @@ return {
 						== nil
 			end
 
+			local cmp_format = require("lsp-zero").cmp_format()
+
 			local opts = {
+				formatting = cmp_format,
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body) -- For `luasnip` users.
 					end,
 				},
 				mapping = {
+					["<C-u>"] = cmp.mapping.scroll_docs(-4),
+					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),

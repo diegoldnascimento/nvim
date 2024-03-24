@@ -1,7 +1,7 @@
 return {
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
+		branch = "v3.x",
 		dependencies = {
 			{ "neovim/nvim-lspconfig" },
 			{
@@ -26,22 +26,18 @@ return {
 			},
 		},
 		init = function()
-			local lsp = require("lsp-zero").preset({})
+			local lsp_zero = require("lsp-zero").preset({})
 
-			lsp.on_attach(function(client, bufnr)
-				lsp.default_keymaps({ buffer = bufnr })
-
+			lsp_zero.on_attach(function(client, bufnr)
+				lsp_zero.default_keymaps({ buffer = bufnr })
 			end)
 
-			lsp.setup()
+			lsp_zero.setup()
 
-			local status_mason_ok, mason = pcall(require, "mason")
-
-			local status_mason_config_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-
-			local status_mason_nvim_dap, mason_nvim_dap = pcall(require, "mason-nvim-dap")
-
-			local status_mason_null_ls, mason_nvim_null_ls = pcall(require, "mason-null-ls")
+			local mason = require("mason")
+			local mason_lspconfig = require("mason-lspconfig")
+			local mason_nvim_dap = require("mason-nvim-dap")
+			local mason_nvim_null_ls = require("mason-null-ls")
 
 			local servers = {
 				"jsonls",
@@ -98,6 +94,9 @@ return {
 			mason_lspconfig.setup({
 				ensure_installed = servers,
 				automatic_installation = true,
+				handlers = {
+					lsp_zero.default_setup,
+				},
 			})
 
 			mason_nvim_dap.setup({
