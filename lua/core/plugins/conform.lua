@@ -39,6 +39,7 @@ return {
 				["*"] = { "codespell" },
 				["_"] = { "trim_whitespace" },
 			},
+			notify_on_error = true,
 		},
 		init = function(_, opts)
 			require("conform").setup(opts)

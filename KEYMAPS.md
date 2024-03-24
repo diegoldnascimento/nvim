@@ -41,6 +41,12 @@
 | `gk` | Show hover lsp signature help   | n,v  |
 | `gx` | Show workspace diagnostics      | n,v  |
 
+## Git
+
+| Key          | Description      | Mode |
+| ------------ | ---------------- | ---- |
+| `<Leader>gp` | Preview Git Hunk | n,v  |
+
 ## Rest
 
 | Key          | Description                      | Mode |
