@@ -42,9 +42,9 @@
 
 ## Formatter
 
-| Key     | Description     | Mode |
-| ------- | --------------- | ---- |
-| `<C-f>` | Format and Save | n    |
+| Key     | Description | Mode |
+| ------- | ----------- | ---- |
+| `<C-f>` | Format      | n    |
 
 ## Flash
 
