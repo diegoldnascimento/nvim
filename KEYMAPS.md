@@ -26,6 +26,21 @@
 | `<Leader>fp` | Telescope Buffers                        | n    |
 | `<Leader>fo` | Telescope Old Files                      | n    |
 
+## LSP
+
+| Key  | Description                     | Mode |
+| ---- | ------------------------------- | ---- |
+| `gd` | Go to definition                | n,v  |
+| `gr` | Show references                 | n,v  |
+| `[e` | Go to previous error diagnostic | n,v  |
+| `]e` | Go to next error diagnostic     | n,v  |
+| `[d` | Go to previous diagnostic       | n,v  |
+| `]d` | Go to next diagnostic           | n,v  |
+| `ga` | Show code actions preview       | n,v  |
+| `K`  | Show hover documentation        | n,v  |
+| `gk` | Show hover lsp signature help   | n,v  |
+| `gx` | Show workspace diagnostics      | n,v  |
+
 ## Rest
 
 | Key          | Description                      | Mode |

@@ -63,7 +63,6 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim) - Collection of functions that will help you setup Neovim's LSP client, so you can get IDE-like features with minimum effort.
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Nvim supports the Language Server Protocol (LSP), which means it acts as a client to LSP servers and includes a Lua framework `vim.lsp` for building enhanced LSP tools.
-- [nvim-lint](https://github.com/mfussenegger/nvim-lint) - An asynchronous linter plugin for Neovim (>= 0.6.0) complementary to the built-in Language Server Protocol support
 - [lspsaga](https://github.com/nvimdev/lspsaga.nvim?tab=readme-ov-file) - Improves the Neovim built-in LSP experience.
 
 ### Mason
@@ -72,6 +71,10 @@ Below the list of the current plugins used in this configuration and how we are 
 - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) - Easy management for LSP servers
 - [mason-null-ls.nvim](https://github.com/jay-babu/mason-null-ls.nvim) - mason-null-ls bridges mason.nvim with the null-ls plugin - making it easier to use both plugins together.
 - [mason-nvim-dap](https://github.com/jayp0521/mason-nvim-dap.nvim) - Plugin for installing DAPs using Mason
+
+### Linter
+
+- [nvim-lint](https://github.com/mfussenegger/nvim-lint) - An asynchronous linter plugin for Neovim (>= 0.6.0) complementary to the built-in Language Server Protocol support
 
 ### Formatter
 
