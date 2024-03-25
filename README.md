@@ -146,6 +146,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Use treesitter to autoclose and autorename HTML tag.
 - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) - Preview markdown on your modern browser with synchronised scrolling and flexible configuration.
 - [flash.nvim](https://github.com/folke/flash.nvim)- Flash.nvim lets you navigate your code with search labels, enhanced character motions, and Treesitter integration.
+- [Todo-Comments.nvim](https://github.com/folke/todo-comments.nvim)- todo-comments is a lua plugin for Neovim >= 0.8.0 to highlight and search for todo comments like TODO, HACK, BUG in your code base.
 
 ### Plugin development
 

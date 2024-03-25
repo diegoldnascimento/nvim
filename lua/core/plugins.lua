@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 local modules = {
@@ -38,6 +39,7 @@ local modules = {
 	{ import = "core.plugins.markdown" },
 	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
+	{ import = "core.plugins.todo_comments" },
 	{ import = "core.plugins.trouble" },
 	{ import = "core.plugins.spectre" },
 	{ import = "core.plugins.rest" },

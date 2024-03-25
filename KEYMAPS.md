@@ -105,3 +105,11 @@
 | `<Leader>xw` | Trouble Toggle Document Diagnostics  | n    |
 | `<Leader>xq` | Trouble Toggle Quick Fix             | n    |
 | `<Leader>xl` | Trouble Toggle Loclist               | n    |
+
+## Todo Comments
+
+| Key          | Description                 | Mode |
+| ------------ | --------------------------- | ---- |
+| `<leader>ft` | Open todo list in Telescope | n,v  |
+| `[t`         | Next todo comment           | n    |
+| `]t`         | Previous todo comment       | n    |
