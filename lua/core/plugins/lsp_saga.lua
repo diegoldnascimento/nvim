@@ -10,9 +10,9 @@ return {
 			},
 			{
 				"gr",
-				"<cmd>Lspsaga finder<CR>",
+				"<cmd>Lspsaga finder def+ref+imp<CR>",
 				mode = { "n", "v" },
-				desc = "Show references",
+				desc = "Show references, definitions, and implementations",
 			},
 			{
 				"[e",
@@ -36,7 +36,7 @@ return {
 					require("lspsaga.diagnostic"):goto_prev()
 				end,
 				mode = { "n", "v" },
-				desc = "Go to previous error diagnostic",
+				desc = "Go to previous diagnostic",
 			},
 			{
 				"]d",
@@ -44,7 +44,7 @@ return {
 					require("lspsaga.diagnostic"):goto_next()
 				end,
 				mode = { "n", "v" },
-				desc = "Go to next error diagnostic",
+				desc = "Go to next diagnostic",
 			},
 			{
 				"ga",
@@ -82,6 +82,10 @@ return {
 			finder = {
 				keymaps = {
 					quit = "q",
+					vsplit = "v",
+					split = "s",
+					close = "<ESC>",
+					toggle_or_open = "o",
 				},
 			},
 			definition = {
@@ -107,7 +111,7 @@ return {
 				virtual_text = true,
 			},
 		},
-		config = function(_, opts)
+		init = function(_, opts)
 			require("lspsaga").setup(opts)
 		end,
 	},
