@@ -82,9 +82,5 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		require("nvim-tree").setup(opts)
-
-		-- Remap Enter key to do nothing
-		vim.api.nvim_set_keymap("n", "<CR>", "<NOP>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("v", "<CR>", "<NOP>", { noremap = true, silent = true })
 	end,
 }

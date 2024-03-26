@@ -21,6 +21,10 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 --
 
+-- Remap Enter key to do nothing
+keymap("n", "<CR>", "<NOP>", opts)
+keymap("v", "<CR>", "<NOP>", opts)
+
 -- Better window navigation
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
