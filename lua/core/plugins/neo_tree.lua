@@ -22,6 +22,13 @@ return {
 			end,
 			desc = "Git Explorer",
 		},
+		{
+			"<c-m>",
+			function()
+        vim.cmd([[Neotree reveal]])
+			end,
+			desc = "Reveal current file in NeoTree",
+		},
 	},
 	deactivate = function()
 		vim.cmd([[Neotree close]])
@@ -43,14 +50,12 @@ return {
 			},
 			indent = {
 				indent_size = 2,
-				padding = 1, -- extra padding on left hand side
-				-- indent guides
+				padding = 1, 
 				with_markers = true,
 				indent_marker = "│",
 				last_indent_marker = "└",
 				highlight = "NeoTreeIndentMarker",
-				-- expander config, needed for nesting files
-				with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
+				with_expanders = nil,
 				expander_collapsed = "",
 				expander_expanded = "",
 				expander_highlight = "NeoTreeExpander",
@@ -147,6 +152,7 @@ return {
 		},
 		nesting_rules = {},
 		filesystem = {
+			bind_to_cwd = false,
 			filtered_items = {
 				visible = false, -- when true, they will just be displayed differently than normal items
 				hide_dotfiles = true,
@@ -208,7 +214,7 @@ return {
 			follow_current_file = {
 				enabled = true, -- This will find and focus the file in the active buffer every time
 				--              -- the current file is changed while the tree is open.
-				leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+				leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 			},
 			group_empty_dirs = true, -- when true, empty folders will be grouped together
 			show_unloaded = true,

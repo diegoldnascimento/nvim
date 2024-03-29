@@ -3,7 +3,7 @@ return {
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		opts = {
-			labels = "asdfghjklqwertyuiopzxcvbnm",
+			labels = "asdfghjklqwertypzxcvb",
 			search = {
 				exclude = {
 					"notify",

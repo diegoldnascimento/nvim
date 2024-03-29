@@ -73,10 +73,6 @@ keymap("n", "<Leader>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
 
 keymap("n", "<C-a>", "ggVG", opts)
 
---Nvim Tree Toggle
-keymap("n", "<c-n>", "<cmd>NvimTreeToggle<CR>", opts)
-keymap("n", "<c-m>", "<cmd>NvimTreeFocus<CR>", opts)
-keymap("n", "<c-k>", "<cmd>NvimTreeFindFile<CR>", opts)
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts)
