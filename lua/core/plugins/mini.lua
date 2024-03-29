@@ -59,4 +59,8 @@ return {
 			require("mini.surround").setup(opts)
 		end,
 	},
+  {
+    "echasnovski/mini.bufremove",
+    event = "BufReadPre",
+  }
 }

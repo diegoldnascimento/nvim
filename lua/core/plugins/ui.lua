@@ -1,10 +1,7 @@
 return {
 	{ "folke/lazy.nvim" },
-	{ "nvim-tree/nvim-web-devicons" },
-	{ "windwp/nvim-autopairs", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
-	{ "folke/which-key.nvim", event = "VeryLazy" },
-	-- { "RRethy/vim-illuminate", event = "VeryLazy", priority = 1 },
+	-- { "folke/which-key.nvim", event = "VeryLazy" },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -41,7 +38,6 @@ return {
 	},
 	{ "HiPhish/rainbow-delimiters.nvim" },
 	{ "max397574/better-escape.nvim", name = "better_escape", event = "VeryLazy" },
-	{ "ojroques/nvim-bufdel", event = "VeryLazy" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
