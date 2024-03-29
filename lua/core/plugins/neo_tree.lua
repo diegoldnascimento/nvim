@@ -25,7 +25,7 @@ return {
 		{
 			"<c-m>",
 			function()
-        vim.cmd([[Neotree reveal]])
+				vim.cmd([[Neotree reveal]])
 			end,
 			desc = "Reveal current file in NeoTree",
 		},
@@ -39,7 +39,6 @@ return {
 		popup_border_style = "rounded",
 		enable_git_status = true,
 		enable_diagnostics = true,
-		enable_normal_mode_for_inputs = false,
 		open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
 		sort_case_insensitive = false,
 		sort_function = nil,
@@ -50,7 +49,7 @@ return {
 			},
 			indent = {
 				indent_size = 2,
-				padding = 1, 
+				padding = 1,
 				with_markers = true,
 				indent_marker = "│",
 				last_indent_marker = "└",
