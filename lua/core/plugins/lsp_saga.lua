@@ -30,6 +30,23 @@ return {
 				mode = { "n", "v" },
 				desc = "Go to next error diagnostic",
 			},
+
+			{
+				"[w",
+				function()
+					require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.WARNING })
+				end,
+				mode = { "n", "v" },
+				desc = "Go to previous warning diagnostic",
+			},
+			{
+				"]w",
+				function()
+					require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.WARNING })
+				end,
+				mode = { "n", "v" },
+				desc = "Go to next warning diagnostic",
+			},
 			{
 				"[d",
 				function()

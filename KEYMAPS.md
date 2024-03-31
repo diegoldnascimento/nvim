@@ -28,19 +28,21 @@
 
 ## LSP
 
-| Key  | Description                     | Mode |
-| ---- | ------------------------------- | ---- |
-| `gD` | Go to definition                | n,v  |
-| `gd` | Show LSP references             | n,v  |
-| `gr` | Show references                 | n,v  |
-| `[e` | Go to previous error diagnostic | n,v  |
-| `]e` | Go to next error diagnostic     | n,v  |
-| `[d` | Go to previous diagnostic       | n,v  |
-| `]d` | Go to next diagnostic           | n,v  |
-| `ga` | Show code actions preview       | n,v  |
-| `K`  | Show hover documentation        | n,v  |
-| `gk` | Show hover lsp signature help   | n,v  |
-| `gx` | Show workspace diagnostics      | n,v  |
+| Key  | Description                       | Mode |
+| ---- | --------------------------------- | ---- |
+| `gD` | Go to definition                  | n,v  |
+| `gd` | Show LSP references               | n,v  |
+| `gr` | Show references                   | n,v  |
+| `[e` | Go to previous error diagnostic   | n,v  |
+| `]e` | Go to next error diagnostic       | n,v  |
+| `[w` | Go to previous warning diagnostic | n,v  |
+| `]w` | Go to next warning diagnostic     | n,v  |
+| `[d` | Go to previous diagnostic         | n,v  |
+| `]d` | Go to next diagnostic             | n,v  |
+| `ga` | Show code actions preview         | n,v  |
+| `K`  | Show hover documentation          | n,v  |
+| `gk` | Show hover lsp signature help     | n,v  |
+| `gx` | Show workspace diagnostics        | n,v  |
 
 ## Git
 
