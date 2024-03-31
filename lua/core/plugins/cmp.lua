@@ -77,6 +77,7 @@ return {
 					}),
 				},
 				sources = {
+					{ name = "copilot", group_index = 2 },
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "path" },
@@ -87,6 +88,7 @@ return {
 				sorting = {
 					priority_weight = 2,
 					comparators = {
+						require("copilot_cmp.comparators").prioritize,
 						compare.offset,
 						compare.exact,
 						compare.score,

@@ -135,6 +135,7 @@ Below the list of the current plugins used in this configuration and how we are 
 ### AI Completion
 
 - [copilot.lua](https://github.com/zbirenbaum/copilot.lua) - GitHub Copilot is an AI pair programmer that helps you write code faster and with less work.
+- [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp) - Copilot suggestions will automatically be loaded into your cmp menu as snippets and display their full contents when a copilot suggestion is hovered.
 
 ### Others
 
