@@ -35,6 +35,7 @@ local modules = {
 	{ import = "core.plugins.nvim_lint" },
 	{ import = "core.plugins.lualine" },
 	{ import = "core.plugins.lsp" },
+	{ import = "core.plugins.lazygit" },
 	{ import = "core.plugins.lsp_saga" },
 	{ import = "core.plugins.markdown" },
 	{ import = "core.plugins.ui" },

@@ -48,6 +48,12 @@
 | ------------ | ---------------- | ---- |
 | `<Leader>gp` | Preview Git Hunk | n,v  |
 
+## Git UI
+
+| Key          | Description         | Mode |
+| ------------ | ------------------- | ---- |
+| `<Leader>lg` | Open the Lazygit UI | n,v  |
+
 ## Rest
 
 | Key          | Description                      | Mode |
@@ -95,6 +101,13 @@
 | Key     | Description                    | Mode |
 | ------- | ------------------------------ | ---- |
 | `<C-d>` | Select multi line under cursor | n    |
+
+## Rest
+
+| Key          | Description                  | Mode |
+| ------------ | ---------------------------- | ---- |
+| `<Leader>rr` | Run Rest command             | n    |
+| `<Leader>rl` | Re-run the last rest command | n    |
 
 ## Trouble
 
