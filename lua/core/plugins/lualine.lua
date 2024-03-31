@@ -35,7 +35,17 @@ return {
 				options = {
 					theme = dracula,
 					globalstatus = true,
-					disabled_filetypes = { statusline = { "dashboard", "alpha", "NvimTree", "lazy", "Telescope","telescope"  } },
+					disabled_filetypes = {
+						statusline = {
+							"dashboard",
+							"alpha",
+							"NvimTree",
+							"lazy",
+							"Telescope",
+							"telescope",
+							"TelescopePrompt",
+						},
+					},
 				},
 				sections = {
 					lualine_b = {
