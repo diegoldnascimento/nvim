@@ -33,6 +33,7 @@ return {
 						luasnip.lsp_expand(args.body) -- For `luasnip` users.
 					end,
 				},
+
 				mapping = {
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
@@ -46,7 +47,7 @@ return {
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
 					}),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.confirm({ select = false }),
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() and has_words_before() then
 							cmp.select_next_item()
@@ -153,7 +154,11 @@ return {
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-buffer",
-			"L3MON4D3/LuaSnip",
+			{
+				"L3MON4D3/LuaSnip",
+				version = "v2.*",
+				build = "make install_jsregexp",
+			},
 			"rafamadriz/friendly-snippets",
 			"mlaursen/vim-react-snippets",
 		},
