@@ -128,3 +128,9 @@
 | `<leader>ft` | Open todo list in Telescope | n,v  |
 | `[t`         | Next todo comment           | n    |
 | `]t`         | Previous todo comment       | n    |
+
+## Markdown 
+
+| Key          | Description                 | Mode |
+| ------------ | --------------------------- | ---- |
+| `<leader>mp` | Preview the Markdown | n,v  |
