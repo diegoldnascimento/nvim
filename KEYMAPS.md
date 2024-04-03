@@ -43,6 +43,7 @@
 | `K`  | Show hover documentation          | n,v  |
 | `gk` | Show hover lsp signature help     | n,v  |
 | `gx` | Show workspace diagnostics        | n,v  |
+| `X`  | Show line diagnostic              | n,v  |
 
 ## Git
 
@@ -129,8 +130,8 @@
 | `[t`         | Next todo comment           | n    |
 | `]t`         | Previous todo comment       | n    |
 
-## Markdown 
+## Markdown
 
-| Key          | Description                 | Mode |
-| ------------ | --------------------------- | ---- |
+| Key          | Description          | Mode |
+| ------------ | -------------------- | ---- |
 | `<leader>mp` | Preview the Markdown | n,v  |

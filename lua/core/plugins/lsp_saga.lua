@@ -89,6 +89,12 @@ return {
 				mode = { "n", "v" },
 				desc = "Show workspace diagnostics",
 			},
+			{
+				"X",
+				"<cmd>Lspsaga show_line_diagnostics<CR>",
+				mode = { "n", "v" },
+				desc = "Show line diagnostics",
+			},
 		},
 		opts = {
 			show_code_action = true,
