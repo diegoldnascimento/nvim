@@ -138,12 +138,10 @@ return {
 				},
 			})
 
-			cmp.event:on("confirm_done", function(evt)
-				if evt.entry.completion_item then
-					require("nvim-autopairs.completion.cmp").on_confirm_done()(evt)
-					vim.api.nvim_exec_autocmds("CompleteChanged", {})
-				end
-			end)
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
 		end,
 		dependencies = {
 			"hrsh7th/cmp-emoji",

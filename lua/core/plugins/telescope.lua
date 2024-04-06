@@ -34,6 +34,13 @@ return {
 						override_file_sorter = true,
 						case_mode = "smart_case",
 					},
+					mappings = {
+						i = {
+							["<C-j>"] = require("telescope.actions").move_selection_next,
+							["<C-k>"] = require("telescope.actions").move_selection_previous,
+							["<C-q>"] = require("telescope.actions").send_to_qflist,
+						},
+					},
 				},
 			})
 

@@ -22,8 +22,7 @@ return {
 				mode = { "n", "v" },
 				desc = "Go to previous error diagnostic",
 			},
-			{
-				"]e",
+			{ "]e",
 				function()
 					require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 				end,
