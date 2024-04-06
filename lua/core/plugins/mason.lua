@@ -77,6 +77,7 @@ return {
 				"codespell",
 				"yamlfix",
 				"hadolint",
+				"pylint",
 			},
 			automatic_installation = true,
 		},

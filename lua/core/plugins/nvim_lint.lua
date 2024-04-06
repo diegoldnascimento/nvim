@@ -8,7 +8,7 @@ return {
 				javascript = { "eslint_d" },
 				json = { "jsonlint" },
 				dockerfile = { "hadolint" },
-				python = { "flake8" },
+				python = { "pylint" },
 				markdown = { "markdownlint" },
 			},
 
@@ -27,8 +27,23 @@ return {
 				},
 			},
 		},
-		config = function()
+		config = function(_, opts)
+			local lint = require("lint")
+
+			if not opts.linters then
+				lint.linters = opts.linters
+				return
+			end
+
+			if not opts.linters_by_ft then
+				lint.linters_by_ft = opts.linters_by_ft
+				return
+			end
+
+			local lint_auto = vim.api.nvim_create_augroup("lint", { clear = true })
+
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
+				group = lint_auto,
 				callback = function()
 					require("lint").try_lint()
 				end,
