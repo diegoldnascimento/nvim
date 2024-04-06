@@ -4,8 +4,8 @@
 | ----------- | ------------------ | ---- |
 | `<C-s>`     | Save               | n    |
 | `<C-q>`     | Save and Quit      | n    |
-| `<leader>v` | Split vertically   | n    |
-| `<leader>h` | Split horitonzally | n    |
+| `<leader>vv` | Split vertically   | n    |
+| `<leader>vh` | Split horitonzally | n    |
 
 ## Navigation
 
