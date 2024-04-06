@@ -1,10 +1,11 @@
 ## Basic Commands
 
-| Key     | Description          | Mode |
-| ------- | -------------------- | ---- |
-| `<C-s>` | Save                 | n    |
-| `<C-q>` | Save and Quit        | n    |
-| `<C-w>` | Close Current Buffer | n    |
+| Key         | Description        | Mode |
+| ----------- | ------------------ | ---- |
+| `<C-s>`     | Save               | n    |
+| `<C-q>`     | Save and Quit      | n    |
+| `<leader>v` | Split vertically   | n    |
+| `<leader>h` | Split horitonzally | n    |
 
 ## Navigation
 
