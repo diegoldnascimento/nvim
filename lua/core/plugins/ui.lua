@@ -10,22 +10,22 @@ return {
 		-- t is important to stay on the version 2, otherwise it will break, until migrates to v3--
 		tag = "v2.20.8",
 	},
-	{
-		"mg979/vim-visual-multi",
-		event = "VeryLazy",
-		init = function()
-			vim.api.nvim_exec(
-				[[
-          let g:VM_maps = {}
-          let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
-          let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
-          let g:VM_maps["Select Cursor Down"] = '<M-C-Down>'      " start selecting down
-          let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>'        " start selecting up
-       ]],
-				false
-			)
-		end,
-	},
+	-- {
+	-- 	"mg979/vim-visual-multi",
+	-- 	event = "VeryLazy",
+	-- 	init = function()
+	-- 		vim.api.nvim_exec(
+	-- 			[[
+ --          let g:VM_maps = {}
+ --          let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
+ --          let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
+ --          let g:VM_maps["Select Cursor Down"] = '<M-C-Down>'      " start selecting down
+ --          let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>'        " start selecting up
+ --       ]],
+	-- 			false
+	-- 		)
+	-- 	end,
+	-- },
 	{
 		"norcalli/nvim-colorizer.lua",
 		event = "VeryLazy",
