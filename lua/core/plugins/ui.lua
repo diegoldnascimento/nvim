@@ -16,12 +16,12 @@ return {
 	-- 	init = function()
 	-- 		vim.api.nvim_exec(
 	-- 			[[
- --          let g:VM_maps = {}
- --          let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
- --          let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
- --          let g:VM_maps["Select Cursor Down"] = '<M-C-Down>'      " start selecting down
- --          let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>'        " start selecting up
- --       ]],
+	--          let g:VM_maps = {}
+	--          let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
+	--          let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
+	--          let g:VM_maps["Select Cursor Down"] = '<M-C-Down>'      " start selecting down
+	--          let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>'        " start selecting up
+	--       ]],
 	-- 			false
 	-- 		)
 	-- 	end,
@@ -47,7 +47,10 @@ return {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = true,
-				}
+				},
+				signature = {
+					enabled = false,
+				},
 			},
 			routes = {
 				{
