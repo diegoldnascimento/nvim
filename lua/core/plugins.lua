@@ -44,7 +44,8 @@ local modules = {
 	{ import = "core.plugins.trouble" },
 	{ import = "core.plugins.spectre" },
 	{ import = "core.plugins.rest" },
-	{ import = "core.plugins.vim_tmux_navigator" },
+	-- { import = "core.plugins.vim_tmux_navigator" },
+	{ import = "core.plugins.zellij_nav" },
 }
 
 return require("lazy").setup(modules)

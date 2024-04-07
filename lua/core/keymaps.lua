@@ -30,8 +30,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<leader>vv", "<cmd>vsplit<cr>", opts)
-keymap("n", "<leader>vh", "<cmd>split<cr>", opts)
+keymap("n", "<leader>sv", "<cmd>vsplit<cr>", opts)
+keymap("n", "<leader>sh", "<cmd>split<cr>", opts)
 
 -- Stay in indent mode
 --
