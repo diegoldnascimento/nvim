@@ -154,11 +154,12 @@ return {
 			bind_to_cwd = false,
 			filtered_items = {
 				visible = false, -- when true, they will just be displayed differently than normal items
-				hide_dotfiles = true,
+				hide_dotfiles = false,
 				hide_gitignored = true,
 				hide_hidden = false, -- only works on Windows for hidden files/directories
 				hide_by_name = {
 					"node_modules",
+					".git",
 				},
 				always_show = { -- remains visible even if other settings would normally hide it
 					".gitignored",
