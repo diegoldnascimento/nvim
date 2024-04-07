@@ -21,7 +21,7 @@ local modules = {
 	{ import = "core.plugins.conform" },
 	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.cmp" },
-	{ import = "core.plugins.copilot" },
+
 	{ import = "core.plugins.flash" },
 	{ import = "core.plugins.gitsigns" },
 	{ import = "core.plugins.illuminate" },

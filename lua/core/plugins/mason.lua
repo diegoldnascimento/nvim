@@ -39,7 +39,6 @@ return {
 					"html",
 					"graphql",
 					"prismals",
-					"marksman",
 					"intelephense",
 					"pyright",
 				},

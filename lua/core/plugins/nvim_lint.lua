@@ -25,6 +25,14 @@ return {
 						end,
 					},
 				},
+				markdownlint = {
+					args = {
+						"--disable",
+						"MD013",
+						"MD007",
+						"--",
+					},
+				},
 			},
 		},
 		config = function(_, opts)
