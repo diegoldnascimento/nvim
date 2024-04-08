@@ -45,7 +45,6 @@ local modules = {
 	{ import = "core.plugins.spectre" },
 	{ import = "core.plugins.rest" },
 	{ import = "core.plugins.nvim_tmux_navigator" },
-	{ import = "core.plugins.zellij_nav" },
 }
 
 return require("lazy").setup(modules)
