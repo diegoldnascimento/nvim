@@ -41,6 +41,7 @@ return {
 					"prismals",
 					"intelephense",
 					"pyright",
+					"nil_ls",
 				},
 				automatic_installation = true,
 				handlers = {
@@ -77,6 +78,7 @@ return {
 				"yamlfix",
 				"hadolint",
 				"pylint",
+				"nixpkgs-fmt",
 			},
 			automatic_installation = true,
 		},

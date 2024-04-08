@@ -33,6 +33,7 @@ return {
 				yaml = { "yamlfix" },
 				php = { "php-cs-fixer" },
 				python = { "isort", "black" },
+				nix = { "nixpkgs-fmt" },
 				terraform = { "terraform_fmt" },
 				tf = { "terraform_fmt" },
 				["terraform-vars"] = { "terraform_fmt" },

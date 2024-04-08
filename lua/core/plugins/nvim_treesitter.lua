@@ -29,6 +29,7 @@ return {
 				"yaml",
 				"markdown",
 				"markdown_inline",
+				"nix",
 				"http",
 				"gitignore",
 				"bash",
