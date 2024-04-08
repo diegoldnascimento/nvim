@@ -149,7 +149,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [flash.nvim](https://github.com/folke/flash.nvim) - Flash.nvim lets you navigate your code with search labels, enhanced character motions, and Treesitter integration.
 - [Todo-Comments.nvim](https://github.com/folke/todo-comments.nvim)- todo-comments is a lua plugin for Neovim >= 0.8.0 to highlight and search for todo comments like TODO, HACK, BUG in your code base.
 - [rest.nvim](https://github.com/rest-nvim/rest.nvim) - A very fast, powerful, extensible and asynchronous Neovim HTTP client written in Lua.
-- [vim-tmux-navigator.nvim](https://github.com/christoomey/vim-tmux-navigator) - This plugin is a repackaging of Mislav Marohnić's tmux-navigator configuration described in this gist. When combined with a set of tmux key bindings, the plugin will allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.
+- [nvim-tmux-navigator.nvim](https://github.com/alexghergh/nvim-tmux-navigation) - This plugin is a repackaging of Mislav Marohnić's tmux-navigator configuration described in this gist. When combined with a set of tmux key bindings, the plugin will allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.
 
 ### Plugin development
 
