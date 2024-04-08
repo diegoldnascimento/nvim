@@ -3,13 +3,6 @@ return {
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
 	-- { "folke/which-key.nvim", event = "VeryLazy" },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = "VeryLazy",
-		pin = true,
-		-- t is important to stay on the version 2, otherwise it will break, until migrates to v3--
-		tag = "v2.20.8",
-	},
 	-- {
 	-- 	"mg979/vim-visual-multi",
 	-- 	event = "VeryLazy",

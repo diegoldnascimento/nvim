@@ -24,7 +24,6 @@ return {
 						== nil
 			end
 
-
 			local cmp_format = require("lsp-zero").cmp_format()
 
 			local opts = {
