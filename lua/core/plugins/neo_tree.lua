@@ -16,13 +16,6 @@ return {
 			desc = "Explorer NeoTree (cwd)",
 		},
 		{
-			"<c-g>",
-			function()
-				require("neo-tree.command").execute({ source = "git_status", toggle = true })
-			end,
-			desc = "Git Explorer",
-		},
-		{
 			"<c-m>",
 			function()
 				vim.cmd([[Neotree reveal]])
