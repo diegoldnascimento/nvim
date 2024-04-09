@@ -1,6 +1,6 @@
 return {
 	{
-		"windwp/nvim-spectre",
+		"nvim-pack/nvim-spectre",
 		config = function()
 			vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
 				desc = "Toggle Spectre",
@@ -24,7 +24,6 @@ return {
 					desc = "Search on current file",
 				}
 			)
-			require("spectre").setup()
 		end,
 	},
 }

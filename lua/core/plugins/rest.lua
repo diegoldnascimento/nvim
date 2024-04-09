@@ -9,16 +9,6 @@ return {
 		"rest-nvim/rest.nvim",
 		ft = "http",
 		dependencies = { "luarocks.nvim" },
-		build = function()
-			local ok, luarocks = pcall(require, "luarocks.rocks")
-
-			luarocks.ensure({
-				"nvim-nio ~> 1.7",
-				"lua-curl ~> 0.3",
-				"mimetypes ~> 1.0",
-				"xml2lua ~> 1.5",
-			})
-		end,
 		keys = {
 			{
 				"<leader>rr",
