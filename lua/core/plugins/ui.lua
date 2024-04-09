@@ -3,6 +3,12 @@ return {
 	{ "nvim-lua/plenary.nvim", event = "VeryLazy" },
 	-- { "folke/which-key.nvim", event = "VeryLazy" },
 	{ "APZelos/blamer.nvim", event = "VeryLazy" },
+	{
+		"j-hui/fidget.nvim",
+		opts = {
+			-- options
+		},
+	},
 	-- {
 	-- 	"mg979/vim-visual-multi",
 	-- 	event = "VeryLazy",
