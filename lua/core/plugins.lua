@@ -18,6 +18,7 @@ local modules = {
 	{ import = "core.plugins.alpha" },
 	{ import = "core.plugins.bufferline" },
 	{ import = "core.plugins.comment" },
+	{ import = "core.plugins.colorizer" },
 	{ import = "core.plugins.conform" },
 	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.cmp" },

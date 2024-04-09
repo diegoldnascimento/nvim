@@ -25,16 +25,6 @@ return {
 	-- 		)
 	-- 	end,
 	-- },
-	{
-		"norcalli/nvim-colorizer.lua",
-		event = "VeryLazy",
-		config = function()
-			require("colorizer").setup({
-				"*",
-				"!vim",
-			})
-		end,
-	},
 	{ "HiPhish/rainbow-delimiters.nvim" },
 	{ "max397574/better-escape.nvim", name = "better_escape", event = "VeryLazy" },
 	{
