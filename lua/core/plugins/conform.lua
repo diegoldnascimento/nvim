@@ -25,6 +25,8 @@ return {
 				lua = { "stylua" },
 				typescript = { "prettierd" },
 				javascript = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				javascriptreact = { "prettierd" },
 				css = { "prettierd" },
 				json = { "jq" },
 				go = { "goimports", "gofumpt" },
