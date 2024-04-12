@@ -24,6 +24,7 @@ return {
 						== nil
 			end
 
+
 			local cmp_format = require("lsp-zero").cmp_format()
 
 			local opts = {
@@ -78,6 +79,7 @@ return {
 					}),
 				},
 				sources = {
+					{ name = "copilot" },
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "path" },
@@ -88,6 +90,7 @@ return {
 				sorting = {
 					priority_weight = 2,
 					comparators = {
+						require("copilot_cmp.comparators").prioritize,
 						compare.offset,
 						compare.exact,
 						compare.score,
