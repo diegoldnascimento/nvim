@@ -28,6 +28,7 @@ return {
 				typescriptreact = { "prettierd" },
 				javascriptreact = { "prettierd" },
 				css = { "prettierd" },
+				scss = { "prettierd" },
 				json = { "jq" },
 				go = { "goimports", "gofumpt" },
 				sh = { "shfmt" },
