@@ -77,6 +77,7 @@ return {
 				"yamlfix",
 				"hadolint",
 				"pylint",
+        "nixpkgs-fmt"
 			},
 			automatic_installation = true,
 		},
