@@ -73,7 +73,7 @@ keymap("n", "<Leader>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
 
 -- Select the whole buffer
 
-keymap("n", "<C-a>", "ggVG", opts)
+keymap("n", "<C-a>", "G$vgg0", opts)
 
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>", opts)
