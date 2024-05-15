@@ -7,18 +7,25 @@ return {
 	},
 	{
 		"rest-nvim/rest.nvim",
-		ft = "http",
-		dependencies = { "luarocks.nvim" },
+		ft = { "http", "https" },
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+		tag = "v1.2.1",
 		keys = {
 			{
 				"<leader>rr",
-				"<cmd>Rest run<CR>",
+				"<Plug>RestNvim",
 				mode = { "n", "v" },
 				desc = "Run request under the cursor",
 			},
 			{
+				"<leader>rp",
+				"<Plug>RestNvimPrevie",
+				mode = { "n", "v" },
+				desc = "Preview the request cURL command",
+			},
+			{
 				"<leader>rl",
-				"<cmd>Rest run last<CR>",
+				"<Plug>RestNvimLast",
 				mode = { "n", "v" },
 				desc = "Re-run latest request",
 			},
