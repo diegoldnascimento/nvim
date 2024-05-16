@@ -39,14 +39,15 @@ local modules = {
 	{ import = "core.plugins.lazygit" },
 	{ import = "core.plugins.lsp_saga" },
 	{ import = "core.plugins.markdown" },
-  { import = "core.plugins.oil" },
-  { import = "core.plugins.ui" },
+	{ import = "core.plugins.oil" },
+	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
 	{ import = "core.plugins.todo_comments" },
 	{ import = "core.plugins.trouble" },
 	{ import = "core.plugins.spectre" },
 	{ import = "core.plugins.rest" },
 	{ import = "core.plugins.nvim_tmux_navigator" },
+	{ import = "core.plugins.vim_dadbod" },
 }
 
 return require("lazy").setup(modules)
