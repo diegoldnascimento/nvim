@@ -24,16 +24,17 @@ return {
 						== nil
 			end
 
-
 			local cmp_format = require("lsp-zero").cmp_format()
 
 			local opts = {
 				formatting = cmp_format,
 				snippet = {
 					expand = function(args)
-						luasnip.lsp_expand(args.body) -- For `luasnip` users.
+						luasnip.lsp_expand(args.body)
 					end,
 				},
+
+				preselect = cmp.PreselectMode.None,
 
 				mapping = {
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -43,12 +44,12 @@ return {
 					["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 					["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-					["<C-y>"] = cmp.config.disable,
+					["<C-y>"] = cmp.mapping.confirm({ select = false }),
+					["<CR>"] = cmp.config.disabled,
 					["<C-e>"] = cmp.mapping({
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
 					}),
-					["<CR>"] = cmp.mapping.confirm({ select = false }),
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() and has_words_before() then
 							cmp.select_next_item()
@@ -137,10 +138,9 @@ return {
 				},
 			})
 
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 		dependencies = {
 			"hrsh7th/cmp-emoji",

@@ -1,9 +1,9 @@
 ## Basic Commands
 
-| Key         | Description        | Mode |
-| ----------- | ------------------ | ---- |
-| `<C-s>`     | Save               | n    |
-| `<C-q>`     | Save and Quit      | n    |
+| Key          | Description        | Mode |
+| ------------ | ------------------ | ---- |
+| `<C-s>`      | Save               | n    |
+| `<C-q>`      | Save and Quit      | n    |
 | `<leader>vv` | Split vertically   | n    |
 | `<leader>vh` | Split horitonzally | n    |
 
@@ -51,6 +51,13 @@
 | Key          | Description      | Mode |
 | ------------ | ---------------- | ---- |
 | `<Leader>gp` | Preview Git Hunk | n,v  |
+
+## Oil
+
+| Key         | Description                 | Mode |
+| ----------- | --------------------------- | ---- |
+| `<Leader>-` | Open Oil in Floating Window | n,v  |
+| `-`         | Open Oil                    | n,v  |
 
 ## Git UI
 
