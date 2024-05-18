@@ -143,3 +143,14 @@
 | Key          | Description          | Mode |
 | ------------ | -------------------- | ---- |
 | `<leader>mp` | Preview the Markdown | n,v  |
+
+## Bufferline
+
+| Key   | Description             | Mode |
+| ----- | ----------------------- | ---- |
+| `[b`  | Go to previous buffer   | n,v  |
+| `]b`  | Go to next buffer       | n,v  |
+| `[[b` | Move to previous buffer | n,v  |
+| `]]b` | Move to next buffer     | n,v  |
+| `]B`  | Go to Last Buffer       | n,v  |
+| `[B`  | Go to First Buffer      | n,v  |
