@@ -48,6 +48,10 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
 
+-- Indenting in visual mode
+keymap('x', '<S-TAB>', '<gv', opts)
+keymap('x', '<TAB>', '>gv', opts)
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
