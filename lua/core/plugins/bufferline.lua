@@ -4,6 +4,84 @@ return {
 		event = "VeryLazy",
 		keys = {
 			{
+				"[b",
+				"<Cmd>BufferLineCyclePrev<CR>",
+				mode = { "n" },
+				desc = "Cycle to previous buffer",
+			},
+			{
+				"]b",
+				"<Cmd>BufferLineCycleNext<CR>",
+				mode = { "n" },
+				desc = "Cycle to next buffer",
+			},
+			{
+				"<S-h>",
+				"<Cmd>BufferLineCyclePrev<CR>",
+				mode = { "n" },
+				desc = "Cycle to previous buffer",
+			},
+			{
+				"<S-l>",
+				"<Cmd>BufferLineCycleNext<CR>",
+				mode = { "n" },
+				desc = "Cycle to next buffer",
+			},
+			{
+				"]]b",
+				"<Cmd>BufferLineMovePrev<CR>",
+				mode = { "n" },
+				desc = "Move buffer to previous position",
+			},
+			{
+				"[[b",
+				"<Cmd>BufferLineMoveNext<CR>",
+				mode = { "n" },
+				desc = "Move buffer to next position",
+			},
+			{
+				"[B",
+				"<cmd>BufferLineGoToBuffer 1<CR>",
+				mode = { "n" },
+				desc = "Go to buffer 1",
+			},
+			{
+				"]B",
+				"<cmd>BufferLineGoToBuffer 99<cr>",
+				mode = { "n" },
+				desc = "Go to buffer 99",
+			},
+			{
+				"<Leader>w",
+				"<cmd>BufferLinePickClose<cr>",
+				mode = { "n" },
+				desc = "Pick and close buffer",
+			},
+			{
+				"<Leader>bb",
+				"<cmd>BufferOrderByBufferNumber<cr>",
+				mode = { "n" },
+				desc = "Order buffers by buffer number",
+			},
+			{
+				"<Leader>bd",
+				"<cmd>BufferOrderByDirectory<cr>",
+				mode = { "n" },
+				desc = "Order buffers by directory",
+			},
+			{
+				"<Leader>bl",
+				"<cmd>BufferOrderByLanguage<cr>",
+				mode = { "n" },
+				desc = "Order buffers by language",
+			},
+			{
+				"<Leader>bw",
+				"<cmd>BufferOrderByWindowNumber<cr>",
+				mode = { "n" },
+				desc = "Order buffers by window number",
+			},
+			{
 				"<C-w>",
 				function(n)
 					require("mini.bufremove").delete(n, false)
@@ -12,6 +90,7 @@ return {
 				desc = "Close buffer",
 			},
 		},
+
 		opts = {
 			options = {
 				mode = "buffers",

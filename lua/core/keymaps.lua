@@ -63,21 +63,6 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<C-q>", "<cmd> q! <CR>", opts)
 keymap("n", "<C-s>", "<cmd> w <CR>", opts)
 
--- Bufferline
-keymap("n", "[b", "<Cmd>BufferLineCyclePrev<CR>", opts)
-keymap("n", "]b", "<Cmd>BufferLineCycleNext<CR>", opts)
-keymap("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", opts)
-keymap("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", opts)
-keymap("n", "]]b", "<Cmd>BufferLineMovePrev<CR>", opts)
-keymap("n", "[[b", "<Cmd>BufferLineMoveNext<CR>", opts)
-keymap("n", "[B", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
-keymap("n", "]B", "<cmd>BufferLineGoToBuffer 99<cr>", opts)
-keymap("n", "<Leader>w", "<cmd>BufferLinePickClose<cr>", opts)
-keymap("n", "<Leader>bb", "<cmd>BufferOrderByBufferNumber<cr>", opts)
-keymap("n", "<Leader>bd", "<cmd>BufferOrderByDirectory<cr>", opts)
-keymap("n", "<Leader>bl", "<cmd>BufferOrderByLanguage<cr>", opts)
-keymap("n", "<Leader>bw", "<cmd>BufferOrderByWindowNumber<cr>", opts)
-
 -- Select the whole buffer
 
 keymap("n", "<C-a>", "G$vgg0", opts)
