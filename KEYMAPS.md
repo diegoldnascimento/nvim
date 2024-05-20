@@ -146,11 +146,13 @@
 
 ## Bufferline
 
-| Key   | Description             | Mode |
-| ----- | ----------------------- | ---- |
-| `[b`  | Go to previous buffer   | n,v  |
-| `]b`  | Go to next buffer       | n,v  |
-| `[[b` | Move to previous buffer | n,v  |
-| `]]b` | Move to next buffer     | n,v  |
-| `]B`  | Go to Last Buffer       | n,v  |
-| `[B`  | Go to First Buffer      | n,v  |
+| Key     | Description             | Mode |
+| ------- | ----------------------- | ---- |
+| `<S-h>` | Go to previous buffer   | n,v  |
+| `<S-l>` | Go to next buffer       | n,v  |
+| `[b`    | Go to previous buffer   | n,v  |
+| `]b`    | Go to next buffer       | n,v  |
+| `[[b`   | Move to previous buffer | n,v  |
+| `]]b`   | Move to next buffer     | n,v  |
+| `]B`    | Go to Last Buffer       | n,v  |
+| `[B`    | Go to First Buffer      | n,v  |

@@ -66,6 +66,8 @@ keymap("n", "<C-s>", "<cmd> w <CR>", opts)
 -- Bufferline
 keymap("n", "[b", "<Cmd>BufferLineCyclePrev<CR>", opts)
 keymap("n", "]b", "<Cmd>BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", opts)
+keymap("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", opts)
 keymap("n", "]]b", "<Cmd>BufferLineMovePrev<CR>", opts)
 keymap("n", "[[b", "<Cmd>BufferLineMoveNext<CR>", opts)
 keymap("n", "[B", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
