@@ -44,7 +44,7 @@ return {
 					["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 					["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-					["<C-y>"] = cmp.mapping.confirm({ select = false }),
+					["<C-y>"] = cmp.mapping.confirm({ select = true }),
 					["<CR>"] = cmp.config.disabled,
 					["<C-e>"] = cmp.mapping({
 						i = cmp.mapping.abort(),
