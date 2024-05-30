@@ -8,7 +8,6 @@ return {
 			local compare = require("cmp.config.compare")
 
 			require("luasnip/loaders/from_vscode").lazy_load()
-
 			local check_backspace = function()
 				local col = vim.fn.col(".") - 1
 				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -26,12 +25,19 @@ return {
 
 			local cmp_format = require("lsp-zero").cmp_format()
 
+			local cmp_action = require("lsp-zero").cmp_action()
+
 			local opts = {
 				formatting = cmp_format,
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
 					end,
+				},
+
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
 				},
 
 				preselect = cmp.PreselectMode.None,
@@ -41,10 +47,13 @@ return {
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 					["<C-j>"] = cmp.mapping.select_next_item(),
-					["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-					["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+					["<C-f>"] = cmp_action.luasnip_jump_forward(),
+					["<C-b>"] = cmp_action.luasnip_jump_backward(),
 					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-					["<C-y>"] = cmp.mapping.confirm({ select = true }),
+					["<C-y>"] = cmp.mapping.confirm({
+						select = true,
+						behavior = cmp.ConfirmBehavior.Insert,
+					}),
 					["<CR>"] = cmp.config.disabled,
 					["<C-e>"] = cmp.mapping({
 						i = cmp.mapping.abort(),
@@ -80,6 +89,7 @@ return {
 					}),
 				},
 				sources = {
+					{ name = "copilot" },
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "path" },
@@ -102,24 +112,10 @@ return {
 				},
 				confirm_opts = {
 					behavior = cmp.ConfirmBehavior.Replace,
-					select = false,
-				},
-				window = {
-					documentation = {
-						border = {
-							"╭",
-							"─",
-							"╮",
-							"│",
-							"╯",
-							"─",
-							"╰",
-							"│",
-						},
-					},
+					select = true,
 				},
 				experimental = {
-					ghost_text = false,
+					ghost_text = true,
 					native_menu = false,
 				},
 			}

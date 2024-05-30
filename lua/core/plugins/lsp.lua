@@ -17,5 +17,5 @@ return {
 
 			lsp_zero.setup()
 		end,
-	}
+	},
 }
