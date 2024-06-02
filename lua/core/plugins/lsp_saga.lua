@@ -22,7 +22,8 @@ return {
 				mode = { "n", "v" },
 				desc = "Go to previous error diagnostic",
 			},
-			{ "]e",
+			{
+				"]e",
 				function()
 					require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 				end,
@@ -75,12 +76,12 @@ return {
 				desc = "Show hover documentation",
 			},
 			{
-				"gk",
+				"<C-h>",
 				function()
 					vim.lsp.buf.signature_help()
 				end,
-				mode = { "n", "v" },
-				desc = "Show hover documentation",
+				mode = { "i", "n" },
+				desc = "Show hover signature help",
 			},
 			{
 				"gx",
@@ -93,6 +94,12 @@ return {
 				"<cmd>Lspsaga show_line_diagnostics<CR>",
 				mode = { "n", "v" },
 				desc = "Show line diagnostics",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Lspsaga outline<CR>",
+				mode = { "n", "v" },
+				desc = "A code outline window for skimming and quick navigation",
 			},
 		},
 		opts = {

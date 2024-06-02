@@ -9,7 +9,7 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 		},
 		init = function()
-			local lsp_zero = require("lsp-zero").preset()
+			local lsp_zero = require("lsp-zero").preset("recommended")
 
 			lsp_zero.on_attach(function(_, bufnr)
 				lsp_zero.default_keymaps({ buffer = bufnr })

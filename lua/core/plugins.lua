@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 local modules = {
 	{ import = "core.plugins.autopairs" },
 	{ import = "core.plugins.alpha" },
-	{ import = "core.plugins.aerial" },
 	{ import = "core.plugins.bufferline" },
 	{ import = "core.plugins.comment" },
 	{ import = "core.plugins.colorizer" },
