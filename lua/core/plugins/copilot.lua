@@ -14,11 +14,13 @@ return {
 				"<leader>cc",
 				"<cmd>CopilotChatToggle<cr>",
 				desc = "CopilotChat - Help actions",
+				mode = { "v", "n" },
 			},
 			{
 				"<leader>ct",
 				"<cmd>CopilotChatTests<cr>",
 				desc = "Run command for Copilot to generate Tests",
+				mode = { "v", "n" },
 			},
 			{
 				"<leader>ch",
@@ -27,6 +29,7 @@ return {
 					require("CopilotChat.integrations.telescope").pick(actions.help_actions())
 				end,
 				desc = "CopilotChat - Help actions",
+				mode = { "v", "n" },
 			},
 			{
 				"<leader>cp",
@@ -35,6 +38,7 @@ return {
 					require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
 				end,
 				desc = "CopilotChat - Prompt actions",
+				mode = { "v", "n" },
 			},
 		},
 	},
