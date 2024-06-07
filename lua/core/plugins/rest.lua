@@ -19,7 +19,7 @@ return {
 			},
 			{
 				"<leader>rp",
-				"<Plug>RestNvimPrevie",
+				"<Plug>RestNvimPreview",
 				mode = { "n", "v" },
 				desc = "Preview the request cURL command",
 			},

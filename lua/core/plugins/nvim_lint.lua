@@ -9,7 +9,6 @@ return {
 				json = { "jsonlint" },
 				dockerfile = { "hadolint" },
 				python = { "pylint" },
-				markdown = { "markdownlint" },
 			},
 
 			linters = {
@@ -23,14 +22,6 @@ return {
 						function()
 							return vim.api.nvim_buf_get_name(0)
 						end,
-					},
-				},
-				markdownlint = {
-					args = {
-						"--disable",
-						"MD013",
-						"MD007",
-						"--",
 					},
 				},
 			},

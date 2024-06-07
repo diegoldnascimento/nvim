@@ -32,6 +32,7 @@ local modules = {
 	{ import = "core.plugins.neotest" },
 	{ import = "core.plugins.neo_tree" },
 	{ import = "core.plugins.nvim_dap" },
+	{ import = "core.plugins.noice" },
 	{ import = "core.plugins.nvim_notify" },
 	{ import = "core.plugins.nvim_treesitter" },
 	{ import = "core.plugins.nvim_lint" },

@@ -21,7 +21,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = function()
-			local lsp_zero = require("lsp-zero").preset()
+			local lsp_zero = require("lsp-zero").preset("recommended")
 
 			local opts = {
 				ensure_installed = {
@@ -71,7 +71,6 @@ return {
 				"goimports",
 				"tflint",
 				"jsonlint",
-				"markdownlint",
 				"php-cs-fixer",
 				"codespell",
 				"yamlfix",
