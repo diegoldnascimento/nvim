@@ -9,6 +9,8 @@ return {
 				json = { "jsonlint" },
 				dockerfile = { "hadolint" },
 				python = { "pylint" },
+				markdown = { "cspell" },
+				lua = { "luacheck" },
 			},
 
 			linters = {
@@ -39,12 +41,20 @@ return {
 				return
 			end
 
+			lint.linters.cspell = require("lint.util").wrap(lint.linters.cspell, function(diagnostic)
+				diagnostic.severity = vim.diagnostic.severity.HINT
+				return diagnostic
+			end)
+
 			local lint_auto = vim.api.nvim_create_augroup("lint", { clear = true })
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
 				group = lint_auto,
 				callback = function()
-					require("lint").try_lint()
+					local ft = vim.bo.filetype
+					if opts.linters_by_ft[ft] then
+						require("lint").try_lint()
+					end
 				end,
 			})
 		end,
