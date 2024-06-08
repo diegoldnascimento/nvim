@@ -32,6 +32,13 @@ return {
 			local opts = {
 				formatting = {
 					format = lspkind.cmp_format({
+						menu = {
+							nvim_lsp = "[LSP]",
+							path = "[Path]",
+							buffer = "[Buffer]",
+							luasnip = "[LuaSnip]",
+							emoji = "[Emoji]",
+						},
 						mode = "symbol_text",
 						maxwidth = 50,
 						ellipsis_char = "...",
