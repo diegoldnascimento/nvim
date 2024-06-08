@@ -36,7 +36,7 @@ return {
 						maxwidth = 50,
 						ellipsis_char = "...",
 						show_labelDetails = true,
-            preset = "default",
+						preset = "default",
 						before = function(_, vim_item)
 							return vim_item
 						end,
