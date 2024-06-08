@@ -132,19 +132,30 @@ return {
 				},
 			}
 
-			cmp.setup(opts)
-
-			cmp.setup.cmdline(":", {
-				sources = {
-					{ name = "cmdline" },
-				},
-			})
-
-			cmp.setup.cmdline({ "/", "?" }, {
+			-- `/` cmdline setup.
+			cmp.setup.cmdline("/", {
+				mapping = cmp.mapping.preset.cmdline(),
 				sources = {
 					{ name = "buffer" },
 				},
 			})
+
+			-- `:` cmdline setup.
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{
+						name = "cmdline",
+						option = {
+							ignore_cmds = { "Man", "!" },
+						},
+					},
+				}),
+			})
+
+			cmp.setup(opts)
 		end,
 		dependencies = {
 			"hrsh7th/cmp-emoji",
