@@ -42,6 +42,7 @@ return {
 					["<C-k>"] = telescope_actions.move_selection_previous,
 					["<C-q>"] = telescope_actions.send_to_qflist,
 					["<C-y>"] = telescope_actions.select_default,
+					["<C-e>"] = telescope_actions.close,
 				},
 			}
 			telescope.setup(opts)
