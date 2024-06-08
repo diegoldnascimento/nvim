@@ -23,12 +23,25 @@ return {
 						== nil
 			end
 
-			local cmp_format = require("lsp-zero").cmp_format()
-
+			local lspkind = require("lspkind")
 			local cmp_action = require("lsp-zero").cmp_action()
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 			local opts = {
-				formatting = cmp_format,
+				formatting = {
+					format = lspkind.cmp_format({
+						mode = "symbol_text",
+						maxwidth = 50,
+						ellipsis_char = "...",
+						show_labelDetails = true,
+            preset = "default",
+						before = function(_, vim_item)
+							return vim_item
+						end,
+					}),
+				},
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -132,10 +145,6 @@ return {
 					{ name = "buffer" },
 				},
 			})
-
-			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-
-			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 		dependencies = {
 			"hrsh7th/cmp-emoji",
@@ -146,6 +155,7 @@ return {
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-buffer",
+			"onsails/lspkind.nvim",
 			{
 				"L3MON4D3/LuaSnip",
 				version = "v2.*",

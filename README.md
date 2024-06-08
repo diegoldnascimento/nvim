@@ -58,6 +58,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [better-escape.nvim](https://github.com/max397574/better-escape.nvim) - This plugin is the lua version of better_escape.vim, with some additional features and optimizations A lot of people have mappings like jk or jj to escape insert mode
 - [nvim-bufedel.nvim](https://github.com/ojroques/nvim-bufdel) - A small Neovim plugin to improve the deletion of buffers.
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
+- [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) - The plugin adds vscode-like icons to Neovim LSP
 
 ### LSP
 
@@ -150,7 +151,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [Todo-Comments.nvim](https://github.com/folke/todo-comments.nvim)- todo-comments is a lua plugin for Neovim >= 0.8.0 to highlight and search for todo comments like TODO, HACK, BUG in your code base.
 - [rest.nvim](https://github.com/rest-nvim/rest.nvim) - A very fast, powerful, extensible and asynchronous Neovim HTTP client written in Lua.
 - [nvim-tmux-navigator.nvim](https://github.com/alexghergh/nvim-tmux-navigation) - This plugin is a repackaging of Mislav Marohnić's tmux-navigator configuration described in this gist. When combined with a set of tmux key bindings, the plugin will allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.
-- [import-cost.nvim](https://github.com/barrett-ruth/import-cost.nvim) - Display the costs of javascript imports inside neovim with the power of import-cost. 
+- [import-cost.nvim](https://github.com/barrett-ruth/import-cost.nvim) - Display the costs of javascript imports inside neovim with the power of import-cost.
 
 ### Plugin development
 
