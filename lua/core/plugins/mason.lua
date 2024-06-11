@@ -29,6 +29,7 @@ return {
 					"terraformls",
 					"yamlls",
 					"lua_ls",
+					"tsserver",
 					"svelte",
 					"sqlls",
 					"gopls",
