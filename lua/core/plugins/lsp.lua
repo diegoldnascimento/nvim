@@ -8,6 +8,17 @@ return {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "L3MON4D3/LuaSnip" },
 		},
+
+		keys = {
+			{
+				"gi",
+				function()
+					vim.lsp.buf.implementation()
+				end,
+				mode = { "n", "v" },
+				desc = "Go to implementation",
+			},
+		},
 		init = function()
 			local lsp_zero = require("lsp-zero").preset("recommended")
 

@@ -29,7 +29,6 @@ return {
 					"terraformls",
 					"yamlls",
 					"lua_ls",
-					"tsserver",
 					"svelte",
 					"sqlls",
 					"gopls",
@@ -79,7 +78,7 @@ return {
 				"pylint",
 				"nixpkgs-fmt",
 				"cspell",
-				-- "luacheck", It was throwing lua errors
+				"luacheck",
 			},
 			automatic_installation = true,
 		},

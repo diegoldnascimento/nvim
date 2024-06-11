@@ -46,6 +46,7 @@ local modules = {
 	{ import = "core.plugins.telescope" },
 	{ import = "core.plugins.todo_comments" },
 	{ import = "core.plugins.trouble" },
+	{ import = "core.plugins.typescript" },
 	{ import = "core.plugins.spectre" },
 	{ import = "core.plugins.rest" },
 	{ import = "core.plugins.nvim_tmux_navigator" },
