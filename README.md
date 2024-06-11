@@ -66,6 +66,10 @@ Below the list of the current plugins used in this configuration and how we are 
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Nvim supports the Language Server Protocol (LSP), which means it acts as a client to LSP servers and includes a Lua framework `vim.lsp` for building enhanced LSP tools.
 - [lspsaga](https://github.com/nvimdev/lspsaga.nvim?tab=readme-ov-file) - Improves the Neovim built-in LSP experience.
 
+### Programming Language
+
+- [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) - Blazingly fast, thanks to the utilization of the native Tsserver communication protocol, similar to Visual Studio Code.
+
 ### Mason
 
 - [mason.nvim](https://github.com/williamboman/mason.nvim) - Easy install LSP servers, Formatters, linters and more
