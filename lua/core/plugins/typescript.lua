@@ -6,9 +6,9 @@ return {
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*.ts*",
 				callback = function()
-					vim.cmd([[TypescriptAddMissingImports!]])
-					vim.cmd([[TypescriptOrganizeImports!]])
-					vim.cmd("write")
+					pcall(vim.api.nvim_command, "TypescriptAddMissingImports!")
+					pcall(vim.api.nvim_command, "TypescriptOrganizeImports!")
+					pcall(vim.api.nvim_command, "write")
 				end,
 			})
 		end,
