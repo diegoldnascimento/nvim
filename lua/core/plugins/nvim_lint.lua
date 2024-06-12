@@ -9,7 +9,6 @@ return {
 				json = { "jsonlint" },
 				dockerfile = { "hadolint" },
 				python = { "pylint" },
-				markdown = { "cspell" },
 				lua = { "luacheck" },
 			},
 
@@ -52,6 +51,7 @@ return {
 				group = lint_auto,
 				callback = function()
 					local ft = vim.bo.filetype
+
 					if opts.linters_by_ft[ft] then
 						require("lint").try_lint()
 					end
