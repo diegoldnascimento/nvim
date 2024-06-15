@@ -52,13 +52,6 @@
 | ------------ | ---------------- | ---- |
 | `<Leader>gp` | Preview Git Hunk | n,v  |
 
-## Oil
-
-| Key         | Description                 | Mode |
-| ----------- | --------------------------- | ---- |
-| `<Leader>-` | Open Oil in Floating Window | n,v  |
-| `-`         | Open Oil                    | n,v  |
-
 ## Git UI
 
 | Key          | Description         | Mode |

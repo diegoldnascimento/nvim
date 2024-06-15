@@ -135,7 +135,6 @@ Below the list of the current plugins used in this configuration and how we are 
 ### File Explorer
 
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - Neo-tree is a Neovim plugin to browse the file system and other tree like structures in whatever style suits you, including sidebars, floating windows, netrw split style, or all of them at once
-- [oil.nvim](https://github.com/stevearc/oil.nvim) - A vim-vinegar like file explorer that lets you edit your filesystem like a normal Neovim buffer.
 
 ### AI Completion
 

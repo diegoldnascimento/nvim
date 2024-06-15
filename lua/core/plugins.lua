@@ -41,7 +41,6 @@ local modules = {
 	{ import = "core.plugins.lazygit" },
 	{ import = "core.plugins.lsp_saga" },
 	{ import = "core.plugins.markdown" },
-	{ import = "core.plugins.oil" },
 	{ import = "core.plugins.ui" },
 	{ import = "core.plugins.telescope" },
 	{ import = "core.plugins.todo_comments" },

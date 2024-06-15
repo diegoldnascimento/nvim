@@ -52,7 +52,7 @@ return {
 				callback = function()
 					local ft = vim.bo.filetype
 
-					if opts.linters_by_ft[ft] then
+          if opts.linters_by_ft[ft] then
 						require("lint").try_lint()
 					end
 				end,
