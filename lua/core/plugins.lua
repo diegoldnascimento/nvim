@@ -36,6 +36,7 @@ local modules = {
 	{ import = "core.plugins.nvim_notify" },
 	{ import = "core.plugins.nvim_treesitter" },
 	{ import = "core.plugins.nvim_lint" },
+	{ import = "core.plugins.lazy" },
 	{ import = "core.plugins.lualine" },
 	{ import = "core.plugins.lsp" },
 	{ import = "core.plugins.lazygit" },
@@ -50,6 +51,7 @@ local modules = {
 	{ import = "core.plugins.rest" },
 	{ import = "core.plugins.nvim_tmux_navigator" },
 	{ import = "core.plugins.vim_dadbod" },
+	{ import = "core.plugins.vim_startuptime" },
 }
 
 return require("lazy").setup(modules)

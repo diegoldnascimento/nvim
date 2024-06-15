@@ -155,6 +155,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [rest.nvim](https://github.com/rest-nvim/rest.nvim) - A very fast, powerful, extensible and asynchronous Neovim HTTP client written in Lua.
 - [nvim-tmux-navigator.nvim](https://github.com/alexghergh/nvim-tmux-navigation) - This plugin is a repackaging of Mislav Marohnić's tmux-navigator configuration described in this gist. When combined with a set of tmux key bindings, the plugin will allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.
 - [import-cost.nvim](https://github.com/barrett-ruth/import-cost.nvim) - Display the costs of javascript imports inside neovim with the power of import-cost.
+- [vim-startuptime](https://github.com/dstein64/vim-startuptime) - vim-startuptime is a plugin for viewing vim and nvim startup event timing information. The data is automatically obtained by launching (n)vim with the --startuptime argument. See :help startuptime-configuration for details on customization options.
 
 ### Plugin development
 
