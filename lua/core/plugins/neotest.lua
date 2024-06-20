@@ -2,6 +2,7 @@ return {
 	{
 		"nvim-neotest/neotest",
 		config = function()
+      unpack = table.unpack or unpack
 			local neotest = require("neotest")
 
 			local opts = { noremap = true, silent = true }
@@ -90,7 +91,7 @@ return {
 					require("neotest-jest")({
 						estCommand = "yarn test --",
 						env = { CI = true },
-						cwd = function(path)
+						cwd = function(_)
 							return vim.fn.getcwd()
 						end,
 					}),
