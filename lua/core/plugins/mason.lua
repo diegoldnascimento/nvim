@@ -5,7 +5,7 @@ return {
 			pcall(vim.api.nvim_command, "MasonUpdate")
 		end,
 		opts = {
-			max_concurrent_installers = 4,
+			max_concurrent_installers = 12,
 			ui = {
 				icons = {
 					package_installed = "✓",

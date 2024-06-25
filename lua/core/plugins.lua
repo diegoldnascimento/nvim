@@ -26,7 +26,6 @@ local modules = {
 	{ import = "core.plugins.flash" },
 	{ import = "core.plugins.gitsigns" },
 	{ import = "core.plugins.illuminate" },
-	{ import = "core.plugins.import-cost" },
 	{ import = "core.plugins.mini" },
 	{ import = "core.plugins.mason" },
 	{ import = "core.plugins.neotest" },
