@@ -25,6 +25,7 @@ return {
 
 			local opts = {
 				ensure_installed = {
+					"astro",
 					"jsonls",
 					"terraformls",
 					"yamlls",
