@@ -18,7 +18,6 @@ return {
 					"^dist/",
 					"^build/",
 					"^coverage/",
-					"^packages/",
 					"^logs/",
 					"^.npm/",
 					"^.next/",
