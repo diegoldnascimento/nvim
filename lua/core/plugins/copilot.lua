@@ -23,7 +23,7 @@ return {
 				mode = { "v", "n" },
 			},
 			{
-				"<leader>ch",
+				"<leader>gh",
 				function()
 					local actions = require("CopilotChat.actions")
 					require("CopilotChat.integrations.telescope").pick(actions.help_actions())
