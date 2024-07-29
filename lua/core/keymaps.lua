@@ -132,7 +132,7 @@ keymap(
 
 keymap("n", "<Leader>cl", "<cmd>LspInfo<CR>", opts)
 keymap("n", "<Leader>cm", "<cmd>Mason<CR>", opts)
-keymap("n", "<Leader>ch", "<cmd>checkhealth<CR>", opts)
+keymap("n", "<Leader>ch", "<cmd>vertical checkhealth<CR>", opts)
 
 -- Vim Arrows remap to do nothing
 keymap("n", "<up>", "", opts)
