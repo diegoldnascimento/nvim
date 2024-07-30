@@ -4,6 +4,7 @@ return {
 	opts = {
 		attach_mode = "global",
 		backends = { "lsp", "treesitter", "markdown", "man" },
+		ignore = { filetypes = { "NvimTree", "terminal", "nofile" } },
 		show_guides = true,
 		layout = {
 			resize_to_content = false,
