@@ -76,7 +76,7 @@ keymap(
 	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 	opts
 )
-keymap("n", "<Leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<Leader>fg", ":lua require('telescope.builtin').live_grep({ additional_args = { '--fixed-strings' }})<CR>", opts)
 keymap(
 	"n",
 	"<Leader>fG",
