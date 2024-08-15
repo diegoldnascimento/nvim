@@ -19,7 +19,7 @@ return {
 				callback = function()
 					pcall(vim.api.nvim_command, "TSToolsAddMissingImports")
 					pcall(vim.api.nvim_command, "TSToolsRemoveUnused")
-          pcall(vim.api.nvim_command, "TSToolsRemoveUnusedImports")
+					pcall(vim.api.nvim_command, "TSToolsFixAll")
 					pcall(vim.api.nvim_command, "write")
 				end,
 			})
