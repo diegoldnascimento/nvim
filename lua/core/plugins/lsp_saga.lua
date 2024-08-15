@@ -103,7 +103,7 @@ return {
 			},
 		},
 		opts = {
-			show_code_action = false,
+			show_code_action = true,
 			scroll_preview = {
 				scroll_down = "<C-f>",
 				scroll_up = "<C-b>",
