@@ -103,7 +103,7 @@ return {
 			},
 		},
 		opts = {
-			show_code_action = true,
+			show_code_action = false,
 			scroll_preview = {
 				scroll_down = "<C-f>",
 				scroll_up = "<C-b>",
@@ -134,13 +134,13 @@ return {
 			},
 			lightbulb = {
 				enable = false,
-				enable_in_insert = true,
-				sign = true,
+				enable_in_insert = false,
+				sign = false,
 				sign_priority = 40,
-				virtual_text = true,
+				virtual_text = false,
 			},
 		},
-		init = function(_, opts)
+		config = function(_, opts)
 			require("lspsaga").setup(opts)
 		end,
 	},
