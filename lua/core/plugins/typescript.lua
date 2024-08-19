@@ -14,15 +14,14 @@ return {
 			},
 		},
 		init = function()
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				pattern = "*.ts*",
-				callback = function()
-					pcall(vim.api.nvim_command, "TSToolsAddMissingImports")
-					pcall(vim.api.nvim_command, "TSToolsRemoveUnused")
-					pcall(vim.api.nvim_command, "TSToolsFixAll")
-					pcall(vim.api.nvim_command, "write")
-				end,
-			})
+			-- vim.api.nvim_create_autocmd("BufWritePre", {
+			-- 	pattern = "*.ts*",
+			-- 	callback = function()
+			-- 		-- pcall(vim.api.nvim_command, "TSToolsAddMissingImports")
+			-- 		-- pcall(vim.api.nvim_command, "TSToolsRemoveUnused")
+			-- 		pcall(vim.api.nvim_command, "write")
+			-- 	end,
+			-- })
 		end,
 	},
 }
