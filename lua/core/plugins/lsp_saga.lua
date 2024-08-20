@@ -76,14 +76,6 @@ return {
 				desc = "Show hover documentation",
 			},
 			{
-				"<C-h>",
-				function()
-					vim.lsp.buf.signature_help()
-				end,
-				mode = { "i", "n" },
-				desc = "Show hover signature help",
-			},
-			{
 				"gx",
 				"<cmd>Lspsaga show_workspace_diagnostics<CR>",
 				mode = { "n", "v" },
