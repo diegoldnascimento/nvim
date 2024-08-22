@@ -32,6 +32,76 @@ return {
 				},
 			},
 		},
+		keys = {
+			{
+				mode = "n",
+				"<c-p>",
+				function()
+					require("telescope.builtin").find_files({
+						find_command = { "rg", "--ignore", "--hidden", "--files" },
+					})
+				end,
+				desc = "Find files",
+			},
+			{
+				mode = "n",
+				"<Leader>ff",
+				function()
+					require("telescope.builtin").find_files({
+						find_command = { "rg", "--ignore", "--hidden", "--files" },
+					})
+				end,
+				desc = "Find files",
+			},
+			{
+				mode = "n",
+				"<Leader>fa",
+				function()
+					require("telescope.builtin").find_files({ follow = true, no_ignore = true, hidden = true })
+				end,
+				desc = "Find all files (including hidden and ignored)",
+			},
+			{
+				mode = "n",
+				"<Leader>fg",
+				function()
+					require("telescope.builtin").live_grep({ additional_args = { "--fixed-strings" } })
+				end,
+				desc = "Live grep (fixed strings)",
+			},
+			{
+				mode = "n",
+				"<Leader>fG",
+				function()
+					require("telescope.builtin").live_grep({ search_dirs = { "%:p" } })
+				end,
+				desc = "Live grep in current directory",
+			},
+			{
+				mode = "n",
+				"<Leader>fh",
+				function()
+					require("telescope.builtin").help_tags()
+				end,
+				desc = "Search help tags",
+			},
+			{
+				mode = "n",
+				"<Leader>fb",
+				function()
+					require("telescope.builtin").buffers()
+				end,
+				desc = "List open buffers",
+			},
+			{
+				mode = "n",
+				"<Leader>fo",
+				function()
+					require("telescope.builtin").oldfiles()
+				end,
+				desc = "Find recently opened files",
+			},
+		},
 		config = function(_, opts)
 			local telescope = require("telescope")
 			local telescope_actions = require("telescope.actions")
@@ -50,7 +120,6 @@ return {
 		end,
 		dependencies = {
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 		},
 	},

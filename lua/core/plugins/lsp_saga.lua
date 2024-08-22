@@ -125,11 +125,11 @@ return {
 				},
 			},
 			lightbulb = {
-				enable = false,
-				enable_in_insert = false,
-				sign = false,
+				enable = true,
+				enable_in_insert = true,
+				sign = true,
 				sign_priority = 40,
-				virtual_text = false,
+				virtual_text = true,
 			},
 		},
 		config = function(_, opts)

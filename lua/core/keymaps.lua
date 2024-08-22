@@ -67,26 +67,6 @@ keymap("n", "<C-s>", "<cmd> w <CR>", opts)
 
 keymap("n", "<C-a>", "G$vgg0", opts)
 
--- Telescope
-keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap(
-	"n",
-	"<Leader>fa",
-	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>",
-	opts
-)
-keymap("n", "<Leader>fg", ":lua require('telescope.builtin').live_grep({ additional_args = { '--fixed-strings' }})<CR>", opts)
-keymap(
-	"n",
-	"<Leader>fG",
-	"<cmd>lua require'telescope.builtin'.live_grep{ search_dirs={'%:p'} }<cr>",
-	opts
-)
-keymap("n", "<Leader>fh", "<cmd>Telescope help_tags<cr>", opts)
-keymap("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<Leader>fo", "<cmd>Telescope oldfiles<cr>", opts)
-
 -- BlamerToggle
 keymap("n", "<Leader>bt", "<cmd>BlamerToggle<cr>", opts)
 
