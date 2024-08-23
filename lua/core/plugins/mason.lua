@@ -46,9 +46,6 @@ return {
 				automatic_installation = true,
 				handlers = {
 					lsp_zero.default_setup,
-					["tsserver"] = function()
-						return
-					end,
 				},
 			}
 

@@ -1,12 +1,19 @@
 return {
 	{
 		"nvimdev/lspsaga.nvim",
+		event = "LspAttach",
 		keys = {
 			{
-				"gD",
+				"gd",
 				"<cmd>Lspsaga goto_definition<CR>",
 				mode = { "n", "v" },
 				desc = "Go to definition",
+			},
+			{
+				"<leader>ca",
+				"<cmd>Lspsaga code_action<CR>",
+				mode = { "n", "v" },
+				desc = "Trigger Code Action",
 			},
 			{
 				"gr",
@@ -94,6 +101,7 @@ return {
 				desc = "A code outline window for skimming and quick navigation",
 			},
 		},
+		cmd = "Lspsaga",
 		opts = {
 			show_code_action = true,
 			scroll_preview = {
@@ -129,11 +137,11 @@ return {
 				enable_in_insert = true,
 				sign = true,
 				sign_priority = 40,
-				virtual_text = true,
+				virtual_text = false,
 			},
 		},
-		config = function(_, opts)
-			require("lspsaga").setup(opts)
-		end,
+		-- config = function(_, opts)
+		-- 	require("lspsaga").setup(opts)
+		-- end,
 	},
 }

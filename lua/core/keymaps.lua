@@ -81,7 +81,6 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv-gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 
 -- LSP finder - Find the symbol's definition
-keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 keymap(
 	"n",
 	"gI",
