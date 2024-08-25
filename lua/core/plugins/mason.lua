@@ -42,6 +42,7 @@ return {
 					"prismals",
 					"intelephense",
 					"pyright",
+					"nil",
 				},
 				automatic_installation = true,
 				handlers = {

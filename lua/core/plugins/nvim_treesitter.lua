@@ -23,6 +23,7 @@ return {
 				"json",
 				"proto",
 				"make",
+				"just",
 				"graphql",
 				"html",
 				"svelte",
