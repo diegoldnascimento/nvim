@@ -28,13 +28,13 @@ return {
 				desc = "Cycle to next buffer",
 			},
 			{
-				"]]b",
+				"[[b",
 				"<Cmd>BufferLineMovePrev<CR>",
 				mode = { "n" },
 				desc = "Move buffer to previous position",
 			},
 			{
-				"[[b",
+				"]]b",
 				"<Cmd>BufferLineMoveNext<CR>",
 				mode = { "n" },
 				desc = "Move buffer to next position",
@@ -60,6 +60,12 @@ return {
 			{
 				"<Leader>bb",
 				"<cmd>BufferOrderByBufferNumber<cr>",
+				mode = { "n" },
+				desc = "Order buffers by buffer number",
+			},
+			{
+				"<Leader>bq",
+				"<cmd>BufferLineCloseOthers<cr>",
 				mode = { "n" },
 				desc = "Order buffers by buffer number",
 			},
