@@ -36,7 +36,7 @@ return {
 				yaml = { "yamlfix" },
 				php = { "php-cs-fixer" },
 				python = { "isort", "black" },
-				nix = { "nixpkgs-fmt" },
+				nix = { "nix_fmt" },
 				terraform = { "terraform_fmt" },
 				tf = { "terraform_fmt" },
 				["terraform-vars"] = { "terraform_fmt" },
@@ -44,6 +44,12 @@ return {
 				["_"] = { "trim_whitespace" },
 			},
 			notify_on_error = true,
+			formatters = {
+				nix_fmt = {
+					command = "nixfmt",
+					stdin = true,
+				},
+			},
 		},
 	},
 }
