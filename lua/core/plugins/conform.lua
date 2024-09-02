@@ -45,8 +45,5 @@ return {
 			},
 			notify_on_error = true,
 		},
-		init = function(_, opts)
-			require("conform").setup(opts)
-		end,
 	},
 }
