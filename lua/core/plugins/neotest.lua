@@ -100,6 +100,12 @@ return {
 							return name ~= "node_modules"
 						end,
 					}),
+					require("neotest-python")({
+						dap = { justMyCode = false },
+						args = { "--log-level", "DEBUG" },
+						runner = "pytest",
+						pytest_discover_instances = true,
+					}),
 				},
 				consumers = {
 					always_open_output = function(client)
@@ -123,6 +129,7 @@ return {
 		end,
 		dependencies = {
 			{ "nvim-neotest/neotest-jest" },
+			{ "nvim-neotest/neotest-python" },
 			{ "marilari88/neotest-vitest" },
 			{ "nvim-neotest/neotest-go" },
 			{ "antoinemadec/FixCursorHold.nvim" },
