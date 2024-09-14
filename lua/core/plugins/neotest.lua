@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-neotest/neotest",
 		config = function()
-      unpack = table.unpack or unpack
+			unpack = table.unpack or unpack
 			local neotest = require("neotest")
 
 			local opts = { noremap = true, silent = true }
@@ -95,7 +95,11 @@ return {
 							return vim.fn.getcwd()
 						end,
 					}),
-					require("neotest-vitest"),
+					require("neotest-vitest")({
+						filter_dir = function(name, rel_path, root)
+							return name ~= "node_modules"
+						end,
+					}),
 				},
 				consumers = {
 					always_open_output = function(client)
