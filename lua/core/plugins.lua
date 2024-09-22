@@ -48,7 +48,6 @@ local modules = {
 	{ import = "core.plugins.trouble" },
 	{ import = "core.plugins.spectre" },
 	{ import = "core.plugins.rest" },
-	{ import = "core.plugins.nvim_tmux_navigator" },
 	{ import = "core.plugins.vim_dadbod" },
 	{ import = "core.plugins.vim_startuptime" },
 }
