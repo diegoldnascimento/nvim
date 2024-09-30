@@ -2,7 +2,27 @@ return {
 	{
 		"goolord/alpha-nvim",
 		config = function()
-			require("alpha").setup(require("alpha.themes.theta").config)
+			local alpha = require("alpha")
+			local dashboard = require("alpha.themes.theta")
+
+			dashboard.header.val = {
+				[[    ,---,                                                 ]],
+				[[  .'  .' `\     ,--,                                       ]],
+				[[,---.'     \  ,--.'|                              ,---.    ]],
+				[[|   |  .`\  | |  |,                  ,----._,.   '   ,'\   ]],
+				[[:   : |  '  | `--'_        ,---.    /   /  ' /  /   /   |  ]],
+				[[|   ' '  ;  : ,' ,'|      /     \  |   :     | .   ; ,. :  ]],
+				[['   | ;  .  | '  | |     /    /  | |   | .\  . '   | |: :  ]],
+				[[|   | :  |  ' |  | :    .    ' / | .   ; ';  | '   | .; :  ]],
+				[['   : | /  ;  '  : |__  '   ;   /| '   .   . | |   :    |  ]],
+				[[|   | '` ,/   |  | '.'| '   |  / |  `---`-'| |  \   \  /   ]],
+				[[;   :  .'     ;  :    ; |   :    |  .'__/\_: |   `----'    ]],
+				[[|   ,.'       |  ,   /   \   \  /   |   :    :             ]],
+				[['---'          ---`-'     `----'     \   \  /              ]],
+				[[                                      `--`-'               ]],
+			}
+
+			alpha.setup(dashboard.config)
 		end,
 	},
 }

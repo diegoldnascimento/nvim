@@ -161,7 +161,9 @@ Below the list of the current plugins used in this configuration and how we are 
 
 ## Screenshots
 
-![](https://i.postimg.cc/BZM9b68J/Screen-Shot-2022-09-19-at-9-50-10-PM.png)
+
+
+![](https://i.postimg.cc/rFkxnq7h/2024-09-30-03-05.png)
 
 ### Get healthy
 
