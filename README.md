@@ -136,6 +136,10 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - Neo-tree is a Neovim plugin to browse the file system and other tree like structures in whatever style suits you, including sidebars, floating windows, netrw split style, or all of them at once
 
+### AI Completion
+
+- [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim) - GitHub Copilot is an AI pair programmer that helps you write code faster and with less work.
+
 ### Others
 
 - [Comment](https://github.com/numToStr/Comment.nvim) - Shortcut for commenting in and out code snippets
