@@ -134,7 +134,7 @@ return {
 				mode = { "n", "v" },
 			},
 			{
-				"<leader>cr",
+				"<leader>cl",
 				"<cmd>CopilotChatReset<cr>",
 				desc = "CopilotChat - Reset chat history and clear buffer",
 				mode = { "n", "v" },
