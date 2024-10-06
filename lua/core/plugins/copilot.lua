@@ -27,11 +27,14 @@ return {
 				-- Code related prompts
 				Explain = "Please explain how the following code works.",
 				Review = {
-					prompt = "Please review the following code and provide suggestions for improvement.",
+					prompt = "Please perform a detailed review of the following code, including suggestions for improvement, potential bugs, and adherence to best practices.",
 					mapping = "<leader>cr",
 				},
 				Tests = "Please explain how the selected code works, then generate unit tests for it.",
-				Refactor = "Please refactor the following code to improve its clarity and readability.",
+				Refactor = {
+					prompt = "Please refactor the following code to improve its clarity and readability.",
+					mapping = "<leader>cR",
+				},
 				FixCode = "Please fix the following code to make it work as intended.",
 				FixError = "Please explain the error in the following text and provide a solution.",
 				BetterNamings = "Please provide better names for the following variables and functions.",
