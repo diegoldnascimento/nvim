@@ -50,6 +50,7 @@ local modules = {
 	{ import = "core.plugins.rest" },
 	{ import = "core.plugins.vim_dadbod" },
 	{ import = "core.plugins.vim_startuptime" },
+	{ import = "core.plugins.yanky" },
 }
 
 return require("lazy").setup(modules)

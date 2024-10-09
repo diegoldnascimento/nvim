@@ -59,6 +59,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [nvim-bufedel.nvim](https://github.com/ojroques/nvim-bufdel) - A small Neovim plugin to improve the deletion of buffers.
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
 - [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) - The plugin adds vscode-like icons to Neovim LSP
+- [gbprod/yanky.nvim](https://github.com/gbprod/yanky.nvim) - The aim of yanky.nvim is to improve yank and put functionalities for Neovim.
 
 ### LSP
 
@@ -159,8 +160,6 @@ Below the list of the current plugins used in this configuration and how we are 
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Lua helpers for general usage
 
 ## Screenshots
-
-
 
 ![](https://i.postimg.cc/rFkxnq7h/2024-09-30-03-05.png)
 

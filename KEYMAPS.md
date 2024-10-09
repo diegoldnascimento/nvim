@@ -149,3 +149,13 @@
 | `]]b`   | Move to next buffer     | n,v  |
 | `]B`    | Go to Last Buffer       | n,v  |
 | `[B`    | Go to First Buffer      | n,v  |
+
+## Yanky
+
+| Key | Description                         | Mode |
+| --- | ----------------------------------- | ---- |
+| y   | Yank text                           | n, x |
+| P   | Put yanked text after cursor        | n, x |
+| p   | Put yanked text before cursor       | n, x |
+| [y  | Cycle forward through yank history  |      |
+| ]y  | Cycle backward through yank history |      |

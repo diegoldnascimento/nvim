@@ -37,11 +37,6 @@ keymap("n", "<leader>sh", "<cmd>split<cr>", opts)
 keymap("n", "j", "gj", opts)
 keymap("n", "k", "gk", opts)
 
--- Move to the end of yanked text after yank and paste
-keymap('n', 'p', 'p`]', opts)
-keymap('x', 'y', 'y`]', opts)
-keymap('x', 'p', 'p`]', opts)
-
 -- Stay in indent mode
 --
 keymap("v", "<", "<gv", opts)
