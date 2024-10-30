@@ -117,7 +117,7 @@ return {
 				max_prefix_length = 30,
 				tab_size = 21,
 				diagnostics = "nvim_lsp",
-				diagnostics_update_in_insert = false,
+				diagnostics_update_in_insert = true,
 				color_icons = true,
 				show_buffer_icons = true,
 				show_buffer_close_icons = false,
