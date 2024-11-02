@@ -159,3 +159,17 @@
 | p   | Put yanked text before cursor       | n, x |
 | [y  | Cycle forward through yank history  |      |
 | ]y  | Cycle backward through yank history |      |
+
+## Refactoring 
+
+| Key       | Description                     | Mode  |
+| --------- | ------------------------------- | ----- |
+| `<leader>re` | Extract Function                | x     |
+| `<leader>rf` | Extract Function To File        | x     |
+| `<leader>rv` | Extract Variable                | x     |
+| `<leader>rI` | Inline Function                 | n     |
+| `<leader>ri` | Inline Variable                 | n, x  |
+| `<leader>rb` | Extract Block                   | n     |
+| `<leader>rbf`| Extract Block To File           | n     |
+| `<leader>rr` | Refactor                        | n, x  |
+

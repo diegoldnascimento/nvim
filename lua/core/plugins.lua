@@ -48,6 +48,7 @@ local modules = {
 	{ import = "core.plugins.trouble" },
 	{ import = "core.plugins.spectre" },
 	{ import = "core.plugins.rest" },
+	{ import = "core.plugins.refactoring" },
 	{ import = "core.plugins.vim_dadbod" },
 	{ import = "core.plugins.vim_startuptime" },
 	{ import = "core.plugins.yanky" },
