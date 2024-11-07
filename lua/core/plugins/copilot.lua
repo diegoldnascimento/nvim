@@ -30,7 +30,7 @@ return {
 					prompt = "Please perform a detailed review of the following code, including suggestions for improvement, potential bugs, and adherence to best practices.",
 					mapping = "<leader>cr",
 				},
-				Tests = "Please explain how the selected code works, then generate unit tests for it.",
+				Tests = "Please explain how the selected code works, then generate a comprehensive suite of unit tests for it. Ensure the tests cover a wide range of scenarios, including edge cases, exception handling, and data validation.",
 				Refactor = {
 					prompt = "Please refactor the following code to improve its clarity and readability.",
 					mapping = "<leader>cR",
