@@ -89,7 +89,7 @@ return {
 				adapters = {
 					require("neotest-go"),
 					require("neotest-jest")({
-						estCommand = "yarn test --",
+						jestCommand = "yarn test --",
 						env = { CI = true },
 						cwd = function(_)
 							return vim.fn.getcwd()
@@ -100,6 +100,11 @@ return {
 							return name ~= "node_modules"
 						end,
 					}),
+					-- require("core.plugins.neotest-bun")({
+					-- 	filter_dir = function(name, rel_path, root)
+					-- 		return name ~= "node_modules"
+					-- 	end,
+					-- }),
 					require("neotest-python")({
 						dap = { justMyCode = false },
 						args = { "--log-level", "DEBUG" },
