@@ -17,7 +17,7 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
+		branch = "main",
 		build = "make tiktoken",
 		opts = {
 			debug = false,
@@ -75,10 +75,10 @@ return {
 				show_diff = {
 					normal = "gd",
 				},
-				show_system_prompt = {
+				system_prompt = {
 					normal = "gp",
 				},
-				show_user_selection = {
+				user_selection = {
 					normal = "gs",
 				},
 			},
