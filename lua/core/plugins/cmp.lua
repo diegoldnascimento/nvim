@@ -6,6 +6,9 @@ return {
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			local compare = require("cmp.config.compare")
+			local lspkind = require("lspkind")
+			local cmp_action = require("lsp-zero").cmp_action()
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 			require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -13,10 +16,6 @@ return {
 				local col = vim.fn.col(".") - 1
 				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 			end
-
-			local lspkind = require("lspkind")
-			local cmp_action = require("lsp-zero").cmp_action()
-			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
@@ -45,14 +44,11 @@ return {
 						luasnip.lsp_expand(args.body)
 					end,
 				},
-
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
 				},
-
 				preselect = cmp.PreselectMode.None,
-
 				mapping = {
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
@@ -129,7 +125,6 @@ return {
 					native_menu = false,
 				},
 			}
-
 			-- `/` cmdline setup.
 			cmp.setup.cmdline("/", {
 				mapping = cmp.mapping.preset.cmdline(),
@@ -137,7 +132,6 @@ return {
 					{ name = "buffer" },
 				},
 			})
-
 			-- `:` cmdline setup.
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
