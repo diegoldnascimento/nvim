@@ -79,6 +79,14 @@ return {
 			},
 			{
 				mode = "n",
+				"<Leader>fw",
+				function()
+					require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
+				end,
+				desc = "Live grep in under cursor",
+			},
+			{
+				mode = "n",
 				"<Leader>fh",
 				function()
 					require("telescope.builtin").help_tags()
