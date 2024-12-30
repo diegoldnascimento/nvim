@@ -46,6 +46,19 @@ return {
 				Spelling = "Please correct any grammar and spelling errors in the following text.",
 				Wording = "Please improve the grammar and wording of the following text.",
 				Concise = "Please rewrite the following text to make it more concise.",
+
+				-- UML related prompts
+				PlantUMLClassDiagram = "Please generate a UML class diagram for the following code using PlantUML.",
+				PlantUMLSequenceDiagram = "Please generate a UML sequence diagram for the following code using PlantUML.",
+				PlantUMLUseCaseDiagram = "Please generate a UML use case diagram for the following code using PlantUML.",
+				PlantUMLActivityDiagram = "Please generate a UML activity diagram for the following code using PlantUML.",
+				PlantUMLComponentDiagram = "Please generate a UML component diagram for the following code using PlantUML.",
+				PlantUMLDeploymentDiagram = "Please generate a UML deployment diagram for the following code using PlantUML.",
+				PlantUMLStateDiagram = "Please generate a UML state diagram for the following code using PlantUML.",
+				PlantUMLObjectDiagram = "Please generate a UML object diagram for the following code using PlantUML.",
+				PlantUMLPackageDiagram = "Please generate a UML package diagram for the following code using PlantUML.",
+				PlantUMLCompositeStructureDiagram = "Please generate a UML composite structure diagram for the following code using PlantUML.",
+
 			},
 			mappings = {
 				complete = {
