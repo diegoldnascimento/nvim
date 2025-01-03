@@ -28,6 +28,7 @@ local modules = {
 	{ import = "core.plugins.illuminate" },
 	{ import = "core.plugins.just" },
 	{ import = "core.plugins.mini" },
+  { import = "core.plugins.leetcode" },
 	{ import = "core.plugins.mason" },
 	{ import = "core.plugins.neotest" },
 	{ import = "core.plugins.neo_tree" },
