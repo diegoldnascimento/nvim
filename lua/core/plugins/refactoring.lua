@@ -89,14 +89,6 @@ return {
 				require("refactoring").refactor("Extract Block To File")
 			end,
 			desc = "Extract Block To File",
-		},
-		{
-			mode = { "n", "x" },
-			"<leader>rr",
-			function()
-				require("telescope").extensions.refactoring.refactors()
-			end,
-			desc = "Refactor",
-		},
+		}
 	},
 }

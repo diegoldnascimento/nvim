@@ -1,37 +1,66 @@
 -- Lazy loading LuaRocks dependencies for lazy.nvim
 return {
 	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
-	},
-	{
-		"rest-nvim/rest.nvim",
-		ft = { "http", "https" },
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-		tag = "v1.2.1",
+		"mistweaverco/kulala.nvim",
+		opts = {},
 		keys = {
 			{
 				"<leader>rr",
-				"<Plug>RestNvim",
-				mode = { "n", "v" },
+				function()
+					require("kulala").run()
+				end,
 				desc = "Run request under the cursor",
 			},
 			{
-				"<leader>rp",
-				"<Plug>RestNvimPreview",
-				mode = { "n", "v" },
-				desc = "Preview the request cURL command",
+				"<leader>rc",
+				function()
+					require("kulala").copy()
+				end,
+				desc = "Copies the current request (as cURL command) to the clipboard",
 			},
 			{
+				"<leader>ro",
+				function()
+					require("kulala").toggle_view()
+				end,
+				desc = "Toggle result pane",
+			},
+			{
+				"<leader>rq",
+				function()
+					require("kulala").close()
+				end,
+				desc = "Close result pane",
+			},
+
+			{
 				"<leader>rl",
-				"<Plug>RestNvimLast",
-				mode = { "n", "v" },
+				function()
+					require("kulala").replay()
+				end,
 				desc = "Re-run latest request",
 			},
+			{
+				"<leader>ri",
+				function()
+					require("kulala").inspect()
+				end,
+				desc = "Inspects the current request",
+			},
+			{
+				"<leader>r[",
+				function()
+					require("kulala").jump_prev()
+				end,
+				desc = "Jump to the previous request",
+			},
+			{
+				"<leader>r]",
+				function()
+					require("kulala").jump_next()
+				end,
+				desc = "Jump to the next request",
+			},
 		},
-		config = function(_, opts)
-			require("rest-nvim").setup(opts)
-		end,
 	},
 }

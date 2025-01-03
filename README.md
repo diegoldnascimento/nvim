@@ -153,7 +153,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) - Preview markdown on your modern browser with synchronised scrolling and flexible configuration.
 - [flash.nvim](https://github.com/folke/flash.nvim) - Flash.nvim lets you navigate your code with search labels, enhanced character motions, and Treesitter integration.
 - [Todo-Comments.nvim](https://github.com/folke/todo-comments.nvim)- todo-comments is a lua plugin for Neovim >= 0.8.0 to highlight and search for todo comments like TODO, HACK, BUG in your code base.
-- [rest.nvim](https://github.com/rest-nvim/rest.nvim) - A very fast, powerful, extensible and asynchronous Neovim HTTP client written in Lua.
+- [kulala.nvim](https://github.com/mistweaverco/kulala.nvim) - A minimal REST-Client Interface for Neovim. Kulala is swahili for "rest" or "relax". It allows you to make HTTP requests from within Neovim.
 - [vim-startuptime](https://github.com/dstein64/vim-startuptime) - vim-startuptime is a plugin for viewing vim and nvim startup event timing information. The data is automatically obtained by launching (n)vim with the --startuptime argument. See :help startuptime-configuration for details on customization options.
 
 ### Plugin development
