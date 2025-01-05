@@ -9,7 +9,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	opts = {
-		lang = "typescript",
+		lang = "javascript",
 		cn = { -- leetcode.cn
 			enabled = false,
 			translator = true,
