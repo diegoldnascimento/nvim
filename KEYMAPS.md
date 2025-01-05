@@ -26,6 +26,7 @@
 | `<Leader>fb` | Telescope File Browser                   | n    |
 | `<Leader>fp` | Telescope Buffers                        | n    |
 | `<Leader>fo` | Telescope Old Files                      | n    |
+| `<Leader>fw` | Telescope Live Grep under current word   | n    |
 
 ## LSP
 
@@ -160,16 +161,15 @@
 | [y  | Cycle forward through yank history  |      |
 | ]y  | Cycle backward through yank history |      |
 
-## Refactoring 
+## Refactoring
 
-| Key       | Description                     | Mode  |
-| --------- | ------------------------------- | ----- |
-| `<leader>re` | Extract Function                | x     |
-| `<leader>rf` | Extract Function To File        | x     |
-| `<leader>rv` | Extract Variable                | x     |
-| `<leader>rI` | Inline Function                 | n     |
-| `<leader>ri` | Inline Variable                 | n, x  |
-| `<leader>rb` | Extract Block                   | n     |
-| `<leader>rbf`| Extract Block To File           | n     |
-| `<leader>rr` | Refactor                        | n, x  |
-
+| Key           | Description              | Mode |
+| ------------- | ------------------------ | ---- |
+| `<leader>re`  | Extract Function         | x    |
+| `<leader>rf`  | Extract Function To File | x    |
+| `<leader>rv`  | Extract Variable         | x    |
+| `<leader>rI`  | Inline Function          | n    |
+| `<leader>ri`  | Inline Variable          | n, x |
+| `<leader>rb`  | Extract Block            | n    |
+| `<leader>rbf` | Extract Block To File    | n    |
+| `<leader>rr`  | Refactor                 | n, x |
