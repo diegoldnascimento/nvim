@@ -59,6 +59,8 @@ return {
 				PlantUMLPackageDiagram = "Please generate a UML package diagram for the following code using PlantUML.",
 				PlantUMLCompositeStructureDiagram = "Please generate a UML composite structure diagram for the following code using PlantUML.",
 
+				-- Data Structure related prompts
+				AnalyzeAlgorithm = "Please analyze the following data structure algorithm and suggest the most efficient approach for time-complexity and space-complexity using Javascript.",
 			},
 			mappings = {
 				complete = {
