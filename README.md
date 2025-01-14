@@ -60,6 +60,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
 - [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) - The plugin adds vscode-like icons to Neovim LSP
 - [gbprod/yanky.nvim](https://github.com/gbprod/yanky.nvim) - The aim of yanky.nvim is to improve yank and put functionalities for Neovim.
+- [smoka7/multicursors.nvim](https://github.com/smoka7/multicursors.nvim) - The Multicursor Plugin for Neovim extends the native Neovim text editing capabilities, providing a more intuitive way to edit repetitive text with multiple selections. 
 
 ### LSP
 

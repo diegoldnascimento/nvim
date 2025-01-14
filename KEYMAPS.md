@@ -161,6 +161,13 @@
 | [y  | Cycle forward through yank history  |      |
 | ]y  | Cycle backward through yank history |      |
 
+## Multicursor 
+
+| Key | Description                         | Mode |
+| --- | ----------------------------------- | ---- |
+| `<leader>m`   | Start multicursor | n, x |
+
+
 ## Refactoring
 
 | Key           | Description              | Mode |
