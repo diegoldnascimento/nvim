@@ -31,10 +31,10 @@ return {
 					"yamlls",
 					"lua_ls",
 					"ts_ls",
-          "ltex",
+					"ltex",
 					"svelte",
 					"bashls",
-          "sqlls",
+					"sqlls",
 					"html",
 					"gopls",
 					"eslint",
@@ -51,6 +51,24 @@ return {
 				automatic_installation = true,
 				handlers = {
 					lsp_zero.default_setup,
+					ts_ls = function()
+						require("lspconfig").ts_ls.setup({
+							cmd = {
+								"node", -- Use the `node` executable
+								"--max-old-space-size=8192", -- Increase memory limit to 8GB
+								vim.fn.stdpath("data") .. "/mason/bin/typescript-language-server", -- Path to the server
+								"--stdio", -- Communication mode
+							},
+						})
+					end,
+				},
+				settings = {
+					typescript = {
+						updateImportsOnFileMove = { enabled = "always" },
+						ts_ls = {
+							maxTsServerMemory = 8192,
+						},
+					},
 				},
 			}
 
