@@ -20,10 +20,17 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 --
+--
 
 -- Remap Enter key to do nothing
 keymap("n", "<CR>", "<NOP>", opts)
 keymap("v", "<CR>", "<NOP>", opts)
+keymap(
+	"n",
+	"<esc>",
+	":lua for _, win in pairs(vim.api.nvim_list_wins()) do if vim.api.nvim_win_get_config(win).relative == 'win' then vim.api.nvim_win_close(win, false) end end<CR>:noh<CR>",
+	{ silent = true, desc = "Remove Search Highlighting, Dismiss Popups" }
+)
 
 -- Better window navigation
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -44,8 +51,8 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Indenting in visual mode
-keymap('x', '<S-TAB>', '<gv', opts)
-keymap('x', '<TAB>', '>gv', opts)
+keymap("x", "<S-TAB>", "<gv", opts)
+keymap("x", "<TAB>", ">gv", opts)
 
 -- Visual Block --
 -- Move text up and down
@@ -59,7 +66,8 @@ keymap("n", "<C-q>", "<cmd> q! <CR>", opts)
 keymap("n", "<C-s>", "<cmd> w <CR>", opts)
 
 -- Select the whole buffer
-
+--
+keymap("n", "<Leader>a", "ggVG<c-$>", { desc = "Select All" })
 keymap("n", "<C-a>", "G$vgg0", opts)
 
 -- BlamerToggle
@@ -105,6 +113,7 @@ keymap(
 )
 
 keymap("n", "<Leader>cl", "<cmd>LspInfo<CR>", opts)
+keymap("n", "<Leader>L", "<cmd>Lazy update<CR>", opts)
 keymap("n", "<Leader>cm", "<cmd>Mason<CR>", opts)
 keymap("n", "<Leader>ch", "<cmd>vertical checkhealth<CR>", opts)
 

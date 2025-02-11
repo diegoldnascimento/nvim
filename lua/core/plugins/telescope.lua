@@ -16,7 +16,7 @@ return {
 					"^.git/",
 					"^.vscode/",
 					"^dist/",
-					"^build/",
+					-- "^build/",
 					"^coverage/",
 					"^logs/",
 					"^.npm/",

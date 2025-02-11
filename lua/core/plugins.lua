@@ -24,6 +24,7 @@ local modules = {
 	{ import = "core.plugins.colorscheme" },
 	{ import = "core.plugins.cmp" },
 	{ import = "core.plugins.flash" },
+	-- { import = "core.plugins.fzf" },
 	{ import = "core.plugins.gitsigns" },
 	{ import = "core.plugins.illuminate" },
 	{ import = "core.plugins.just" },
