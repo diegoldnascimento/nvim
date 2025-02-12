@@ -117,4 +117,27 @@ return {
 			lsp_zero.setup()
 		end,
 	},
+	{
+		"kosayoda/nvim-lightbulb",
+		opts = {
+			autocmd = {
+				enabled = true,
+			},
+			priority = 10,
+			number = {
+				enabled = true,
+				hl = "LightBulbNumber",
+			},
+		},
+		config = function()
+			require("nvim-lightbulb").setup({
+				autocmd = {
+					enabled = true,
+				},
+			})
+			vim.cmd([[
+				autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
+			]])
+		end,
+	},
 }
