@@ -138,6 +138,24 @@ return {
 				end,
 				desc = "Search help tags",
 			},
+			{
+				mode = "n",
+				"<Leader>ca",
+				function()
+					require("fzf-lua").lsp_code_actions({
+						winopts = { relative = "cursor", row = 1.01, col = 0, height = 0.6, width = 0.4 },
+					})
+				end,
+				desc = "Trigger code action",
+			},
+			{
+				mode = "n",
+				"<Leader>cd",
+				function()
+					require("fzf-lua").diagnostics_document({ fzf_opts = { ["--wrap"] = true } })
+				end,
+				desc = "Trigger code action",
+			},
 		},
 	},
 }

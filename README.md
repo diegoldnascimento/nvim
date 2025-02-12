@@ -66,7 +66,6 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim) - Collection of functions that will help you setup Neovim's LSP client, so you can get IDE-like features with minimum effort.
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Nvim supports the Language Server Protocol (LSP), which means it acts as a client to LSP servers and includes a Lua framework `vim.lsp` for building enhanced LSP tools.
-- [lspsaga](https://github.com/nvimdev/lspsaga.nvim?tab=readme-ov-file) - Improves the Neovim built-in LSP experience.
 
 ### Programming Language
 

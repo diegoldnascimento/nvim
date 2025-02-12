@@ -25,10 +25,11 @@ vim.g.maplocalleader = " "
 -- Remap Enter key to do nothing
 keymap("n", "<CR>", "<NOP>", opts)
 keymap("v", "<CR>", "<NOP>", opts)
+
 keymap(
 	"n",
 	"<esc>",
-	":lua for _, win in pairs(vim.api.nvim_list_wins()) do if vim.api.nvim_win_get_config(win).relative == 'win' then vim.api.nvim_win_close(win, false) end end<CR>:noh<CR>",
+	":lua for _, win in pairs(vim.api.nvim_list_wins()) do if vim.api.nvim_win_is_valid(win) and vim.api.nvim_win_get_config(win).relative == 'win' then vim.api.nvim_win_close(win, false) end end<CR>:noh<CR>",
 	{ silent = true, desc = "Remove Search Highlighting, Dismiss Popups" }
 )
 
