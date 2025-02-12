@@ -4,6 +4,11 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 			{ "telescope" },
+			defaults = {
+				git_icons = false,
+				file_icons = false,
+				color_file = false,
+			},
 			winopts = {
 				winopts = {
 					preview = {
