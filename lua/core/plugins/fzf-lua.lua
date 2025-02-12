@@ -143,7 +143,7 @@ return {
 				"<Leader>ca",
 				function()
 					require("fzf-lua").lsp_code_actions({
-						winopts = { relative = "cursor", row = 1.01, col = 0, height = 0.6, width = 0.4 },
+						winopts = { relative = "cursor", row = 1.01, col = 0, height = 0.4, width = 0.4 },
 					})
 				end,
 				desc = "Trigger code action",
