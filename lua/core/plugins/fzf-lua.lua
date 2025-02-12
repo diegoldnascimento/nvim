@@ -3,21 +3,26 @@ return {
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
-			{ "telescope", "fzf-native" },
+			{ "telescope" },
 			defaults = {
 				git_icons = true,
 				file_icons = true,
 				color_file = true,
 			},
 			winopts = {
-				winopts = {
-					preview = {
-						wrap = true,
-					},
+				preview = {
+					wrap = true,
+					default = "bat",
 				},
 			},
 			files = {
 				fd_opts = "--type f --hidden --follow --exclude .git --exclude node_modules --exclude vendor --exclude tmp --exclude dist --exclude .vscode --exclude coverage --exclude logs --exclude .npm --exclude .next",
+			},
+			previewers = {
+				bat = {
+					cmd = "bat",
+					args = "--color=always --theme=Dracula --style=numbers,changes",
+				},
 			},
 		},
 		keys = {
