@@ -16,17 +16,26 @@
 | `<C-k>` | Move cursor up    | n    |
 | `<C-l>` | Move cursor right | n    |
 
-## Telescope
+## Fzf-Lua
 
 | Key          | Description                              | Mode |
 | ------------ | ---------------------------------------- | ---- |
-| `<Leader>fg` | Telescope Live Grep                      | n    |
-| `<Leader>fG` | Telescope Live Grep Current Working File | n    |
-| `<Leader>fh` | Telescope Help Tags                      | n    |
-| `<Leader>fb` | Telescope File Browser                   | n    |
-| `<Leader>fp` | Telescope Buffers                        | n    |
-| `<Leader>fo` | Telescope Old Files                      | n    |
-| `<Leader>fw` | Telescope Live Grep under current word   | n    |
+| `<Leader>fa` | Find all files (including hidden and ignored) | n    |
+| `<Leader>ff` | Find files                               | n    |
+| `<c-p>`      | Find files                               | n    |
+| `<Leader>fp` | Open Builtin commands                    | n    |
+| `<Leader>fw` | Live grep under cursor                   | n    |
+| `<Leader>fv` | Live grep in visual selection            | n    |
+| `<Leader>fg` | Live grep (fixed strings)                | n    |
+| `<Leader>fb` | List open buffers                        | n    |
+| `<Leader>fq` | List quickfix                            | n    |
+| `<Leader>fr` | Resume                                   | n    |
+| `<Leader>fs` | Open Git Status                          | n    |
+| `<Leader>fo` | Find recently opened files               | n    |
+| `<Leader>fG` | Live grep in current directory           | n    |
+| `<Leader>fh` | Search help tags                         | n    |
+
+
 
 ## LSP
 
@@ -128,7 +137,7 @@
 
 | Key          | Description                 | Mode |
 | ------------ | --------------------------- | ---- |
-| `<leader>ft` | Open todo list in Telescope | n,v  |
+| `<leader>ft` | Open todo list in Fzf | n,v  |
 | `[t`         | Next todo comment           | n    |
 | `]t`         | Previous todo comment       | n    |
 
