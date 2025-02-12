@@ -5,9 +5,9 @@ return {
 		opts = {
 			{ "telescope", "fzf-native" },
 			defaults = {
-				git_icons = false,
-				file_icons = false,
-				color_file = false,
+				git_icons = true,
+				file_icons = true,
+				color_file = true,
 			},
 			winopts = {
 				winopts = {
