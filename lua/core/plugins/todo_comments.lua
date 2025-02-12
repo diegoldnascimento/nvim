@@ -20,7 +20,7 @@ return {
 		{
 			mode = "n",
 			"<leader>ft",
-			"<cmd>TodoTelescope<cr>",
+			"<cmd>:lua require('fzf-lua').grep({search='TODO|HACK|PERF|NOTE|FIX', no_esc=true})<cr>",
 			desc = "Previous todo comment",
 		},
 	},

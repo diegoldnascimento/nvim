@@ -164,7 +164,7 @@ return {
 				"<leader>ch",
 				function()
 					local actions = require("CopilotChat.actions")
-					require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+					require("CopilotChat.integrations.fzflua").pick(actions.prompt_actions())
 				end,
 				desc = "CopilotChat - Help actions",
 				mode = { "n", "v" },
@@ -173,7 +173,7 @@ return {
 				"<leader>cp",
 				function()
 					local actions = require("CopilotChat.actions")
-					require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+					require("CopilotChat.integrations.fzflua").pick(actions.prompt_actions())
 				end,
 				desc = "CopilotChat - Prompt actions",
 				mode = { "n", "v" },

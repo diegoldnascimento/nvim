@@ -60,7 +60,7 @@ Below the list of the current plugins used in this configuration and how we are 
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
 - [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) - The plugin adds vscode-like icons to Neovim LSP
 - [gbprod/yanky.nvim](https://github.com/gbprod/yanky.nvim) - The aim of yanky.nvim is to improve yank and put functionalities for Neovim.
-- [smoka7/multicursors.nvim](https://github.com/smoka7/multicursors.nvim) - The Multicursor Plugin for Neovim extends the native Neovim text editing capabilities, providing a more intuitive way to edit repetitive text with multiple selections. 
+- [smoka7/multicursors.nvim](https://github.com/smoka7/multicursors.nvim) - The Multicursor Plugin for Neovim extends the native Neovim text editing capabilities, providing a more intuitive way to edit repetitive text with multiple selections.
 
 ### LSP
 
@@ -122,10 +122,9 @@ Below the list of the current plugins used in this configuration and how we are 
 - [neotest-jest](https://github.com/haydenmeade/neotest-jest) - An plugin that provides a Jest adapter for the Neotest framework
 - [neotest-vitest](https://github.com/marilari88/neotest-vitest) - An plugin that provides a Vitest adapter for the Neotest framework
 
-### Telescope
+### Fzf-Lua
 
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - telescope.nvim is a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core. Telescope is centered around modularity, allowing for easy customization.
-- [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - fzf-native is a c port of fzf. It only covers the algorithm and implements few functions to support calculating the score.
+- [fzf-lua](https://github.com/ibhagwan/fzf-lua/) - fzf is described as a general-purpose command line fuzzy finder meaning you can search any output using the fuzzy search algorithm. This opaque description hides an endless wealth of functionality from searching files, processes, command-line history and much more. fzf-lua aims to bring all this goodness to neovim.
 
 ### Search and Replace
 

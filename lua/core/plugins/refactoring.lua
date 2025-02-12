@@ -29,9 +29,6 @@ return {
 			print_var_statements = {},
 			show_success_message = true, -- shows a message with information about the refactor on success
 		})
-
-		-- load refactoring Telescope extension
-		require("telescope").load_extension("refactoring")
 	end,
 	keys = {
 		{

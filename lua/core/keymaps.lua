@@ -84,31 +84,16 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv-gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 
 -- LSP finder - Find the symbol's definition
-keymap(
-	"n",
-	"gI",
-	"<cmd>lua require('telescope.builtin').lsp_implementations({ reuse_win = true })<CR>",
-	opts
-)
+keymap("n", "gI", "<cmd>lua require('fzf-lua').lsp_implementations()<CR>", opts)
 keymap("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-keymap(
-	"n",
-	"gt",
-	"<cmd>lua require('telescope.builtin').lsp_type_definitions({ reuse_win = true })<CR>",
-	opts
-)
+keymap("n", "gt", "<cmd>lua require('fzf-lua').lsp_typedefs()<CR>", opts)
 keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
-keymap(
-	"n",
-	"<space>fx",
-	"<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<CR>",
-	opts
-)
+keymap("n", "gr", "<cmd>FzfLua lsp_references<cr>", opts)
+keymap("n", "<space>fx", "<cmd>lua require('fzf-lua').lsp_document_diagnostics()<CR>", opts)
 keymap(
 	"n",
 	"gw",
-	"<cmd>lua require('telescope.builtin').lsp_document_symbols({ reuse_win = true })<CR>",
+	"<cmd>lua require('fzf-lua').lsp_document_symbols({ reuse_win = true })<CR>",
 	opts
 )
 
