@@ -3,7 +3,7 @@ return {
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
-			{ "telescope" },
+			{ "telescope", "fzf-native" },
 			defaults = {
 				git_icons = false,
 				file_icons = false,
