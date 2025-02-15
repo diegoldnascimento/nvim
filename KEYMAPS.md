@@ -18,24 +18,23 @@
 
 ## Fzf-Lua
 
-| Key          | Description                              | Mode |
-| ------------ | ---------------------------------------- | ---- |
+| Key          | Description                                   | Mode |
+| ------------ | --------------------------------------------- | ---- |
 | `<Leader>fa` | Find all files (including hidden and ignored) | n    |
-| `<Leader>ff` | Find files                               | n    |
-| `<c-p>`      | Find files                               | n    |
-| `<Leader>fp` | Open Builtin commands                    | n    |
-| `<Leader>fw` | Live grep under cursor                   | n    |
-| `<Leader>fv` | Live grep in visual selection            | n    |
-| `<Leader>fg` | Live grep (fixed strings)                | n    |
-| `<Leader>fb` | List open buffers                        | n    |
-| `<Leader>fq` | List quickfix                            | n    |
-| `<Leader>fr` | Resume                                   | n    |
-| `<Leader>fs` | Open Git Status                          | n    |
-| `<Leader>fo` | Find recently opened files               | n    |
-| `<Leader>fG` | Live grep in current directory           | n    |
-| `<Leader>fh` | Search help tags                         | n    |
-
-
+| `<Leader>ff` | Find files                                    | n    |
+| `<c-p>`      | Find files                                    | n    |
+| `<Leader>fp` | Open Builtin commands                         | n    |
+| `<Leader>fw` | Live grep under cursor                        | n    |
+| `<Leader>fv` | Live grep in visual selection                 | n    |
+| `<Leader>fg` | Live grep (fixed strings)                     | n    |
+| `<Leader>fb` | List open buffers                             | n    |
+| `<Leader>fq` | List quickfix                                 | n    |
+| `<Leader>fr` | Resume                                        | n    |
+| `<Leader>fs` | Open Git Status                               | n    |
+| `<Leader>fo` | Find recently opened files                    | n    |
+| `<Leader>fG` | Live grep in current directory                | n    |
+| `<Leader>fh` | Search help tags                              | n    |
+| `<Leader>fk` | List keymaps                                  | n    |
 
 ## LSP
 
@@ -135,11 +134,11 @@
 
 ## Todo Comments
 
-| Key          | Description                 | Mode |
-| ------------ | --------------------------- | ---- |
+| Key          | Description           | Mode |
+| ------------ | --------------------- | ---- |
 | `<leader>ft` | Open todo list in Fzf | n,v  |
-| `[t`         | Next todo comment           | n    |
-| `]t`         | Previous todo comment       | n    |
+| `[t`         | Next todo comment     | n    |
+| `]t`         | Previous todo comment | n    |
 
 ## Markdown
 
@@ -170,12 +169,11 @@
 | [y  | Cycle forward through yank history  |      |
 | ]y  | Cycle backward through yank history |      |
 
-## Multicursor 
+## Multicursor
 
-| Key | Description                         | Mode |
-| --- | ----------------------------------- | ---- |
-| `<leader>m`   | Start multicursor | n, x |
-
+| Key         | Description       | Mode |
+| ----------- | ----------------- | ---- |
+| `<leader>m` | Start multicursor | n, x |
 
 ## Refactoring
 
