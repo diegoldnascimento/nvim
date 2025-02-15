@@ -103,6 +103,15 @@ return {
 			},
 			{
 				mode = "n",
+				"<Leader>fk",
+				function()
+					require("fzf-lua").keymaps()
+				end,
+				desc = "List keymaps",
+			},
+
+			{
+				mode = "n",
 				"<Leader>fr",
 				function()
 					require("fzf-lua").resume()
