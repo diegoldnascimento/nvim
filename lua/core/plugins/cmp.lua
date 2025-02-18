@@ -8,7 +8,6 @@ return {
 			local compare = require("cmp.config.compare")
 			local lspkind = require("lspkind")
 			local cmp_action = require("lsp-zero").cmp_action()
-			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 			require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -16,8 +15,6 @@ return {
 				local col = vim.fn.col(".") - 1
 				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 			end
-
-			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 			local opts = {
 				formatting = {

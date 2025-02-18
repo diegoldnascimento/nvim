@@ -98,7 +98,7 @@ keymap(
 	opts
 )
 
-keymap("n", "<Leader>cl", "<cmd>LspInfo<CR>", opts)
+keymap("n", "<Leader>ci", "<cmd>LspInfo<CR>", opts)
 keymap("n", "<Leader>L", "<cmd>Lazy update<CR>", opts)
 keymap("n", "<Leader>cm", "<cmd>Mason<CR>", opts)
 keymap("n", "<Leader>ch", "<cmd>vertical checkhealth<CR>", opts)

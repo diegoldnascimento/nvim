@@ -1,14 +1,8 @@
 return {
 	{
-		"windwp/nvim-autopairs",
+		"cohama/lexima.vim",
 		event = "InsertEnter",
-		opts = {
-			check_ts = true,
-			ts_config = { java = false },
-		},
-		config = function(_, opts)
-			local npairs = require("nvim-autopairs")
-			npairs.setup(opts)
-		end,
+		opts = {},
+		config = function() end,
 	},
 }
