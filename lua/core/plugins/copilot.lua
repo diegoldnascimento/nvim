@@ -21,6 +21,7 @@ return {
 		build = "make tiktoken",
 		opts = {
 			debug = false,
+      model = "claude-3.7-sonnet-thought",
 			show_help = "yes",
 			language = "English",
 			prompts = {
