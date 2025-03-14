@@ -11,6 +11,22 @@ return {
 
 		keys = {
 			{
+				"gd",
+				function()
+					vim.lsp.buf.definition()
+				end,
+				mode = { "n", "v" },
+				desc = "Go to definition",
+			},
+			{
+				"gD",
+				function()
+					vim.lsp.buf.declaration()
+				end,
+				mode = { "n", "v" },
+				desc = "Go to declaration",
+			},
+			{
 				"gi",
 				function()
 					vim.lsp.buf.implementation()
