@@ -17,6 +17,7 @@ local modules = {
 	{ import = "core.plugins.autopairs" },
 	{ import = "core.plugins.alpha" },
 	{ import = "core.plugins.bufferline" },
+	{ import = "core.plugins.bracketed" },
 	{ import = "core.plugins.comment" },
 	{ import = "core.plugins.colorizer" },
 	{ import = "core.plugins.copilot" },

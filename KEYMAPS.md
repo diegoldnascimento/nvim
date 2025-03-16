@@ -187,3 +187,63 @@
 | `<leader>rb`  | Extract Block            | n    |
 | `<leader>rbf` | Extract Block To File    | n    |
 | `<leader>rr`  | Refactor                 | n, x |
+
+## Bracketed
+
+| Key  | Description                        | Mode |
+| ---- | ---------------------------------- | ---- |
+| `[B` | Previous buffer (far)              | n    |
+| `[b` | Previous buffer                    | n    |
+| `]b` | Next buffer                        | n    |
+| `]B` | Next buffer (far)                  | n    |
+| `[C` | Previous comment block (far)       | n    |
+| `[c` | Previous comment block             | n    |
+| `]c` | Next comment block                 | n    |
+| `]C` | Next comment block (far)           | n    |
+| `[X` | Previous conflict marker (far)     | n    |
+| `[x` | Previous conflict marker           | n    |
+| `]x` | Next conflict marker               | n    |
+| `]X` | Next conflict marker (far)         | n    |
+| `[D` | Previous diagnostic (far)          | n    |
+| `[d` | Previous diagnostic                | n    |
+| `]d` | Next diagnostic                    | n    |
+| `]D` | Next diagnostic (far)              | n    |
+| `[F` | Previous file on disk (far)        | n    |
+| `[f` | Previous file on disk              | n    |
+| `]f` | Next file on disk                  | n    |
+| `]F` | Next file on disk (far)            | n    |
+| `[i` | Previous indent change             | n    |
+| `]i` | Next indent change                 | n    |
+| `]I` | Next indent change (far)           | n    |
+| `[J` | Previous jump within buffer (far)  | n    |
+| `[j` | Previous jump within buffer        | n    |
+| `]j` | Next jump within buffer            | n    |
+| `]J` | Next jump within buffer (far)      | n    |
+| `[L` | Previous location (far)            | n    |
+| `[l` | Previous location                  | n    |
+| `]l` | Next location                      | n    |
+| `]L` | Next location (far)                | n    |
+| `[O` | Previous old file (far)            | n    |
+| `[o` | Previous old file                  | n    |
+| `]o` | Next old file                      | n    |
+| `]O` | Next old file (far)                | n    |
+| `[Q` | Previous quickfix entry (far)      | n    |
+| `[q` | Previous quickfix entry            | n    |
+| `]q` | Next quickfix entry                | n    |
+| `]Q` | Next quickfix entry (far)          | n    |
+| `[T` | Previous tree-sitter node (far)    | n    |
+| `[t` | Previous tree-sitter node          | n    |
+| `]t` | Next tree-sitter node              | n    |
+| `]T` | Next tree-sitter node (far)        | n    |
+| `[U` | Previous undo state (far)          | n    |
+| `[u` | Previous undo state                | n    |
+| `]u` | Next undo state                    | n    |
+| `]U` | Next undo state (far)              | n    |
+| `[W` | Previous window (far)              | n    |
+| `[w` | Previous window                    | n    |
+| `]w` | Next window                        | n    |
+| `]W` | Next window (far)                  | n    |
+| `[Y` | Previous yank replace region (far) | n    |
+| `[y` | Previous yank replace region       | n    |
+| `]y` | Next yank replace region           | n    |
+| `]Y` | Next yank replace region (far)     | n    |

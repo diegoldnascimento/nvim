@@ -133,6 +133,7 @@ Below the list of the current plugins used in this configuration and how we are 
 ### Mini
 
 - [mini.indentscope](https://github.com/echasnovski/mini.indentscope) - Visualize scope with animated vertical line. It is very fast and done automatically in a non-blocking way (other operations can be performed, like moving cursor). You can customize debounce delay and animation rule.
+- [mini.bracketed](https://github.com/echasnovski/mini.bracketed) - Add bracket-style navigation through various text objects including buffers, comments, diagnostics, files, indent levels, jumps, locations, quickfix entries, tree-sitter nodes, undo states, and more. Each target has multiple mapping variants for enhanced navigation.
 
 ### File Explorer
 
