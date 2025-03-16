@@ -81,7 +81,7 @@ return {
 				mode = "n",
 				"<Leader>fg",
 				function()
-					require("fzf-lua").live_grep()
+					require("fzf-lua").live_grep({ rg_opts = "--fixed-strings" })
 				end,
 				desc = "Live grep (fixed strings)",
 			},
@@ -164,11 +164,11 @@ return {
 			},
 			{
 				mode = "n",
-				"<Leader>cd",
+				"<Leader>fd",
 				function()
 					require("fzf-lua").diagnostics_document({ fzf_opts = { ["--wrap"] = true } })
 				end,
-				desc = "Trigger code action",
+				desc = "Show document diagnostics",
 			},
 		},
 	},
