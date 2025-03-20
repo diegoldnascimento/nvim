@@ -45,22 +45,22 @@ return {
 		"echasnovski/mini.surround",
 		opts = {
 			mappings = {
-				add = "gsa", -- Add surrounding in Normal and Visual modes
-				delete = "gsd", -- Delete surrounding
+				add = "ys", -- Add surrounding in Normal mode
+				delete = "ds", -- Delete surrounding
 				find = "gsf", -- Find surrounding (to the right)
 				find_left = "gsF", -- Find surrounding (to the left)
 				highlight = "gsh", -- Highlight surrounding
-				replace = "gsr", -- Replace surrounding
+				replace = "cs", -- Replace surrounding
 				update_n_lines = "gsn", -- Update `n_lines`
 			},
-      n_lines = 100,
+			n_lines = 100,
 		},
 		config = function(_, opts)
 			require("mini.surround").setup(opts)
 		end,
 	},
-  {
-    "echasnovski/mini.bufremove",
-    event = "BufReadPre",
-  }
+	{
+		"echasnovski/mini.bufremove",
+		event = "BufReadPre",
+	},
 }
