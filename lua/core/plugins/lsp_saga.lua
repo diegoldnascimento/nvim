@@ -22,6 +22,13 @@ return {
 				desc = "Show references, definitions, and implementations",
 			},
 			{
+				"gi",
+				"<cmd>Lspsaga finder imp<CR>",
+				mode = { "n", "v" },
+				desc = "Show implementations",
+			},
+
+			{
 				"[e",
 				function()
 					require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })

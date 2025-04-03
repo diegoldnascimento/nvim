@@ -10,6 +10,8 @@ return {
 		},
 
 		keys = {
+      -- Diego: Im using LSP Saga keys to replace native LSP from Neovim
+
 			-- {
 			-- 	"gd",
 			-- 	function()
@@ -26,22 +28,22 @@ return {
 			-- 	mode = { "n", "v" },
 			-- 	desc = "Go to declaration",
 			-- },
-			{
-				"gi",
-				function()
-					vim.lsp.buf.implementation()
-				end,
-				mode = { "n", "v" },
-				desc = "Go to implementation",
-			},
-			{
-				"X",
-				function()
-					vim.diagnostic.open_float(0, { scope = "line" })
-				end,
-				mode = { "n", "v" },
-				desc = "Show line diagnostics",
-			},
+			-- {
+			-- 	"gi",
+			-- 	function()
+			-- 		vim.lsp.buf.implementation()
+			-- 	end,
+			-- 	mode = { "n", "v" },
+			-- 	desc = "Go to implementation",
+			-- },
+			-- {
+			-- 	"X",
+			-- 	function()
+			-- 		vim.diagnostic.open_float(0, { scope = "line" })
+			-- 	end,
+			-- 	mode = { "n", "v" },
+			-- 	desc = "Show line diagnostics",
+			-- },
 			-- {
 			-- 	"gr",
 			-- 	function()
@@ -132,28 +134,5 @@ return {
 
 			lsp_zero.setup()
 		end,
-	},
-	{
-		"kosayoda/nvim-lightbulb",
-		opts = {
-			autocmd = {
-				enabled = true,
-			},
-			priority = 10,
-			number = {
-				enabled = true,
-				hl = "LightBulbNumber",
-			},
-		},
-		config = function()
-			require("nvim-lightbulb").setup({
-				autocmd = {
-					enabled = true,
-				},
-			})
-			vim.cmd([[
-				autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
-			]])
-		end,
-	},
+	}
 }
