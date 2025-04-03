@@ -18,6 +18,10 @@ return {
 			files = {
 				fd_opts = "--type f --hidden --follow --exclude .git --exclude node_modules --exclude vendor --exclude tmp --exclude dist --exclude .vscode --exclude coverage --exclude logs --exclude .npm --exclude .next",
 			},
+			grep = {
+				grep_opts = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
+				rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 --fixed-strings",
+			},
 			previewers = {
 				bat = {
 					cmd = "bat",
@@ -81,7 +85,7 @@ return {
 				mode = "n",
 				"<Leader>fg",
 				function()
-					require("fzf-lua").live_grep({ rg_opts = "--fixed-strings" })
+					require("fzf-lua").live_grep()
 				end,
 				desc = "Live grep (fixed strings)",
 			},
