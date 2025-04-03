@@ -13,6 +13,11 @@ return {
 		},
 	},
 	config = function()
-		require("trouble").setup()
+		require("trouble").setup({
+      focus = true,
+			win = {
+				type = "float"
+			},
+		})
 	end,
 }
