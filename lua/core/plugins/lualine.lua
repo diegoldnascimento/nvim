@@ -40,6 +40,7 @@ return {
 							"dashboard",
 							"alpha",
 							"NvimTree",
+							"neo-tree",
 							"lazy",
 							"FzfLua",
 						},
