@@ -42,6 +42,7 @@ local modules = {
 	{ import = "core.plugins.lazy" },
 	{ import = "core.plugins.lualine" },
 	{ import = "core.plugins.lsp" },
+	{ import = "core.plugins.lsp_saga" },
 	{ import = "core.plugins.lazygit" },
 	{ import = "core.plugins.markdown" },
 	{ import = "core.plugins.ui" },

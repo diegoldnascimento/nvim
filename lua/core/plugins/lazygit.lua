@@ -15,7 +15,8 @@ return {
 			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 		},
 		config = function()
-			vim.g.lazygit_floating_window_scaling_factor = 1
+			vim.g.lazygit_floating_window_scaling_factor = 0.9
+			vim.g.lazygit_floating_window_border_chars = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' }
 		end,
 	},
 }
