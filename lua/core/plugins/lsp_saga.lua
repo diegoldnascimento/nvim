@@ -146,6 +146,14 @@ return {
 				sign_priority = 40,
 				virtual_text = false,
 			},
+			outline = {
+				layout = "float",
+				keys = {
+					jump = { "<cr>" },
+					quit = { "q", "<ESC>" },
+					toggle_or_open = { "o" },
+				},
+			},
 		},
 	},
 }
