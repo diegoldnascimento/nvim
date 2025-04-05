@@ -68,11 +68,13 @@ Below the list of the current plugins used in this configuration and how we are 
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Nvim supports the Language Server Protocol (LSP), which means it acts as a client to LSP servers and includes a Lua framework `vim.lsp` for building enhanced LSP tools.
 - [lspsaga](https://github.com/nvimdev/lspsaga.nvim?tab=readme-ov-file) - Improves the Neovim built-in LSP experience.
 
+## Search & Replace
+- [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) - Find And Replace plugin for neovim
+
 
 ### Programming Language
 
 - [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) - Blazingly fast, thanks to the utilization of the native Tsserver communication protocol, similar to Visual Studio Code.
-- [refactoring.nvim](https://github.com/ThePrimeagen/refactoring.nvim) - The Refactoring library based off the Refactoring book by Martin Fowler
 
 ### Mason
 

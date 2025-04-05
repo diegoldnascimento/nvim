@@ -1,15 +1,18 @@
 return {
 	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
+		"echasnovski/mini.pairs",
+		event = "VeryLazy",
 		opts = {
-			check_ts = true,
-			ts_config = { java = false },
+			modes = { insert = true, command = true, terminal = false },
+			-- skip autopair when next character is one of these
+			skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
+			-- skip autopair when the cursor is inside these treesitter nodes
+			skip_ts = { "string" },
+			-- skip autopair when next character is closing pair
+			-- and there are more closing pairs than opening pairs
+			skip_unbalanced = true,
+			-- better deal with markdown code blocks
+			markdown = true,
 		},
-		config = function(_, opts)
-			local npairs = require("nvim-autopairs")
-			npairs.setup(opts)
-		end,
 	},
 }
-
