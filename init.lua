@@ -1,4 +1,4 @@
-require("core.options")
-require("core.keymaps")
-require("core.plugins")
-require("core.dap")
+require("configs.options")
+require("configs.keymaps")
+require("plugins.init")
+require("plugins.dap")
