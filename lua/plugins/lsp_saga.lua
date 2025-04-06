@@ -124,6 +124,11 @@ return {
 					toggle_or_open = "o",
 				},
 			},
+      implementation = {
+        enable = true,
+        sign = true,
+        virtual_text = true
+      },
 			definition = {
 				keymaps = {
 					quit = "q",
