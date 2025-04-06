@@ -117,7 +117,7 @@ return {
 				mode = { "n", "v" },
 			},
 			{
-				"<leader>cd",
+				"<leader>cD",
 				"<cmd>CopilotChatDocs<cr>",
 				desc = "CopilotChat - Generate Docs",
 				mode = { "n", "v" },
@@ -140,12 +140,12 @@ return {
 				desc = "CopilotChat - Generate Commit",
 				mode = { "n", "v" },
 			},
-			{
-				"<leader>cv",
-				"<cmd>CopilotChatVsplitToggle<cr>",
-				desc = "CopilotChat - Toggle vertical split",
-				mode = { "n", "v" },
-			},
+			-- {
+			-- 	"<leader>cv",
+			-- 	"<cmd>CopilotChatVsplitToggle<cr>",
+			-- 	desc = "CopilotChat - Toggle vertical split",
+			-- 	mode = { "n", "v" },
+			-- },
 			{
 				"<leader>cf",
 				"<cmd>CopilotChatFixDiagnostic<cr>",
@@ -158,12 +158,12 @@ return {
 				desc = "CopilotChat - Reset chat history and clear buffer",
 				mode = { "n", "v" },
 			},
-			{
-				"<leader>co",
-				"<cmd>CopilotChatOptimize<cr>",
-				desc = "CopilotChat - Optimize code",
-				mode = { "n", "v" },
-			},
+			-- {
+			-- 	"<leader>co",
+			-- 	"<cmd>CopilotChatOptimize<cr>",
+			-- 	desc = "CopilotChat - Optimize code",
+			-- 	mode = { "n", "v" },
+			-- },
 			{
 				"<leader>ch",
 				function()
@@ -182,17 +182,17 @@ return {
 				desc = "CopilotChat - Prompt actions",
 				mode = { "n", "v" },
 			},
-			{
-				"<leader>cq",
-				function()
-					local input = vim.fn.input("Ask Copilot: ")
-					if input ~= "" then
-						vim.cmd("CopilotChat " .. input)
-					end
-				end,
-				desc = "CopilotChat - Ask input",
-				mode = { "n", "v", "x" },
-			},
+			-- {
+			-- 	"<leader>cq",
+			-- 	function()
+			-- 		local input = vim.fn.input("Ask Copilot: ")
+			-- 		if input ~= "" then
+			-- 			vim.cmd("CopilotChat " .. input)
+			-- 		end
+			-- 	end,
+			-- 	desc = "CopilotChat - Ask input",
+			-- 	mode = { "n", "v", "x" },
+			-- },
 		},
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" },
