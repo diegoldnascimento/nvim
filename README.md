@@ -48,7 +48,7 @@ Below the list of the current plugins used in this configuration and how we are 
 ### Visual
 
 - [dracula](https://github.com/Mofiqul/dracula.nvim) - Main colorscheme
-- [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - web devicons for general usage. Used in buffer tabs, statusline and telescope
+- [mini.icons](https://github.com/echasnovski/mini.icons) - General icons as part of the Mini.library 
 - [lualine.nvim](https://github.com/shadmansaleh/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua.
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - A snazzy 💅 buffer line (with tabpage integration) for Neovim built using lua.
 - [colorizer.lua](nvchad/nvim-colorizer.lua) - A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.

@@ -13,11 +13,8 @@ return {
 		preserve_cursor_position = {
 			enabled = true,
 		},
-		ring = {
-			history_length = 200,
-		},
 		highlight = {
-			timer = 125,
+			timer = 150,
 		},
 	},
 }
