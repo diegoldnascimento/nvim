@@ -4,32 +4,63 @@ return {
 		dependencies = {
 			"echasnovski/mini.icons",
 		},
-		opts = {
-			defaults = {
-				git_icons = true,
-				file_icons = true,
-				color_file = true,
-			},
-			winopts = {
-				preview = {
-					wrap = true,
-					default = "bat",
+		opts = function()
+			local actions = require("fzf-lua").actions
+
+			return {
+				defaults = {
+					git_icons = true,
+					file_icons = true,
+					color_file = true,
 				},
-			},
-			files = {
-				fd_opts = "--type f --hidden --follow --exclude .git --exclude node_modules --exclude vendor --exclude tmp --exclude dist --exclude .vscode --exclude coverage --exclude logs --exclude .npm --exclude .next",
-			},
-			grep = {
-				grep_opts = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
-				rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096",
-			},
-			previewers = {
-				bat = {
-					cmd = "bat",
-					args = "--color=always --theme=Dracula --style=numbers,changes",
+				winopts = {
+					preview = {
+						wrap = true,
+						default = "bat",
+					},
 				},
-			},
-		},
+				files = {
+					fd_opts = "--type f --hidden --follow --exclude .git --exclude node_modules --exclude vendor --exclude tmp --exclude dist --exclude .vscode --exclude coverage --exclude logs --exclude .npm --exclude .next",
+				},
+				grep = {
+					grep_opts = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
+					rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096",
+				},
+				previewers = {
+					bat = {
+						cmd = "bat",
+						args = "--color=always --theme=Dracula --style=numbers,changes",
+					},
+				},
+				actions = {
+					files = {
+						["enter"] = actions.file_edit_or_qf,
+						["ctrl-s"] = actions.file_split,
+						["ctrl-v"] = actions.file_vsplit,
+						["ctrl-t"] = actions.file_tabedit,
+						["alt-q"] = actions.file_sel_to_qf,
+					},
+				},
+				buffers = {
+					keymap = { builtin = { ["<C-d>"] = false } },
+					actions = { ["ctrl-x"] = false, ["ctrl-d"] = { actions.buf_del, actions.resume } },
+				},
+
+				keymap = {
+					builtin = {
+						true,
+						["<C-d>"] = "preview-page-down",
+						["<C-u>"] = "preview-page-up",
+					},
+					fzf = {
+						true,
+						["ctrl-d"] = "preview-page-down",
+						["ctrl-u"] = "preview-page-up",
+						["ctrl-q"] = "select-all+accept",
+					},
+				},
+			}
+		end,
 		keys = {
 			{
 				mode = "n",
