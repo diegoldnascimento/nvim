@@ -50,6 +50,7 @@ local modules = {
 	{ import = "plugins.trouble" },
 	{ import = "plugins.search_and_replace" },
 	{ import = "plugins.rest" },
+	{ import = "plugins.oil" },
 	{ import = "plugins.vim_dadbod" },
 	{ import = "plugins.vim_startuptime" },
 	{ import = "plugins.yanky" },
