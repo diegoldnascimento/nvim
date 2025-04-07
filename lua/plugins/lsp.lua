@@ -116,6 +116,15 @@ return {
 				mode = { "n", "v" },
 				desc = "Show workspace diagnostics",
 			},
+			{
+				"<leader>cx",
+				function()
+					vim.lsp.codelens.run()
+				end,
+				mode = { "n", "v" },
+				desc = "Run code Lens",
+			},
+
 			-- {
 			-- 	"<leader>cs",
 			-- 	function()
