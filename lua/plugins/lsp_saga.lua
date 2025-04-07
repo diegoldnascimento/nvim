@@ -101,12 +101,6 @@ return {
 				mode = { "n", "v" },
 				desc = "Show line diagnostics",
 			},
-			{
-				"<leader>cs",
-				"<cmd>Lspsaga outline<CR>",
-				mode = { "n", "v" },
-				desc = "A code outline window for skimming and quick navigation",
-			},
 		},
 		cmd = "Lspsaga",
 		opts = {

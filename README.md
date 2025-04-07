@@ -48,7 +48,7 @@ Below the list of the current plugins used in this configuration and how we are 
 ### Visual
 
 - [dracula](https://github.com/Mofiqul/dracula.nvim) - Main colorscheme
-- [mini.icons](https://github.com/echasnovski/mini.icons) - General icons as part of the Mini.library 
+- [mini.icons](https://github.com/echasnovski/mini.icons) - General icons as part of the Mini.library
 - [lualine.nvim](https://github.com/shadmansaleh/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua.
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - A snazzy 💅 buffer line (with tabpage integration) for Neovim built using lua.
 - [colorizer.lua](nvchad/nvim-colorizer.lua) - A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
@@ -67,10 +67,11 @@ Below the list of the current plugins used in this configuration and how we are 
 - [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim) - Collection of functions that will help you setup Neovim's LSP client, so you can get IDE-like features with minimum effort.
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Nvim supports the Language Server Protocol (LSP), which means it acts as a client to LSP servers and includes a Lua framework `vim.lsp` for building enhanced LSP tools.
 - [lspsaga](https://github.com/nvimdev/lspsaga.nvim?tab=readme-ov-file) - Improves the Neovim built-in LSP experience.
+- [outline.nvim](https://github.com/hedyhli/outline.nvim) - A sidebar with a tree-like outline of symbols from your code, powered by LSP.
 
 ## Search & Replace
-- [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) - Find And Replace plugin for neovim
 
+- [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) - Find And Replace plugin for neovim
 
 ### Programming Language
 
