@@ -5,7 +5,6 @@ return {
 			"echasnovski/mini.icons",
 		},
 		opts = {
-			{ "telescope" },
 			defaults = {
 				git_icons = true,
 				file_icons = true,
