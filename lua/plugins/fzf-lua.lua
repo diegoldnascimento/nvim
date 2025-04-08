@@ -8,6 +8,7 @@ return {
 			local actions = require("fzf-lua").actions
 
 			return {
+        "telescope",
 				defaults = {
 					git_icons = true,
 					file_icons = true,

@@ -144,12 +144,11 @@ return {
 			-- Configure server options from what was previously in nvim-lspconfig
 			local lspconfig = require("lspconfig")
 
-			-- Disable tsserver and ts_ls
-			lspconfig.tsserver.setup({ enabled = false })
-			lspconfig.ts_ls.setup({ enabled = false })
+			-- Enable tsserver instead of vtsls
+			lspconfig.vtsls.setup({ enabled = false })
 
-			-- Setup vtsls
-			local vtsls_settings = {
+			-- Setup tsserver
+			local tsserver_settings = {
 				filetypes = {
 					"javascript",
 					"javascriptreact",
@@ -159,20 +158,6 @@ return {
 					"typescript.tsx",
 				},
 				settings = {
-					complete_function_calls = true,
-					vtsls = {
-						enableMoveToFileCodeAction = true,
-						autoUseWorkspaceTsdk = true,
-						experimental = {
-							maxInlayHintLength = 30,
-							completion = {
-								enableServerSideFuzzyMatch = true,
-							},
-						},
-						tsserver = {
-							maxTsServerMemory = 8192, -- 8GB in MB
-						},
-					},
 					typescript = {
 						updateImportsOnFileMove = { enabled = "always" },
 						suggest = {
@@ -188,23 +173,31 @@ return {
 						},
 					},
 					javascript = {}, -- This will be filled below
+					completions = {
+						completeFunctionCalls = true,
+					},
 				},
 				on_attach = function(client, buffer)
-					-- Add vtsls specific keybindings
+					-- Add tsserver specific keybindings
 					vim.keymap.set("n", "gD", function()
-						local params = vim.lsp.util.make_position_params()
-						vim.lsp.buf.execute_command({
-							command = "typescript.goToSourceDefinition",
-							arguments = { params.textDocument.uri, params.position },
-						})
-					end, { buffer = buffer, desc = "Goto Source Definition" })
+						vim.lsp.buf.declaration()
+					end, { buffer = buffer, desc = "Go to Declaration" })
+
+					vim.keymap.set("n", "gd", function()
+						vim.lsp.buf.definition()
+					end, { buffer = buffer, desc = "Go to Definition" })
+
+					vim.keymap.set("n", "gi", function()
+						vim.lsp.buf.implementation()
+					end, { buffer = buffer, desc = "Go to Implementation" })
+
+					vim.keymap.set("n", "gr", function()
+						vim.lsp.buf.references()
+					end, { buffer = buffer, desc = "Find References" })
 
 					vim.keymap.set("n", "gR", function()
-						vim.lsp.buf.execute_command({
-							command = "typescript.findAllFileReferences",
-							arguments = { vim.uri_from_bufnr(0) },
-						})
-					end, { buffer = buffer, desc = "File References" })
+						vim.lsp.buf.references()
+					end, { buffer = buffer, desc = "Find All References" })
 
 					local function code_action(action_name)
 						return function()
@@ -228,88 +221,34 @@ return {
 					vim.keymap.set(
 						"n",
 						"<leader>cM",
-						code_action("source.addMissingImports.ts"),
+						code_action("source.addMissingImports"),
 						{ buffer = buffer, desc = "Add missing imports" }
 					)
 
 					vim.keymap.set(
 						"n",
 						"<leader>cu",
-						code_action("source.removeUnused.ts"),
+						code_action("source.removeUnused"),
 						{ buffer = buffer, desc = "Remove unused imports" }
 					)
 
 					vim.keymap.set(
 						"n",
 						"<leader>cd",
-						code_action("source.fixAll.ts"),
+						code_action("source.fixAll"),
 						{ buffer = buffer, desc = "Fix all diagnostics" }
 					)
-
-					vim.keymap.set("n", "<leader>cV", function()
-						vim.lsp.buf.execute_command({ command = "typescript.selectTypeScriptVersion" })
-					end, { buffer = buffer, desc = "Select TS workspace version" })
-
-					-- Setup move to file refactoring command
-					client.commands["_typescript.moveToFileRefactoring"] = function(command, _)
-						---@type string, string, table
-						local action, uri, range = unpack(command.arguments)
-
-						local function move(newf)
-							client.request("workspace/executeCommand", {
-								command = command.command,
-								arguments = { action, uri, range, newf },
-							})
-						end
-
-						local fname = vim.uri_to_fname(uri)
-						client.request("workspace/executeCommand", {
-							command = "typescript.tsserverRequest",
-							arguments = {
-								"getMoveToRefactoringFileSuggestions",
-								{
-									file = fname,
-									startLine = range.start.line + 1,
-									startOffset = range.start.character + 1,
-									endLine = range["end"].line + 1,
-									endOffset = range["end"].character + 1,
-								},
-							},
-						}, function(_, result)
-							---@type string[]
-							local files = result.body.files
-							table.insert(files, 1, "Enter new path...")
-							vim.ui.select(files, {
-								prompt = "Select move destination:",
-								format_item = function(f)
-									return vim.fn.fnamemodify(f, ":~:.")
-								end,
-							}, function(f)
-								if f and f:find("^Enter new path") then
-									vim.ui.input({
-										prompt = "Enter move destination:",
-										default = vim.fn.fnamemodify(fname, ":h") .. "/",
-										completion = "file",
-									}, function(newf)
-										return newf and move(newf)
-									end)
-								elseif f then
-									move(f)
-								end
-							end)
-						end)
-					end
 				end,
 			}
 
 			-- Copy typescript settings to javascript
-			vtsls_settings.settings.javascript = vim.tbl_deep_extend(
+			tsserver_settings.settings.javascript = vim.tbl_deep_extend(
 				"force",
 				{},
-				vtsls_settings.settings.typescript,
-				vtsls_settings.settings.javascript or {}
+				tsserver_settings.settings.typescript,
+				tsserver_settings.settings.javascript or {}
 			)
-			lspconfig.vtsls.setup(vtsls_settings)
+			lspconfig.tsserver.setup(tsserver_settings)
 
 			lsp_zero.setup()
 		end,
