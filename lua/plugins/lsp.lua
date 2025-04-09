@@ -177,23 +177,11 @@ return {
 						completeFunctionCalls = true,
 					},
 				},
-				on_attach = function(client, buffer)
+				on_attach = function(_, buffer)
 					-- Add tsserver specific keybindings
 					vim.keymap.set("n", "gD", function()
 						vim.lsp.buf.declaration()
 					end, { buffer = buffer, desc = "Go to Declaration" })
-
-					vim.keymap.set("n", "gd", function()
-						vim.lsp.buf.definition()
-					end, { buffer = buffer, desc = "Go to Definition" })
-
-					vim.keymap.set("n", "gi", function()
-						vim.lsp.buf.implementation()
-					end, { buffer = buffer, desc = "Go to Implementation" })
-
-					vim.keymap.set("n", "gr", function()
-						vim.lsp.buf.references()
-					end, { buffer = buffer, desc = "Find References" })
 
 					vim.keymap.set("n", "gR", function()
 						vim.lsp.buf.references()
@@ -210,6 +198,41 @@ return {
 							})
 						end
 					end
+
+					-- Code actions command picker using fzf-lua
+					vim.keymap.set("n", "<leader>cf", function()
+						local actions = {
+							{ name = "Organize Imports", action = "source.organizeImports" },
+							{ name = "Add Missing Imports", action = "source.addMissingImports" },
+							{ name = "Remove Unused", action = "source.removeUnused" },
+							{ name = "Fix All Diagnostics", action = "source.fixAll" },
+							{ name = "Extract Function", action = "refactor.extract.function" },
+							{ name = "Extract Variable", action = "refactor.extract.constant" },
+							{ name = "Convert to Arrow Function", action = "refactor.rewrite.arrow.function" },
+						}
+
+						local fzf = require("fzf-lua")
+
+						local action_names = {}
+						for _, act in ipairs(actions) do
+							table.insert(action_names, act.name)
+						end
+
+						fzf.fzf_exec(action_names, {
+							prompt = "Code Actions> ",
+							actions = {
+								["default"] = function(selected)
+									local selected_action = selected[1]
+									for _, act in ipairs(actions) do
+										if act.name == selected_action then
+											code_action(act.action)()
+											break
+										end
+									end
+								end,
+							},
+						})
+					end, { buffer = buffer, desc = "Code Action Picker" })
 
 					vim.keymap.set(
 						"n",

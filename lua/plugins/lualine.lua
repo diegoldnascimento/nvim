@@ -43,6 +43,8 @@ return {
 							"neo-tree",
 							"lazy",
 							"FzfLua",
+							"fzf",
+							"copilot-chat",
 						},
 					},
 				},
@@ -63,12 +65,13 @@ return {
 						"encoding",
 						{
 							function()
-								local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
-								if #buf_clients == 0 then
+								local bufnr = vim.api.nvim_get_current_buf()
+								local clients = vim.lsp.buf_get_clients(bufnr)
+								if next(clients) == nil then
 									return "No LSP"
 								end
 								local buf_client_names = {}
-								for _, client in pairs(buf_clients) do
+								for _, client in pairs(clients) do
 									table.insert(buf_client_names, client.name)
 								end
 								return table.concat(buf_client_names, ", ")
