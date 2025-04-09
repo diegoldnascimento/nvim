@@ -45,6 +45,7 @@ return {
 							"FzfLua",
 							"fzf",
 							"copilot-chat",
+							"lazygit",
 						},
 					},
 				},
