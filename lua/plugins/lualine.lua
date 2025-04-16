@@ -68,16 +68,31 @@ return {
 				title = false,
 				filter = { range = true },
 				format = "{kind_icon}{symbol.name:Normal}",
-				-- The following line is needed to fix the background color
-				-- Set it to the lualine section you want to use
 				hl_group = "lualine_c_normal",
 			})
 			table.insert(opts.sections.lualine_c, {
 				symbols.get,
 				cond = symbols.has,
 			})
-			--
+
+			-- Set up vectorcode integration if available
+			local ok, vectorcode = pcall(require, "vectorcode.integrations")
+			if ok then
+				opts.tabline = {
+					lualine_y = {
+						{
+							function()
+								return vectorcode.lualine(opts)
+							end,
+						},
+					},
+				}
+			end
+
 			require("lualine").setup(opts)
 		end,
+		dependencies = {
+			{ "Davidyz/VectorCode" },
+		},
 	},
 }

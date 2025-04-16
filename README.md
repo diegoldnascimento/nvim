@@ -143,9 +143,10 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - Neo-tree is a Neovim plugin to browse the file system and other tree like structures in whatever style suits you, including sidebars, floating windows, netrw split style, or all of them at once
 
-### AI Completion
+### AI 
 
 - [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim) - GitHub Copilot is an AI pair programmer that helps you write code faster and with less work.
+- [vectorcode.nvim](https://github.com/Davidyz/VectorCode) - VectorCode is a code repository indexing tool. It helps you write better prompt for your coding LLMs by indexing and providing information about the code repository you're working on. This repository also contains the corresponding neovim plugin because that's what I used to write this tool.
 
 ### Others
 

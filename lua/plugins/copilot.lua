@@ -197,6 +197,7 @@ return {
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" },
 			{ "nvim-lua/plenary.nvim" },
+			{ "Davidyz/VectorCode" },
 		},
 		config = function(_, opts)
 			local success, chat = pcall(require, "CopilotChat")
