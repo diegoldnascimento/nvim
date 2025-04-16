@@ -43,6 +43,9 @@ return {
 							"neo-tree",
 							"lazy",
 							"FzfLua",
+							"fzf",
+							"copilot-chat",
+							"lazygit",
 						},
 					},
 				},
@@ -50,12 +53,32 @@ return {
 					lualine_b = {
 						"branch",
 						"diff",
-						"diagnostics",
+						{
+							"diagnostics",
+							sources = { "nvim_diagnostic" },
+							symbols = { error = "🆇 ", warn = "⚠️ ", info = "ℹ️ ", hint = " " },
+						},
 					},
 					lualine_c = {
 						{ "filename", path = 1 },
 					},
 					lualine_x = {
+						"encoding",
+						{
+							function()
+								local bufnr = vim.api.nvim_get_current_buf()
+								local clients = vim.lsp.buf_get_clients(bufnr)
+								if next(clients) == nil then
+									return "No LSP"
+								end
+								local buf_client_names = {}
+								for _, client in pairs(clients) do
+									table.insert(buf_client_names, client.name)
+								end
+								return table.concat(buf_client_names, ", ")
+							end,
+							icon = "  LSP:",
+						},
 						"filetype",
 					},
 				},
