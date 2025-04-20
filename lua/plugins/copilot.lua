@@ -19,6 +19,7 @@ return {
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "main",
 		build = "make tiktoken",
+		lazy = true,
 		opts = {
 			debug = false,
 			model = "claude-3.7-sonnet-thought",
@@ -26,25 +27,49 @@ return {
 			language = "English",
 			prompts = {
 				-- Code related prompts
-				Explain = "Please explain how the following code works.",
+				Explain = {
+					prompt = "Please explain how the following code works.",
+					context = { "selection", "vectorcode", "buffers" },
+				},
 				Review = {
 					prompt = "Please perform a detailed review of the following code, including suggestions for improvement, potential bugs, and adherence to best practices.",
 					mapping = "<leader>cr",
+					context = { "selection", "vectorcode", "buffers" },
 				},
 				Tests = {
 					mapping = "<leader>ct",
 					prompt = "Please explain how the selected code works, then generate a comprehensive suite of unit tests for it. Ensure the tests cover a wide range of scenarios, including edge cases, exception handling, and data validation.",
+					context = { "selection", "vectorcode", "buffers" },
 				},
 				Refactor = {
 					prompt = "Please refactor the following code to improve its clarity and readability.",
 					mapping = "<leader>cR",
+					context = { "selection", "vectorcode", "buffers" },
 				},
-				FixCode = "Please fix the following code to make it work as intended.",
-				FixError = "Please explain the error in the following text and provide a solution.",
-				BetterNamings = "Please provide better names for the following variables and functions.",
-				Documentation = "Please provide documentation for the following code.",
-				SwaggerApiDocs = "Please provide documentation for the following API using Swagger.",
-				SwaggerJsDocs = "Please write JSDoc for the following API using Swagger.",
+				FixCode = {
+					prompt = "Please fix the following code to make it work as intended.",
+					context = { "selection", "vectorcode", "buffers" },
+				},
+				FixError = {
+					prompt = "Please explain the error in the following text and provide a solution.",
+					context = { "selection", "diagnostics", "vectorcode", "buffers" },
+				},
+				BetterNamings = {
+					prompt = "Please provide better names for the following variables and functions.",
+					context = { "selection", "vectorcode", "buffers" },
+				},
+				Documentation = {
+					prompt = "Please provide documentation for the following code.",
+					context = { "selection", "vectorcode", "buffers" },
+				},
+				SwaggerApiDocs = {
+					prompt = "Please provide documentation for the following API using Swagger.",
+					context = { "selection", "vectorcode", "buffers" },
+				},
+				SwaggerJsDocs = {
+					prompt = "Please write JSDoc for the following API using Swagger.",
+					context = { "selection", "vectorcode", "buffers" },
+				},
 				-- Text related prompts
 				Summarize = "Please summarize the following text.",
 				Spelling = "Please correct any grammar and spelling errors in the following text.",
@@ -52,19 +77,52 @@ return {
 				Concise = "Please rewrite the following text to make it more concise.",
 
 				-- UML related prompts
-				PlantUMLClassDiagram = "Please generate a UML class diagram for the following code using PlantUML.",
-				PlantUMLSequenceDiagram = "Please generate a UML sequence diagram for the following code using PlantUML.",
-				PlantUMLUseCaseDiagram = "Please generate a UML use case diagram for the following code using PlantUML.",
-				PlantUMLActivityDiagram = "Please generate a UML activity diagram for the following code using PlantUML.",
-				PlantUMLComponentDiagram = "Please generate a UML component diagram for the following code using PlantUML.",
-				PlantUMLDeploymentDiagram = "Please generate a UML deployment diagram for the following code using PlantUML.",
-				PlantUMLStateDiagram = "Please generate a UML state diagram for the following code using PlantUML.",
-				PlantUMLObjectDiagram = "Please generate a UML object diagram for the following code using PlantUML.",
-				PlantUMLPackageDiagram = "Please generate a UML package diagram for the following code using PlantUML.",
-				PlantUMLCompositeStructureDiagram = "Please generate a UML composite structure diagram for the following code using PlantUML.",
+				PlantUMLClassDiagram = {
+					prompt = "Please generate a UML class diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLSequenceDiagram = {
+					prompt = "Please generate a UML sequence diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLUseCaseDiagram = {
+					prompt = "Please generate a UML use case diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLActivityDiagram = {
+					prompt = "Please generate a UML activity diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLComponentDiagram = {
+					prompt = "Please generate a UML component diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLDeploymentDiagram = {
+					prompt = "Please generate a UML deployment diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLStateDiagram = {
+					prompt = "Please generate a UML state diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLObjectDiagram = {
+					prompt = "Please generate a UML object diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLPackageDiagram = {
+					prompt = "Please generate a UML package diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
+				PlantUMLCompositeStructureDiagram = {
+					prompt = "Please generate a UML composite structure diagram for the following code using PlantUML.",
+					context = { "selection", "vectorcode" },
+				},
 
 				-- Data Structure related prompts
-				AnalyzeAlgorithm = "Please analyze the following data structure algorithm and suggest the most efficient approach for time-complexity and space-complexity using Javascript.",
+				AnalyzeAlgorithm = {
+					prompt = "Please analyze the following data structure algorithm and suggest the most efficient approach for time-complexity and space-complexity using Javascript.",
+					context = { "selection", "vectorcode" },
+				},
 			},
 			mappings = {
 				complete = {
@@ -200,8 +258,24 @@ return {
 			{ "Davidyz/VectorCode" },
 		},
 		config = function(_, opts)
-			local success, chat = pcall(require, "CopilotChat")
-			if success then
+			local success_copilot, chat = pcall(require, "CopilotChat")
+			if success_copilot then
+				-- Set up VectorCode context provider
+				local success_vectorcode, vectorcode = pcall(require, "vectorcode")
+				local vectorcode_ctx = {}
+
+				if success_vectorcode then
+					vectorcode_ctx = vectorcode.integrations.copilotchat.make_context_provider({
+						prompt_header = "Here are relevant files from the repository:", -- Customize header text
+						prompt_footer = "\nConsider this context when answering:", -- Customize footer text
+						skip_empty = true, -- Skip adding context when no files are retrieved
+					})
+				end
+
+				-- Add the context provider to opts
+				opts.contexts = opts.contexts or {}
+				opts.contexts.vectorcode = vectorcode_ctx
+
 				chat.setup(opts)
 			else
 				print("Error: CopilotChat module not found")
