@@ -77,7 +77,7 @@ return {
 								end
 								return table.concat(buf_client_names, ", ")
 							end,
-							icon = "  LSP:",
+							icon = "",
 						},
 						"filetype",
 					},
@@ -99,18 +99,22 @@ return {
 			})
 
 			-- Set up vectorcode integration if available
-			local ok, vectorcode = pcall(require, "vectorcode.integrations")
-			if ok then
-				opts.tabline = {
-					lualine_y = {
-						{
-							function()
-								return vectorcode.lualine(opts)
-							end,
-						},
+			opts.tabline = {
+				lualine_y = {
+					{
+						function()
+							return require("vectorcode.integrations").lualine({ show_job_count = true })[1]()
+						end,
+						cond = function()
+							if package.loaded["vectorcode"] == nil then
+								return false
+							else
+								return require("vectorcode.integrations").lualine({ show_job_count = true }).cond()
+							end
+						end,
 					},
-				}
-			end
+				},
+			}
 
 			require("lualine").setup(opts)
 		end,
