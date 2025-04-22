@@ -265,7 +265,7 @@ return {
 				local vectorcode_ctx = {}
 
 				if success_vectorcode then
-					vectorcode_ctx = vectorcode.integrations.copilotchat.make_context_provider({
+					vectorcode_ctx = require("vectorcode.integrations.copilotchat").make_context_provider({
 						prompt_header = "Here are relevant files from the repository:", -- Customize header text
 						prompt_footer = "\nConsider this context when answering:", -- Customize footer text
 						skip_empty = true, -- Skip adding context when no files are retrieved
