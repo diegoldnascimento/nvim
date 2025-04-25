@@ -98,24 +98,6 @@ return {
 				cond = symbols.has,
 			})
 
-			-- Set up vectorcode integration if available
-			opts.tabline = {
-				lualine_y = {
-					{
-						function()
-							return require("vectorcode.integrations").lualine({ show_job_count = true })[1]()
-						end,
-						cond = function()
-							if package.loaded["vectorcode"] == nil then
-								return false
-							else
-								return require("vectorcode.integrations").lualine({ show_job_count = true }).cond()
-							end
-						end,
-					},
-				},
-			}
-
 			require("lualine").setup(opts)
 		end,
 		dependencies = {

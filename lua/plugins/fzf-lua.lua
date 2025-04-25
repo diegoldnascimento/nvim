@@ -206,102 +206,102 @@ return {
 				end,
 				desc = "Show document diagnostics",
 			},
-			{
-				"<C-k>",
-				function()
-					local commands = {
-						{ cmd = "Conform", desc = "Format file", key = "<C-f>" },
-						{
-							cmd = ":lua require('conform').format({ timeout_ms = 500 })",
-							desc = "Format with timeout",
-							key = "<C-f>",
-						},
-						{
-							cmd = ":lua require('neotest').run.run()",
-							desc = "Run nearest test",
-							key = "<leader>tr",
-						},
-						{
-							cmd = ":lua require('neotest').run.run(vim.fn.expand('%'))",
-							desc = "Run test file",
-							key = "<leader>tt",
-						},
-						{
-							cmd = ":lua require('neotest').summary.toggle()",
-							desc = "Toggle test summary",
-							key = "<leader>ts",
-						},
-						{ cmd = ":lua require('fzf-lua').files()", desc = "Find files", key = "<leader>ff" },
-						{
-							cmd = ":lua require('fzf-lua').git_status()",
-							desc = "Git status",
-							key = "<leader>fs",
-						},
-						{ cmd = ":lua require('fzf-lua').live_grep()", desc = "Live grep", key = "<leader>fg" },
-						{
-							cmd = ":lua require('fzf-lua').buffers()",
-							desc = "List buffers",
-							key = "<leader>fb",
-						},
-						{ cmd = ":lua require('lazy').home()", desc = "Open Lazy", key = "" },
-						{ cmd = ":Mason", desc = "Open Mason", key = "" },
-						{ cmd = ":Lazy", desc = "Open Lazy", key = "" },
-						{ cmd = ":checkhealth", desc = "Check health", key = "" },
-						{ cmd = ":lua require('todo-comments').jump_next()", desc = "Next todo", key = "]t" },
-						{ cmd = ":LazyGit", desc = "Open LazyGit", key = "<leader>lg" },
-						{ cmd = ":lua vim.lsp.buf.format()", desc = "LSP format", key = "" },
-						{ cmd = ":lua vim.lsp.buf.code_action()", desc = "Code action", key = "<leader>ca" },
-						{ cmd = ":lua require('spectre').open()", desc = "Open search/replace", key = "" },
-						{ cmd = "MarkdownPreview", desc = "Markdown preview", key = "<leader>mp" },
-						{ cmd = ":e ~/.config/nvim/", desc = "Edit Neovim config", key = "" },
-						{ cmd = ":e ~/.zshrc", desc = "Edit zsh config", key = "" },
-						{ cmd = ":w!", desc = "Save current file", key = "" },
-					}
-
-					-- Sort commands alphabetically by description
-					table.sort(commands, function(a, b)
-						return a.desc:lower() < b.desc:lower()
-					end)
-
-					local opts = {
-						prompt = "Commands: ",
-						winopts = {
-							height = 0.6,
-							width = 0.6,
-							preview = { hidden = "hidden" },
-						},
-						actions = {
-							["default"] = function(selected)
-								local cmd = selected[1]
-								vim.cmd(cmd.cmd)
-							end,
-						},
-					}
-
-					local display = {}
-					local commands_lookup = {}
-
-					for _, command in ipairs(commands) do
-						local display_text = command.desc
-						if command.key and command.key ~= "" then
-							display_text = display_text .. " (" .. command.key .. ")"
-						end
-						table.insert(display, display_text)
-						commands_lookup[display_text] = command
-					end
-
-					require("fzf-lua").fzf_exec(display, {
-						prompt = "Commands: ",
-						actions = {
-							["default"] = function(selected)
-								local cmd = commands_lookup[selected[1]]
-								vim.cmd(cmd.cmd)
-							end,
-						},
-					})
-				end,
-				desc = "Command Palette",
-			},
+			-- {
+			-- 	"<C-k>",
+			-- 	function()
+			-- 		local commands = {
+			-- 			{ cmd = "Conform", desc = "Format file", key = "<C-f>" },
+			-- 			{
+			-- 				cmd = ":lua require('conform').format({ timeout_ms = 500 })",
+			-- 				desc = "Format with timeout",
+			-- 				key = "<C-f>",
+			-- 			},
+			-- 			{
+			-- 				cmd = ":lua require('neotest').run.run()",
+			-- 				desc = "Run nearest test",
+			-- 				key = "<leader>tr",
+			-- 			},
+			-- 			{
+			-- 				cmd = ":lua require('neotest').run.run(vim.fn.expand('%'))",
+			-- 				desc = "Run test file",
+			-- 				key = "<leader>tt",
+			-- 			},
+			-- 			{
+			-- 				cmd = ":lua require('neotest').summary.toggle()",
+			-- 				desc = "Toggle test summary",
+			-- 				key = "<leader>ts",
+			-- 			},
+			-- 			{ cmd = ":lua require('fzf-lua').files()", desc = "Find files", key = "<leader>ff" },
+			-- 			{
+			-- 				cmd = ":lua require('fzf-lua').git_status()",
+			-- 				desc = "Git status",
+			-- 				key = "<leader>fs",
+			-- 			},
+			-- 			{ cmd = ":lua require('fzf-lua').live_grep()", desc = "Live grep", key = "<leader>fg" },
+			-- 			{
+			-- 				cmd = ":lua require('fzf-lua').buffers()",
+			-- 				desc = "List buffers",
+			-- 				key = "<leader>fb",
+			-- 			},
+			-- 			{ cmd = ":lua require('lazy').home()", desc = "Open Lazy", key = "" },
+			-- 			{ cmd = ":Mason", desc = "Open Mason", key = "" },
+			-- 			{ cmd = ":Lazy", desc = "Open Lazy", key = "" },
+			-- 			{ cmd = ":checkhealth", desc = "Check health", key = "" },
+			-- 			{ cmd = ":lua require('todo-comments').jump_next()", desc = "Next todo", key = "]t" },
+			-- 			{ cmd = ":LazyGit", desc = "Open LazyGit", key = "<leader>lg" },
+			-- 			{ cmd = ":lua vim.lsp.buf.format()", desc = "LSP format", key = "" },
+			-- 			{ cmd = ":lua vim.lsp.buf.code_action()", desc = "Code action", key = "<leader>ca" },
+			-- 			{ cmd = ":lua require('spectre').open()", desc = "Open search/replace", key = "" },
+			-- 			{ cmd = "MarkdownPreview", desc = "Markdown preview", key = "<leader>mp" },
+			-- 			{ cmd = ":e ~/.config/nvim/", desc = "Edit Neovim config", key = "" },
+			-- 			{ cmd = ":e ~/.zshrc", desc = "Edit zsh config", key = "" },
+			-- 			{ cmd = ":w!", desc = "Save current file", key = "" },
+			-- 		}
+			--
+			-- 		-- Sort commands alphabetically by description
+			-- 		table.sort(commands, function(a, b)
+			-- 			return a.desc:lower() < b.desc:lower()
+			-- 		end)
+			--
+			-- 		local opts = {
+			-- 			prompt = "Commands: ",
+			-- 			winopts = {
+			-- 				height = 0.6,
+			-- 				width = 0.6,
+			-- 				preview = { hidden = "hidden" },
+			-- 			},
+			-- 			actions = {
+			-- 				["default"] = function(selected)
+			-- 					local cmd = selected[1]
+			-- 					vim.cmd(cmd.cmd)
+			-- 				end,
+			-- 			},
+			-- 		}
+			--
+			-- 		local display = {}
+			-- 		local commands_lookup = {}
+			--
+			-- 		for _, command in ipairs(commands) do
+			-- 			local display_text = command.desc
+			-- 			if command.key and command.key ~= "" then
+			-- 				display_text = display_text .. " (" .. command.key .. ")"
+			-- 			end
+			-- 			table.insert(display, display_text)
+			-- 			commands_lookup[display_text] = command
+			-- 		end
+			--
+			-- 		require("fzf-lua").fzf_exec(display, {
+			-- 			prompt = "Commands: ",
+			-- 			actions = {
+			-- 				["default"] = function(selected)
+			-- 					local cmd = commands_lookup[selected[1]]
+			-- 					vim.cmd(cmd.cmd)
+			-- 				end,
+			-- 			},
+			-- 		})
+			-- 	end,
+			-- 	desc = "Command Palette",
+			-- },
 		},
 	},
 }
