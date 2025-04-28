@@ -29,7 +29,7 @@ return {
 				previewers = {
 					bat = {
 						cmd = "bat",
-						args = "--color=always --theme=Dracula --style=numbers,changes",
+						args = "--color=always --theme=Dracula-Soft --style=numbers,changes",
 					},
 				},
 				actions = {
