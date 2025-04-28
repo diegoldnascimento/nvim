@@ -2,9 +2,38 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
+			local colors = {
+				blue = "#5496bd",   -- Medium blue
+				cyan = "#6aabc0",   -- Cyan/teal
+				black = "#111111",  -- Dark background
+				white = "#e6e6e8",  -- Light text
+				red = "#e66868",    -- Soft red
+				violet = "#9c86bf", -- Lavender/purple
+				grey = "#2c333c",   -- Medium gray
+				green = "#6ab68e",  -- Sequoia green
+			}
+
+			local dracula = {
+				normal = {
+					a = { fg = colors.black, bg = colors.violet },
+					b = { fg = colors.white, bg = colors.grey },
+					c = { fg = colors.white, bg = colors.black },
+				},
+
+				insert = { a = { fg = colors.black, bg = colors.green } },
+				visual = { a = { fg = colors.black, bg = colors.cyan } },
+				replace = { a = { fg = colors.black, bg = colors.red } },
+
+				inactive = {
+					a = { fg = colors.white, bg = colors.black },
+					b = { fg = colors.white, bg = colors.black },
+					c = { fg = colors.black, bg = colors.black },
+				},
+			}
+
 			local opts = {
 				options = {
-					theme = "sequoia",
+					theme = dracula,
 					globalstatus = true,
 					disabled_filetypes = {
 						statusline = {
