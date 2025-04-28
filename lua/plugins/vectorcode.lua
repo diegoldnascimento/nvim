@@ -13,7 +13,8 @@ return {
 			-- the embedding has not been updated.
 		},
 		cond = function()
-			return vim.fn.executable("vectorcode") == 1
+      return false
+			-- return vim.fn.executable("vectorcode") == 1
 		end,
 	},
 }
