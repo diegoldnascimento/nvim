@@ -183,10 +183,6 @@ return {
 						vim.lsp.buf.declaration()
 					end, { buffer = buffer, desc = "Go to Declaration" })
 
-					vim.keymap.set("n", "gR", function()
-						vim.lsp.buf.references()
-					end, { buffer = buffer, desc = "Find All References" })
-
 					local function code_action(action_name)
 						return function()
 							vim.lsp.buf.code_action({
