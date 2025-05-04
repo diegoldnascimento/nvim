@@ -52,7 +52,6 @@ local modules = {
 	{ import = "plugins.rest" },
 	{ import = "plugins.oil" },
 	{ import = "plugins.outline" },
-	{ import = "plugins.vectorcode" },
 	{ import = "plugins.vim_dadbod" },
 	{ import = "plugins.vim_startuptime" },
 	{ import = "plugins.yanky" },
