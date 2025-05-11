@@ -100,7 +100,7 @@ keymap(
 
 keymap("n", "<Leader>ci", "<cmd>LspInfo<CR>", opts)
 keymap("n", "<Leader>L", "<cmd>Lazy update<CR>", opts)
-keymap("n", "<Leader>cm", "<cmd>Mason<CR>", opts)
+keymap("n", "<Leader>M", "<cmd>Mason<CR>", opts)
 keymap("n", "<Leader>ch", "<cmd>vertical checkhealth<CR>", opts)
 
 -- Vim Arrows remap to do nothing
