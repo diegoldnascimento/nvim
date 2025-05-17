@@ -22,7 +22,7 @@ return {
 		lazy = true,
 		opts = {
 			debug = false,
-			model = "gpt-4o",
+			model = "gemini-2.5-pro",
 			show_help = "yes",
 			language = "English",
 			prompts = {
@@ -42,7 +42,7 @@ return {
 					context = { "selection", "buffers" },
 				},
 				Refactor = {
-					prompt = "Please refactor the following code to improve its clarity and readability.",
+					prompt = "Please refactor the following code to improve its clarity and readability. Explain the following changes and reasoning behind the choices",
 					mapping = "<leader>cR",
 					context = { "selection", "buffers" },
 				},
