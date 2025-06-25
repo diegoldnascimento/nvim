@@ -23,7 +23,7 @@ changes and experimenting new things.
 
 **Prerequisites**
 
-- Neovim 0.10.1+
+- Neovim 0.11.0+
 
 Steps:
 
