@@ -1,6 +1,6 @@
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		build = function()
 			pcall(vim.api.nvim_command, "MasonUpdate")
 		end,
@@ -19,7 +19,7 @@ return {
 		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		opts = function()
 			local lsp_zero = require("lsp-zero").preset("recommended")
 
@@ -48,10 +48,10 @@ return {
 					"pyright",
 					"nil_ls",
 				},
-				automatic_installation = true,
 				handlers = {
 					lsp_zero.default_setup,
 				},
+				automatic_enable = true,
 			}
 
 			return opts
@@ -87,7 +87,6 @@ return {
 				"cspell",
 				"luacheck",
 			},
-			automatic_installation = true,
 		},
 		init = function(_, opts)
 			require("mason-null-ls").setup(opts)
@@ -100,7 +99,6 @@ return {
 			ensure_installed = {
 				"chrome",
 			},
-			automatically_installation = true,
 		},
 		init = function(_, opts)
 			require("mason-nvim-dap").setup(opts)

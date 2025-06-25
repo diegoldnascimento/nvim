@@ -75,7 +75,7 @@ Below the list of the current plugins used in this configuration and how we are 
 
 ### Programming Language
 
-- [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) - Blazingly fast, thanks to the utilization of the native Tsserver communication protocol, similar to Visual Studio Code.
+- [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) - Blazingly fast, thanks to the utilization of the native TS_LS communication protocol, similar to Visual Studio Code.
 
 ### Mason
 

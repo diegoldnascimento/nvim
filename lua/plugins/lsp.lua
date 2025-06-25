@@ -144,11 +144,11 @@ return {
 			-- Configure server options from what was previously in nvim-lspconfig
 			local lspconfig = require("lspconfig")
 
-			-- Enable tsserver instead of vtsls
-			lspconfig.vtsls.setup({ enabled = false })
+			-- -- Enable ts_ls instead of vtsls
+			-- lspconfig.vtsls.setup({ enabled = false })
 
-			-- Setup tsserver
-			local tsserver_settings = {
+			-- Setup ts_ls
+			local ts_ls_settings = {
 				filetypes = {
 					"javascript",
 					"javascriptreact",
@@ -178,7 +178,7 @@ return {
 					},
 				},
 				on_attach = function(_, buffer)
-					-- Add tsserver specific keybindings
+					-- Add ts_ls specific keybindings
 					vim.keymap.set("n", "gD", function()
 						vim.lsp.buf.declaration()
 					end, { buffer = buffer, desc = "Go to Declaration" })
@@ -261,13 +261,13 @@ return {
 			}
 
 			-- Copy typescript settings to javascript
-			tsserver_settings.settings.javascript = vim.tbl_deep_extend(
+			ts_ls_settings.settings.javascript = vim.tbl_deep_extend(
 				"force",
 				{},
-				tsserver_settings.settings.typescript,
-				tsserver_settings.settings.javascript or {}
+				ts_ls_settings.settings.typescript,
+				ts_ls_settings.settings.javascript or {}
 			)
-			lspconfig.tsserver.setup(tsserver_settings)
+			lspconfig.ts_ls.setup(ts_ls_settings)
 
 			lsp_zero.setup()
 		end,
