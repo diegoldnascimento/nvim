@@ -22,7 +22,7 @@ return {
 		lazy = true,
 		opts = {
 			debug = false,
-			model = "gemini-2.5-pro",
+			model = "claude-sonnet-4",
 			show_help = "yes",
 			language = "English",
 			prompts = {
