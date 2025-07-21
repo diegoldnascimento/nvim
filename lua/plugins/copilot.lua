@@ -413,11 +413,13 @@ return {
 					end
 
 					local prompt = [[Generate a detailed pull request description using the following template:
-### Context(Why is this change being made?)
-### Description(What was done in this pull request?)
-### Code Changes(Summarize the technical changes made.)
-### Tests(What tests were added or changed?)
-### Risks(What could potentially break or require attention?)
+## Context(Why is this change being made?)
+## Description(What was done in this pull request?)
+## Functional Summary(Short functional summary) 
+## Code Changes(Summarize the technical changes made.)
+## Tests(What tests were added or changed?)
+## QA Steps(What are the steps to reproduce the htofix)
+## Risks(What could potentially break or require attention?)
 Git diff:]] .. diff
 
 					return prompt
