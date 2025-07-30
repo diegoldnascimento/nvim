@@ -413,6 +413,7 @@ return {
 					end
 
 					local prompt = [[Generate a detailed pull request description using the following template:
+## Title(Generate a PR title)
 ## Context(Why is this change being made?)
 ## Description(What was done in this pull request?)
 ## Functional Summary(Short functional summary) 
