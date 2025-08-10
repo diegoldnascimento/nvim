@@ -22,6 +22,8 @@ vim.g.maplocalleader = " "
 --
 --
 
+-- Insert mode: jj = ESC
+keymap("i", "jj", "<Esc>", opts)
 -- Remap Enter key to do nothing
 keymap("n", "<CR>", "<NOP>", opts)
 keymap("v", "<CR>", "<NOP>", opts)
