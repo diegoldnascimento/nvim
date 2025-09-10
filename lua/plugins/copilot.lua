@@ -16,13 +16,25 @@ return {
 		end,
 	},
 	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
+		config = function()
+			require("render-markdown").setup({
+				file_types = { "markdown", "copilot-chat" },
+			})
+		end,
+	},
+	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "main",
 		build = "make tiktoken",
 		lazy = true,
 		opts = {
 			debug = false,
-			model = "claude-sonnet-4",
+			model = "gpt-5-mini",
 			show_help = "yes",
 			language = "English",
 			prompts = {
@@ -402,8 +414,8 @@ return {
 
 					return prompt
 				end
-                
-                -- Implement the pull request generator function
+
+				-- Implement the pull request generator function
 				chat.integrations.actions.generate_pull_request = function()
 					-- Get git diff
 					local diff_handle = io.popen("git diff")
@@ -435,12 +447,22 @@ Git diff:]] .. diff
 				local prompt = require("CopilotChat").integrations.actions.run_git_code_review()
 				require("CopilotChat").ask(prompt)
 			end, {})
-			
+
 			vim.api.nvim_create_user_command("CopilotChatGeneratePullRequest", function()
 				-- Call the integrations function directly
 				local prompt = require("CopilotChat").integrations.actions.generate_pull_request()
 				require("CopilotChat").ask(prompt)
 			end, {})
+
+			-- Quick chat keybinding
+			vim.keymap.set("n", "<leader>cq", function()
+				local input = vim.fn.input("Quick Chat: ")
+				if input ~= "" then
+					require("CopilotChat").ask(input, {
+						selection = require("CopilotChat.select").buffer,
+					})
+				end
+			end, { desc = "CopilotChat - Quick chat" })
 		end,
 	},
 }
