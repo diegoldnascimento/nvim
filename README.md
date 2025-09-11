@@ -145,8 +145,8 @@ Below the list of the current plugins used in this configuration and how we are 
 
 ### AI 
 
-- [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim) - GitHub Copilot is an AI pair programmer that helps you write code faster and with less work.
-- [vectorcode.nvim](https://github.com/Davidyz/VectorCode) - VectorCode is a code repository indexing tool. It helps you write better prompt for your coding LLMs by indexing and providing information about the code repository you're working on. This repository also contains the corresponding neovim plugin because that's what I used to write this tool.
+- [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim) - AI-powered coding companion for Neovim with support for multiple LLM providers including Anthropic's Claude. Features include chat interface, inline code assistance, code review, test generation, and comprehensive prompt library for various coding tasks.
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Enhanced markdown rendering for Neovim with support for syntax highlighting, better formatting, and improved readability. Works seamlessly with codecompanion chat interfaces.
 
 ### Others
 
