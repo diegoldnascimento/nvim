@@ -52,8 +52,18 @@ return {
 						})
 					end,
 				},
+				memory = {
+					claude = {
+						description = "Memory files for Claude Code users",
+						files = {
+							"~/.claude/CLAUDE.md",
+							"CLAUDE.md",
+							"CLAUDE.local.md",
+						},
+					},
+				},
 				prompt_library = {
-					-- Code related prompts
+					-- Code Analysis & Explanation
 					["Explain Code"] = {
 						strategy = "chat",
 						description = "Explain how the selected code works",
@@ -65,11 +75,35 @@ return {
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are an expert {{filetype}} developer. Provide clear, educational explanations suitable for code reviews and documentation.",
+							},
+							{
 								role = "user",
-								content = "Please explain how the following code works:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+File: {{filename}}
+Language: {{filetype}}
+Project context: {{buf_path}}
+
+Please explain how the following code works:
+
+```{{filetype}}
+{{selection}}
+```
+
+Focus on:
+- The main purpose and algorithm
+- Key data structures and design patterns used
+- Time/space complexity if relevant
+- How it handles edge cases
+- Integration points with other code
+
+Provide a clear explanation that would help a mid-level developer understand the implementation.]],
 							},
 						},
 					},
+
+					-- Code Quality & Review
 					["Code Review"] = {
 						strategy = "chat",
 						description = "Perform a detailed code review",
@@ -78,14 +112,88 @@ return {
 							modes = { "v" },
 							slash_cmd = "review",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are a senior software engineer with expertise in {{filetype}} and modern best practices. Provide actionable, specific feedback that improves code quality, maintainability, and performance.",
+							},
+							{
 								role = "user",
-								content = "Please perform a detailed review of the following code, including suggestions for improvement, potential bugs, and adherence to best practices:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Please perform a comprehensive code review:
+
+```{{filetype}}
+{{selection}}
+```
+
+Review checklist:
+- [ ] **Correctness**: Logic errors, boundary conditions, null handling
+- [ ] **Performance**: Algorithmic complexity, database queries, caching opportunities
+- [ ] **Security**: Input validation, authentication, data sanitization
+- [ ] **Maintainability**: Code clarity, naming, structure
+- [ ] **Error Handling**: Exception handling, error messages, recovery
+- [ ] **Testing**: What tests are needed, edge cases to cover
+- [ ] **Documentation**: Missing docs, unclear sections
+
+Format your review as:
+1. **Critical Issues** (must fix)
+2. **Important Suggestions** (should fix)
+3. **Minor Improvements** (consider fixing)
+4. **Positive Aspects** (what's done well)
+
+Provide specific line references and code examples for suggested changes.]],
 							},
 						},
 					},
+
+					["Security Audit"] = {
+						strategy = "chat",
+						description = "Perform security analysis",
+						opts = {
+							mapping = "<leader>cs",
+							modes = { "v" },
+							slash_cmd = "security",
+							auto_submit = true,
+							stop_context_insertion = true,
+						},
+						prompts = {
+							{
+								role = "system",
+								content = "You are a security expert specializing in application security and OWASP guidelines.",
+							},
+							{
+								role = "user",
+								content = [[
+Perform a comprehensive security audit:
+
+```{{filetype}}
+{{selection}}
+```
+
+Analyze for:
+- **Injection vulnerabilities**: SQL, NoSQL, Command, LDAP injection
+- **Authentication & Authorization**: Weak auth, privilege escalation
+- **Data Exposure**: Sensitive data leaks, improper encryption
+- **XSS & CSRF**: Cross-site scripting and request forgery
+- **Input Validation**: Unsafe input handling, buffer overflows
+- **Configuration Security**: Hardcoded secrets, weak configs
+- **Dependencies**: Known vulnerable libraries
+
+For each issue found:
+1. **Severity**: Critical/High/Medium/Low
+2. **Description**: What's the vulnerability
+3. **Impact**: What could an attacker do
+4. **Remediation**: Specific fix with code example
+5. **Prevention**: How to avoid similar issues
+
+Include CWE/CVE references where applicable.]],
+							},
+						},
+					},
+
+					-- Testing
 					["Generate Tests"] = {
 						strategy = "chat",
 						description = "Generate comprehensive unit tests",
@@ -94,44 +202,172 @@ return {
 							modes = { "v" },
 							slash_cmd = "tests",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are a test automation expert. Generate comprehensive, maintainable tests following TDD best practices.",
+							},
+							{
 								role = "user",
-								content = "Please explain how the selected code works, then generate a comprehensive suite of unit tests for it. Ensure the tests cover a wide range of scenarios, including edge cases, exception handling, and data validation:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate comprehensive tests for:
+
+```{{filetype}}
+{{selection}}
+```
+
+Requirements:
+1. **Framework**: Use the appropriate testing framework for {{filetype}}
+2. **Coverage Types**:
+   - Happy path scenarios
+   - Edge cases (null, empty, boundary values)
+   - Error scenarios and exception handling
+   - Concurrent access if applicable
+   - Performance constraints if relevant
+3. **Test Structure**:
+   - Descriptive names: should_expectedBehavior_when_condition
+   - Proper setup/teardown
+   - Test isolation (no dependencies between tests)
+   - Mock external dependencies
+4. **Assertions**: Comprehensive, specific assertions
+5. **Documentation**: Comment complex test scenarios
+
+Target: >80% code coverage with meaningful tests
+
+Provide complete, runnable test code with all necessary imports and setup.]],
 							},
 						},
 					},
+
+					-- Refactoring & Optimization
 					["Refactor Code"] = {
 						strategy = "chat",
-						description = "Refactor code for clarity and readability",
+						description = "Refactor code for clarity and maintainability",
 						opts = {
 							mapping = "<leader>cR",
 							modes = { "v" },
 							slash_cmd = "refactor",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are a software architect focused on clean code, SOLID principles, and maintainability.",
+							},
+							{
 								role = "user",
-								content = "Please refactor the following code to improve its clarity and readability. Explain the changes and reasoning behind the choices:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Refactor this code for improved clarity and maintainability:
+
+```{{filetype}}
+{{selection}}
+```
+
+Requirements:
+- Apply SOLID principles and design patterns where appropriate
+- Improve naming for clarity and expressiveness
+- Reduce complexity and improve readability
+- Extract methods/functions for reusability
+- Follow {{filetype}} idioms and best practices
+- Preserve all existing functionality
+- Add explanatory comments for complex logic
+
+Output format:
+1. **Refactored Code** (ready to paste)
+2. **Change Summary** (what was changed)
+3. **Justification** (why each change improves the code)
+4. **Metrics** (complexity reduction, lines saved, etc.)
+
+Ensure the refactored code is production-ready and well-structured.]],
 							},
 						},
 					},
+
+					["Performance Optimization"] = {
+						strategy = "chat",
+						description = "Optimize code performance",
+						opts = {
+							mapping = "<leader>co",
+							modes = { "v" },
+							slash_cmd = "optimize",
+							auto_submit = true,
+							stop_context_insertion = true,
+						},
+						prompts = {
+							{
+								role = "system",
+								content = "You are a performance engineer specializing in optimization and scalability.",
+							},
+							{
+								role = "user",
+								content = [[
+Analyze and optimize the performance of:
+
+```{{filetype}}
+{{selection}}
+```
+
+Analysis areas:
+1. **Time Complexity**: Current vs. optimized Big-O
+2. **Space Complexity**: Memory usage optimization
+3. **Database/IO**: Query optimization, batching, caching
+4. **Algorithmic**: Better algorithms or data structures
+5. **Parallelization**: Async/concurrent processing opportunities
+6. **Caching**: Strategic caching points
+
+For each optimization:
+- **Current Issue**: What's slow and why
+- **Proposed Solution**: Specific optimization
+- **Performance Gain**: Expected improvement (with metrics)
+- **Trade-offs**: Any downsides to consider
+- **Implementation**: Optimized code
+
+Provide benchmarks or complexity analysis to justify changes.]],
+							},
+						},
+					},
+
+					-- Error Handling & Debugging
 					["Fix Code"] = {
 						strategy = "chat",
 						description = "Fix code to work as intended",
 						opts = {
 							slash_cmd = "fix",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are a debugging expert. Identify root causes and provide robust fixes.",
+							},
+							{
 								role = "user",
-								content = "Please fix the following code to make it work as intended:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Please analyze and fix the following code:
+
+```{{filetype}}
+{{selection}}
+```
+
+Diagnostics: {{diagnostics}}
+
+Provide:
+1. **Issue Identification**: What's wrong with the current code
+2. **Root Cause Analysis**: Why the issue occurs
+3. **Fixed Code**: Complete corrected version (ready to paste)
+4. **Explanation**: Detailed explanation of changes
+5. **Test Cases**: How to verify the fix works
+6. **Prevention Tips**: How to avoid this issue in the future
+
+Ensure the fix is robust and handles edge cases properly.]],
 							},
 						},
 					},
+
 					["Fix Error"] = {
 						strategy = "chat",
 						description = "Explain error and provide solution",
@@ -139,209 +375,542 @@ return {
 							mapping = "<leader>cf",
 							slash_cmd = "fixerror",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are a debugging specialist. Provide clear explanations and reliable solutions.",
+							},
+							{
 								role = "user",
-								content = "Please explain the error in the following text and provide a solution:\n\n```{{filetype}}\n{{selection}}\n```\n\nDiagnostics: {{diagnostics}}",
+								content = [[
+Analyze and fix this error:
+
+```{{filetype}}
+{{selection}}
+```
+
+Diagnostics/Error: {{diagnostics}}
+
+Please provide:
+1. **Error Explanation**: What the error means in simple terms
+2. **Root Cause**: Why this error is occurring
+3. **Solution**: Fixed code with the error resolved
+4. **Alternative Approaches**: Other ways to solve this
+5. **Related Issues**: Common related problems to watch for
+6. **Best Practices**: How to prevent similar errors
+
+Make sure the solution is production-ready and well-tested.]],
 							},
 						},
 					},
+
+					-- Code Quality Improvements
 					["Better Naming"] = {
 						strategy = "chat",
 						description = "Suggest better variable and function names",
 						opts = {
 							slash_cmd = "naming",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please provide better names for the following variables and functions:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Improve naming in this code for better readability:
+
+```{{filetype}}
+{{selection}}
+```
+
+Guidelines:
+- Use descriptive, self-documenting names
+- Follow {{filetype}} naming conventions
+- Avoid abbreviations unless widely understood
+- Use names that reveal intent
+- Consider the domain context
+
+Provide:
+1. **Current → Suggested** name mappings
+2. **Reasoning** for each change
+3. **Refactored code** with new names
+4. **Impact analysis** on readability
+
+Focus on making the code more maintainable and easier to understand.]],
 							},
 						},
 					},
+
+					-- Documentation
 					["Generate Documentation"] = {
 						strategy = "chat",
-						description = "Generate documentation for code",
+						description = "Generate comprehensive documentation",
 						opts = {
 							mapping = "<leader>cD",
 							modes = { "v" },
 							slash_cmd = "docs",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are a technical writer specializing in API documentation and developer guides.",
+							},
+							{
 								role = "user",
-								content = "Please provide documentation for the following code:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate comprehensive documentation for:
+
+```{{filetype}}
+{{selection}}
+```
+
+Include:
+1. **Overview**: Purpose, use cases, and design decisions
+2. **API Reference**:
+   - Function/method signatures
+   - Parameters (types, constraints, defaults, required/optional)
+   - Return values (type, structure, possible values)
+   - Exceptions/errors (when thrown, how to handle)
+   - Side effects
+3. **Usage Examples**: 
+   - Basic usage
+   - Advanced scenarios
+   - Common patterns
+   - Error handling examples
+4. **Performance Notes**: Complexity, optimization tips
+5. **Dependencies**: External requirements, version constraints
+6. **Changelog**: Version history if applicable
+
+Use the appropriate format for {{filetype}}:
+- JavaScript/TypeScript: JSDoc with full type annotations
+- Python: Google-style docstrings
+- Java: Complete Javadoc
+- Go: godoc format
+- C#: XML documentation comments
+
+Ensure documentation is complete, accurate, and helpful for developers.]],
 							},
 						},
 					},
+
 					["Swagger API Docs"] = {
 						strategy = "chat",
-						description = "Generate Swagger API documentation",
+						description = "Generate Swagger/OpenAPI documentation",
 						opts = {
 							slash_cmd = "swagger",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are an API documentation expert specializing in OpenAPI/Swagger specifications.",
+							},
+							{
 								role = "user",
-								content = "Please provide documentation for the following API using Swagger:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate complete Swagger/OpenAPI documentation:
+
+```{{filetype}}
+{{selection}}
+```
+
+Include:
+1. **Endpoint definitions**: paths, methods, operations
+2. **Request specifications**:
+   - Parameters (path, query, header, body)
+   - Request body schemas
+   - Content types
+3. **Response specifications**:
+   - Status codes with descriptions
+   - Response schemas
+   - Error responses
+4. **Security definitions**: Authentication/authorization
+5. **Examples**: Request/response examples
+6. **Models/Schemas**: Data model definitions
+
+Follow OpenAPI 3.0+ specification.
+Include descriptions, examples, and constraints for all fields.
+Make it ready for Swagger UI consumption.]],
 							},
 						},
 					},
+
 					["JSDoc Documentation"] = {
 						strategy = "chat",
-						description = "Generate JSDoc documentation",
+						description = "Generate complete JSDoc documentation",
 						opts = {
 							slash_cmd = "jsdoc",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please write JSDoc for the following API using Swagger:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate comprehensive JSDoc documentation:
+
+```{{filetype}}
+{{selection}}
+```
+
+Requirements:
+- Complete type annotations using JSDoc syntax
+- @param with types, descriptions, and optional/default indicators
+- @returns with type and description
+- @throws for exceptions
+- @example with practical usage
+- @since, @deprecated, @see as appropriate
+- @typedef for complex types
+- Class documentation with @class, @constructor
+- Method documentation with full details
+
+Make it IntelliSense-friendly and comprehensive.]],
 							},
 						},
 					},
-					-- Text related prompts
+
+					-- Type Conversion
+					["Convert to TypeScript"] = {
+						strategy = "chat",
+						description = "Convert JavaScript to TypeScript with full types",
+						opts = {
+							slash_cmd = "typescript",
+							auto_submit = true,
+							stop_context_insertion = true,
+						},
+						prompts = {
+							{
+								role = "system",
+								content = "You are a TypeScript expert. Convert code with comprehensive, strict typing.",
+							},
+							{
+								role = "user",
+								content = [[
+Convert to TypeScript with comprehensive type safety:
+
+```javascript
+{{selection}}
+```
+
+Requirements:
+1. **Type Annotations**: Add types to all variables, parameters, returns
+2. **Interfaces/Types**: Create appropriate type definitions
+3. **Generics**: Use where beneficial for reusability
+4. **Strict Mode**: Ensure compatibility with strict TypeScript settings
+5. **Type Guards**: Add runtime type checking where needed
+6. **Enums/Constants**: Convert magic values to enums
+7. **Utility Types**: Use built-in TypeScript utilities
+
+Maintain all functionality while maximizing type safety.
+Follow TypeScript best practices and conventions.
+Make the code more maintainable and self-documenting.]],
+							},
+						},
+					},
+
+					-- Text Processing
 					["Summarize Text"] = {
 						strategy = "chat",
-						description = "Summarize the selected text",
+						description = "Create a concise summary",
 						opts = {
 							slash_cmd = "summarize",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please summarize the following text:\n\n{{selection}}",
+								content = [[
+Summarize the following text concisely:
+
+{{selection}}
+
+Provide:
+1. **Key Points**: Main ideas in bullet form
+2. **Brief Summary**: 2-3 sentence overview
+3. **Action Items**: If any are mentioned
+4. **Important Details**: Critical information to remember
+
+Keep the summary clear, accurate, and actionable.]],
 							},
 						},
 					},
+
 					["Fix Spelling"] = {
 						strategy = "chat",
 						description = "Correct grammar and spelling errors",
 						opts = {
 							slash_cmd = "spelling",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please correct any grammar and spelling errors in the following text:\n\n{{selection}}",
+								content = [[
+Correct grammar and spelling errors:
+
+{{selection}}
+
+Fix all:
+- Spelling mistakes
+- Grammar errors
+- Punctuation issues
+- Capitalization errors
+
+Maintain the original tone and meaning.
+Only fix errors, don't rewrite for style.]],
 							},
 						},
 					},
+
 					["Improve Wording"] = {
 						strategy = "chat",
-						description = "Improve grammar and wording",
+						description = "Enhance clarity and professionalism",
 						opts = {
 							slash_cmd = "wording",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please improve the grammar and wording of the following text:\n\n{{selection}}",
+								content = [[
+Improve the wording for clarity and professionalism:
+
+{{selection}}
+
+Enhance:
+- Clarity and conciseness
+- Professional tone
+- Sentence structure
+- Word choice
+- Flow and readability
+
+Maintain the core message while making it more polished.]],
 							},
 						},
 					},
+
 					["Make Concise"] = {
 						strategy = "chat",
-						description = "Make text more concise",
+						description = "Reduce length while preserving meaning",
 						opts = {
 							slash_cmd = "concise",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please rewrite the following text to make it more concise:\n\n{{selection}}",
+								content = [[
+Make this text more concise without losing important information:
+
+{{selection}}
+
+Goals:
+- Reduce word count by 30-50%
+- Maintain all key information
+- Improve clarity
+- Remove redundancy
+- Use active voice
+
+Provide the condensed version that's punchy and clear.]],
 							},
 						},
 					},
-					-- UML related prompts
+
+					-- UML Diagrams
 					["PlantUML Class Diagram"] = {
 						strategy = "chat",
 						description = "Generate UML class diagram",
 						opts = {
 							slash_cmd = "class",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please generate a UML class diagram for the following code using PlantUML:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate a detailed PlantUML class diagram:
+
+```{{filetype}}
+{{selection}}
+```
+
+Include:
+- All classes with attributes and methods
+- Visibility modifiers (+public, -private, #protected)
+- Relationships (inheritance, composition, aggregation, association)
+- Interfaces and abstract classes
+- Multiplicity on associations
+- Stereotypes where appropriate
+
+Format as complete PlantUML code ready to render.]],
 							},
 						},
 					},
+
 					["PlantUML Sequence Diagram"] = {
 						strategy = "chat",
 						description = "Generate UML sequence diagram",
 						opts = {
 							slash_cmd = "sequence",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please generate a UML sequence diagram for the following code using PlantUML:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate a PlantUML sequence diagram showing the flow:
+
+```{{filetype}}
+{{selection}}
+```
+
+Include:
+- All actors/participants
+- Method calls with parameters
+- Return values
+- Loops and conditionals
+- Asynchronous calls if present
+- Error/exception flows
+- Notes for complex logic
+
+Show the complete interaction flow clearly.]],
 							},
 						},
 					},
+
 					["PlantUML Use Case Diagram"] = {
 						strategy = "chat",
 						description = "Generate UML use case diagram",
 						opts = {
 							slash_cmd = "usecase",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please generate a UML use case diagram for the following code using PlantUML:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate a PlantUML use case diagram:
+
+```{{filetype}}
+{{selection}}
+```
+
+Include:
+- Actors (users, systems)
+- Use cases with clear names
+- Relationships (include, extend, generalization)
+- System boundaries
+- Primary and secondary actors
+
+Focus on user interactions and system capabilities.]],
 							},
 						},
 					},
+
 					["PlantUML Activity Diagram"] = {
 						strategy = "chat",
 						description = "Generate UML activity diagram",
 						opts = {
 							slash_cmd = "activity",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
 								role = "user",
-								content = "Please generate a UML activity diagram for the following code using PlantUML:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Generate a PlantUML activity diagram for the workflow:
+
+```{{filetype}}
+{{selection}}
+```
+
+Include:
+- Start and end points
+- Activities and actions
+- Decision points with conditions
+- Parallel activities (fork/join)
+- Swimlanes if multiple actors
+- Exception handling flows
+
+Show the complete process flow clearly.]],
 							},
 						},
 					},
+
+					-- Algorithm Analysis
 					["Algorithm Analysis"] = {
 						strategy = "chat",
-						description = "Analyze algorithm complexity",
+						description = "Analyze algorithm complexity and efficiency",
 						opts = {
 							slash_cmd = "analyze",
 							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are an algorithms expert specializing in complexity analysis and optimization.",
+							},
+							{
 								role = "user",
-								content = "Please analyze the following data structure algorithm and suggest the most efficient approach for time-complexity and space-complexity using Javascript:\n\n```{{filetype}}\n{{selection}}\n```",
+								content = [[
+Analyze this algorithm/data structure implementation:
+
+```{{filetype}}
+{{selection}}
+```
+
+Provide:
+1. **Time Complexity**:
+   - Best case: O(?)
+   - Average case: O(?)
+   - Worst case: O(?)
+   - Explanation of each case
+2. **Space Complexity**:
+   - Auxiliary space: O(?)
+   - Total space: O(?)
+3. **Optimization Opportunities**:
+   - Better algorithms
+   - Better data structures
+   - Implementation improvements
+4. **Comparison**:
+   - Alternative approaches
+   - Trade-offs analysis
+5. **Code**: Optimized implementation in {{filetype}}
+
+Focus on practical improvements and real-world performance.]],
 							},
 						},
 					},
-					-- Git related prompts
+
+					-- Git Integration
 					["Git Code Review"] = {
 						strategy = "chat",
 						description = "Review git changes with detailed feedback",
 						opts = {
 							mapping = "<leader>cG",
 							slash_cmd = "gitreview",
+							auto_submit = true,
+							stop_context_insertion = true,
 						},
 						prompts = {
+							{
+								role = "system",
+								content = "You are a senior engineer performing a pull request review. Focus on code quality, security, performance, and maintainability. Be constructive but thorough.",
+							},
 							{
 								role = "user",
 								content = function()
@@ -352,8 +921,8 @@ return {
 										diff_handle:close()
 									end
 
-									-- Get last 3 commits
-									local commits_handle = io.popen("git log --oneline -n 3")
+									-- Get last 5 commits for better context
+									local commits_handle = io.popen("git log --oneline -n 5")
 									local commits = commits_handle and commits_handle:read("*a")
 										or "Error retrieving commits"
 									if commits_handle then
@@ -404,7 +973,7 @@ return {
 											full_context = full_context
 												.. "\n\n## File: "
 												.. path
-												.. "\n```ts\n"
+												.. "\n```\n"
 												.. content
 												.. "\n```"
 										else
@@ -418,38 +987,71 @@ return {
 									-- Build the prompt
 									return string.format(
 										[[
-You are a senior software engineer performing a pull request code review.
+## Pull Request Review
 
-## Branch
+**Branch**: %s → %s
+**Files Changed**: %d
+
+### Recent Commits
+```
+%s
+```
+
+### Git Diff
+```diff
+%s
+```
+
+### Full File Context
 %s
 
-## Recent Commits
-%s
+Please provide a thorough code review using this format:
 
-## Git Diff
-%s
+#### 🎯 Summary
+Brief overview of what these changes accomplish
 
-## Full Context
-%s
+#### ✅ What's Good
+Positive aspects of the implementation
 
-Please provide a comprehensive code review with the following structure:
-1. **Overview**: Brief summary of the changes
-2. **Positive Aspects**: What looks good in the implementation
-3. **Issues and Suggestions**: Specific problems found with line references and suggested fixes
-4. **Performance Considerations**: Any potential performance impacts
-5. **Security Considerations**: Any security implications
-6. **Testing Considerations**: What should be tested to verify these changes
-7. **Conclusion**: Overall assessment and recommendation (approve/request changes)
+#### 🚨 Critical Issues (Blocking)
+Must be fixed before merge:
+- Issue description
+- File:Line reference
+- Suggested fix with code example
 
-Focus particularly on:
-- Code correctness and potential bugs
-- Error handling robustness
-- Adherence to project patterns and best practices
-- Edge cases that might not be handled
+#### ⚠️ Important Suggestions (Non-blocking)
+Should be addressed but not blocking:
+- Suggestion description
+- File:Line reference
+- Recommended improvement
 
-Now provide a code review focusing on quality, bugs, and improvements.
-]],
+#### 💡 Minor Improvements (Optional)
+Nice-to-have enhancements
+
+#### 🔍 Questions for Author
+Clarifications needed
+
+#### 📊 Impact Assessment
+- **Performance Impact**: [None/Low/Medium/High]
+- **Security Concerns**: [None/Present - describe]
+- **Breaking Changes**: [No/Yes - describe]
+- **Test Coverage**: [Adequate/Needs improvement - specify]
+- **Documentation**: [Complete/Needs updates - specify]
+
+#### ✓ Verdict
+[✅ Approve / 🔄 Request Changes / 💬 Needs Discussion]
+
+Focus on:
+- Bugs and logic errors
+- Security vulnerabilities
+- Performance issues
+- Code maintainability
+- Test coverage
+- Error handling
+- Edge cases]],
 										branch,
+										base_branch,
+										#file_paths,
 										commits,
 										diff,
 										full_context
@@ -458,26 +1060,203 @@ Now provide a code review focusing on quality, bugs, and improvements.
 							},
 						},
 					},
+
 					["Generate Pull Request"] = {
 						strategy = "chat",
-						description = "Generate a pull request description",
+						description = "Generate comprehensive PR description",
 						opts = {
 							mapping = "<leader>cP",
 							slash_cmd = "pullrequest",
+							stop_context_insertion = true,
+							auto_submit = true,
 						},
 						prompts = {
 							{
+								role = "system",
+								content = "You are creating a professional pull request description that clearly communicates changes, impact, and testing to reviewers.",
+							},
+							{
 								role = "user",
 								content = function()
-									-- Get git diff
+									-- Get comprehensive git information
 									local diff_handle = io.popen("git diff")
 									local diff = diff_handle and diff_handle:read("*a") or "Error retrieving git diff"
 									if diff_handle then
 										diff_handle:close()
 									end
 
-									return "Generate a detailed pull request description using the following template:\n## Title(Generate a PR title)\n## Context(Why is this change being made?)\n## Description(What was done in this pull request?)\n## Functional Summary(Short functional summary)\n## Code Changes(Summarize the technical changes made.)\n## Tests(What tests were added or changed?)\n## QA Steps(What are the steps to reproduce the fix)\n## Risks(What could potentially break or require attention?)\n\nGit diff:\n"
-										.. diff
+									-- Get commit messages for context
+									local commits_handle = io.popen("git log --oneline -n 10")
+									local commits = commits_handle and commits_handle:read("*a") or ""
+									if commits_handle then
+										commits_handle:close()
+									end
+
+									-- Get statistics
+									local stats_handle = io.popen("git diff --stat")
+									local stats = stats_handle and stats_handle:read("*a") or ""
+									if stats_handle then
+										stats_handle:close()
+									end
+
+									return string.format(
+										[[
+Generate a professional pull request description based on these changes:
+
+### Commits
+```
+%s
+```
+
+### Statistics
+```
+%s
+```
+
+### Diff
+```diff
+%s
+```
+
+Use this template:
+
+## 🎯 Title
+[Generate a clear, descriptive PR title following conventional commits format]
+
+## 📋 Type of Change
+- [ ] Bug fix (non-breaking change fixing an issue)
+- [ ] New feature (non-breaking change adding functionality)
+- [ ] Breaking change (fix or feature causing existing functionality to change)
+- [ ] Documentation update
+- [ ] Performance improvement
+- [ ] Code refactoring
+
+## 🔍 Context
+[Why is this change necessary? What problem does it solve? Link to issue if applicable]
+
+## 📝 Description
+[Detailed description of what was changed and how it works]
+
+## 🛠️ Technical Details
+[Explain the technical implementation, architecture decisions, and approach taken]
+
+### Key Changes:
+- [List major changes with brief explanations]
+
+### Code Structure:
+[Describe any structural changes or new patterns introduced]
+
+## ✅ Testing
+- [ ] Unit tests pass
+- [ ] Integration tests pass
+- [ ] Manual testing completed
+- [ ] Performance testing (if applicable)
+
+### Test Coverage:
+[Describe what new tests were added and what they cover]
+
+### Manual Testing Steps:
+1. [Step-by-step QA instructions]
+2. [Include expected results]
+
+## 📸 Screenshots/Videos
+[If UI changes, include before/after screenshots]
+
+## 🚀 Deployment Notes
+[Any special deployment considerations, migrations, or configuration changes]
+
+## 📊 Performance Impact
+[Describe any performance implications, benchmarks if available]
+
+## 🔒 Security Considerations
+[Any security implications or considerations for review]
+
+## 📚 Documentation
+- [ ] Code comments updated
+- [ ] README updated (if needed)
+- [ ] API documentation updated (if needed)
+- [ ] Changelog updated
+
+## ⚠️ Breaking Changes
+[List any breaking changes and migration guide if applicable]
+
+## 🔗 Related Issues/PRs
+[Link to related issues, PRs, or documentation]
+
+## 👥 Reviewers Checklist
+- [ ] Code follows project style guidelines
+- [ ] Self-review completed
+- [ ] Comments added for complex logic
+- [ ] No unnecessary console.logs or debug code
+- [ ] All tests passing
+- [ ] Security implications considered
+- [ ] Performance impact assessed]],
+										commits,
+										stats,
+										diff
+									)
+								end,
+							},
+						},
+					},
+
+					-- Commit Message Generator
+					["Generate Commit Message"] = {
+						strategy = "chat",
+						description = "Generate conventional commit message",
+						opts = {
+							mapping = "<leader>cC",
+							slash_cmd = "commit",
+							stop_context_insertion = true,
+							auto_submit = true,
+						},
+						prompts = {
+							{
+								role = "system",
+								content = "You are an expert at writing clear, conventional commit messages that follow best practices.",
+							},
+							{
+								role = "user",
+								content = function()
+									local diff_handle = io.popen("git diff --staged")
+									local diff = diff_handle and diff_handle:read("*a") or ""
+									if diff_handle then
+										diff_handle:close()
+									end
+
+									if diff == "" then
+										diff_handle = io.popen("git diff")
+										diff = diff_handle and diff_handle:read("*a") or "No changes detected"
+										if diff_handle then
+											diff_handle:close()
+										end
+									end
+
+									return string.format(
+										[[
+Generate a conventional commit message for these changes:
+
+```diff
+%s
+```
+
+Follow the conventional commits format:
+- type(scope): subject (50 chars max)
+- blank line
+- body (72 chars per line, explain what and why)
+- blank line  
+- footer (breaking changes, issues closed)
+
+Types: feat, fix, docs, style, refactor, perf, test, chore, build, ci
+
+Provide:
+1. **Primary commit message** (ready to use)
+2. **Alternative versions** (2-3 options)
+3. **Explanation** of the chosen type and scope
+
+Make it clear, specific, and informative.]],
+										diff
+									)
 								end,
 							},
 						},
@@ -492,7 +1271,7 @@ Now provide a code review focusing on quality, bugs, and improvements.
 						window = {
 							layout = "vertical", -- float|vertical|horizontal|buffer
 							width = 0.45,
-							height = 0.4,
+							height = 0.5,
 							relative = "editor",
 							border = "single",
 							title = "CodeCompanion",
@@ -505,6 +1284,7 @@ Now provide a code review focusing on quality, bugs, and improvements.
 				opts = {
 					log_level = "INFO", -- TRACE|DEBUG|ERROR|INFO
 					send_code = true, -- Send code context to LLM
+					auto_submit_exit_on_leave = false, -- Auto submit when leaving chat buffer
 				},
 			})
 		end,
@@ -560,6 +1340,18 @@ Now provide a code review focusing on quality, bugs, and improvements.
 				mode = { "n", "v" },
 			},
 			{
+				"<leader>cs",
+				"<cmd>CodeCompanion /security<cr>",
+				desc = "CodeCompanion - Security audit",
+				mode = { "v" },
+			},
+			{
+				"<leader>co",
+				"<cmd>CodeCompanion /optimize<cr>",
+				desc = "CodeCompanion - Optimize performance",
+				mode = { "v" },
+			},
+			{
 				"<leader>cG",
 				"<cmd>CodeCompanion /gitreview<cr>",
 				desc = "CodeCompanion - Git code review",
@@ -569,6 +1361,12 @@ Now provide a code review focusing on quality, bugs, and improvements.
 				"<leader>cP",
 				"<cmd>CodeCompanion /pullrequest<cr>",
 				desc = "CodeCompanion - Generate PR description",
+				mode = { "n" },
+			},
+			{
+				"<leader>cC",
+				"<cmd>CodeCompanion /commit<cr>",
+				desc = "CodeCompanion - Generate commit message",
 				mode = { "n" },
 			},
 			-- Action palette
@@ -602,6 +1400,19 @@ Now provide a code review focusing on quality, bugs, and improvements.
 				"<leader>cl",
 				"<cmd>CodeCompanionChat Reset<cr>",
 				desc = "CodeCompanion - Reset chat",
+				mode = { "n", "v" },
+			},
+			-- Additional useful keybindings
+			{
+				"<leader>cx",
+				"<cmd>CodeCompanion /explain<cr>",
+				desc = "CodeCompanion - Explain (alias)",
+				mode = { "v" },
+			},
+			{
+				"<leader>ci",
+				"<cmd>CodeCompanion /implement<cr>",
+				desc = "CodeCompanion - Implement feature",
 				mode = { "n", "v" },
 			},
 		},
