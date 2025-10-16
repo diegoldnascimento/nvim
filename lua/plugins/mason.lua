@@ -31,7 +31,6 @@ return {
 					"yamlls",
 					"lua_ls",
 					"ts_ls",
-					"ltex",
 					"svelte",
 					"bashls",
 					"sqlls",
