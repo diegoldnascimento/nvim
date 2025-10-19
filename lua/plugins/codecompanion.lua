@@ -36,7 +36,7 @@ return {
 							},
 							schema = {
 								model = {
-									default = "claude-sonnet-4-20250514",
+									default = "claude-sonnet-4-5-20250929",
 								},
 							},
 						})
@@ -102,7 +102,7 @@ Provide a clear explanation that would help a mid-level developer understand the
 							modes = { "v" },
 							slash_cmd = "review",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -146,7 +146,7 @@ Provide specific line references and code examples for suggested changes.]],
 							modes = { "v" },
 							slash_cmd = "security",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -192,7 +192,7 @@ Include CWE/CVE references where applicable.]],
 							modes = { "v" },
 							slash_cmd = "tests",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -240,7 +240,7 @@ Provide complete, runnable test code with all necessary imports and setup.]],
 							modes = { "v" },
 							slash_cmd = "refactor",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -284,7 +284,7 @@ Ensure the refactored code is production-ready and well-structured.]],
 							modes = { "v" },
 							slash_cmd = "optimize",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -327,7 +327,7 @@ Provide benchmarks or complexity analysis to justify changes.]],
 						opts = {
 							slash_cmd = "fix",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -365,7 +365,7 @@ Ensure the fix is robust and handles edge cases properly.]],
 							mapping = "<leader>cf",
 							slash_cmd = "fixerror",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -403,7 +403,7 @@ Make sure the solution is production-ready and well-tested.]],
 						opts = {
 							slash_cmd = "naming",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -442,7 +442,7 @@ Focus on making the code more maintainable and easier to understand.]],
 							modes = { "v" },
 							slash_cmd = "docs",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -493,7 +493,7 @@ Ensure documentation is complete, accurate, and helpful for developers.]],
 						opts = {
 							slash_cmd = "swagger",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -536,7 +536,7 @@ Make it ready for Swagger UI consumption.]],
 						opts = {
 							slash_cmd = "jsdoc",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -571,7 +571,7 @@ Make it IntelliSense-friendly and comprehensive.]],
 						opts = {
 							slash_cmd = "typescript",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -610,7 +610,7 @@ Make the code more maintainable and self-documenting.]],
 						opts = {
 							slash_cmd = "summarize",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -637,7 +637,7 @@ Keep the summary clear, accurate, and actionable.]],
 						opts = {
 							slash_cmd = "spelling",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -665,7 +665,7 @@ Only fix errors, don't rewrite for style.]],
 						opts = {
 							slash_cmd = "wording",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -693,7 +693,7 @@ Maintain the core message while making it more polished.]],
 						opts = {
 							slash_cmd = "concise",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -722,7 +722,7 @@ Provide the condensed version that's punchy and clear.]],
 						opts = {
 							slash_cmd = "class",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -753,7 +753,7 @@ Format as complete PlantUML code ready to render.]],
 						opts = {
 							slash_cmd = "sequence",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -785,7 +785,7 @@ Show the complete interaction flow clearly.]],
 						opts = {
 							slash_cmd = "usecase",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -815,7 +815,7 @@ Focus on user interactions and system capabilities.]],
 						opts = {
 							slash_cmd = "activity",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -847,7 +847,7 @@ Show the complete process flow clearly.]],
 						opts = {
 							slash_cmd = "analyze",
 							auto_submit = true,
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 						},
 						prompts = {
 							{
@@ -1051,139 +1051,363 @@ Focus on:
 						},
 					},
 
-					["Generate Pull Request"] = {
+					["Generate Merge Request"] = {
 						strategy = "chat",
 						description = "Generate comprehensive PR description",
 						opts = {
 							mapping = "<leader>cP",
 							slash_cmd = "pullrequest",
-							stop_context_insertion = true,
 							auto_submit = true,
 						},
 						prompts = {
 							{
 								role = "system",
-								content = "You are creating a professional pull request description that clearly communicates changes, impact, and testing to reviewers.",
+								content = [[You are creating a professional pull request description. Follow the EXACT template structure provided. Fill in each section based on the git changes and file contents. Do not skip sections - if a section doesn't apply, write "N/A" or "None applicable" but keep the section header.]],
 							},
 							{
 								role = "user",
 								content = function()
-									-- Get comprehensive git information
-									local diff_handle = io.popen("git diff")
-									local diff = diff_handle and diff_handle:read("*a") or "Error retrieving git diff"
+									-- Get current branch
+									local branch_handle = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
+									local current_branch = branch_handle and branch_handle:read("*a"):gsub("%s+$", "")
+										or "unknown"
+									if branch_handle then
+										branch_handle:close()
+									end
+
+									-- Get base branch
+									local base_branch_handle = io.popen(
+										"git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/@@'"
+									)
+									local base_branch = base_branch_handle
+											and base_branch_handle:read("*a"):gsub("%s+$", "")
+										or "origin/main"
+									if base_branch_handle then
+										base_branch_handle:close()
+									end
+
+									-- Determine what to compare against
+									local compare_base = base_branch
+									if current_branch == base_branch:gsub("^origin/", "") then
+										-- If on main branch, compare with HEAD~1
+										compare_base = "HEAD~1"
+									end
+
+									-- Get staged diff first, fall back to unstaged if empty
+									local diff_handle = io.popen("git diff --staged 2>/dev/null")
+									local staged_diff = diff_handle and diff_handle:read("*a") or ""
 									if diff_handle then
 										diff_handle:close()
 									end
 
-									-- Get commit messages for context
-									local commits_handle = io.popen("git log --oneline -n 10")
+									local diff = staged_diff
+									if diff == "" then
+										-- Try unstaged changes
+										diff_handle = io.popen("git diff 2>/dev/null")
+										local unstaged_diff = diff_handle and diff_handle:read("*a") or ""
+										if diff_handle then
+											diff_handle:close()
+										end
+
+										if unstaged_diff ~= "" then
+											diff = unstaged_diff
+										else
+											-- If no local changes, get diff against base branch
+											diff_handle = io.popen(
+												string.format(
+													"git diff %s...HEAD 2>/dev/null",
+													vim.fn.shellescape(compare_base)
+												)
+											)
+											diff = diff_handle and diff_handle:read("*a") or "No changes detected"
+											if diff_handle then
+												diff_handle:close()
+											end
+										end
+									end
+
+									-- Get commit messages (last 20 for more context)
+									local commits_handle = io.popen(
+										string.format(
+											"git log --oneline %s..HEAD 2>/dev/null | head -20",
+											vim.fn.shellescape(compare_base)
+										)
+									)
 									local commits = commits_handle and commits_handle:read("*a") or ""
 									if commits_handle then
 										commits_handle:close()
 									end
 
-									-- Get statistics
-									local stats_handle = io.popen("git diff --stat")
+									if commits == "" then
+										commits_handle = io.popen("git log --oneline -10 2>/dev/null")
+										commits = commits_handle and commits_handle:read("*a") or "No commits found"
+										if commits_handle then
+											commits_handle:close()
+										end
+									end
+
+									-- Get detailed statistics
+									local stats_handle = io.popen(
+										string.format(
+											"git diff --stat %s...HEAD 2>/dev/null",
+											vim.fn.shellescape(compare_base)
+										)
+									)
 									local stats = stats_handle and stats_handle:read("*a") or ""
 									if stats_handle then
 										stats_handle:close()
 									end
 
+									if stats == "" then
+										stats_handle = io.popen("git diff --stat 2>/dev/null")
+										stats = stats_handle and stats_handle:read("*a") or "No statistics available"
+										if stats_handle then
+											stats_handle:close()
+										end
+									end
+
+									-- Get list of changed files
+									local files_handle = io.popen(
+										string.format(
+											"git diff --name-only %s...HEAD 2>/dev/null",
+											vim.fn.shellescape(compare_base)
+										)
+									)
+									local files_raw = files_handle and files_handle:read("*a") or ""
+									if files_handle then
+										files_handle:close()
+									end
+
+									if files_raw == "" then
+										files_handle = io.popen("git diff --name-only 2>/dev/null")
+										files_raw = files_handle and files_handle:read("*a") or ""
+										if files_handle then
+											files_handle:close()
+										end
+									end
+
+									local changed_files = {}
+									for file in string.gmatch(files_raw, "[^\r\n]+") do
+										table.insert(changed_files, file)
+									end
+
+									-- Read full contents of changed files (limit to reasonable size)
+									local full_file_contents = ""
+									local max_file_size = 50000 -- Limit file size to avoid huge contexts
+									local files_read = 0
+									local max_files = 20 -- Limit number of files to read
+
+									for _, filepath in ipairs(changed_files) do
+										if files_read >= max_files then
+											full_file_contents = full_file_contents
+												.. "\n\n[Additional files omitted for brevity]"
+											break
+										end
+
+										local file_handle = io.open(filepath, "r")
+										if file_handle then
+											-- Check file size
+											local file_size = file_handle:seek("end")
+											file_handle:seek("set", 0)
+
+											if file_size and file_size <= max_file_size then
+												local content = file_handle:read("*a")
+												file_handle:close()
+
+												-- Determine file type for syntax highlighting
+												local extension = filepath:match("%.([^%.]+)$") or "text"
+
+												full_file_contents = full_file_contents
+													.. string.format(
+														"\n\n### File: %s\n```%s\n%s\n```",
+														filepath,
+														extension,
+														content
+													)
+												files_read = files_read + 1
+											else
+												file_handle:close()
+												full_file_contents = full_file_contents
+													.. string.format(
+														"\n\n### File: %s\n[File too large - %d bytes, showing diff only]",
+														filepath,
+														file_size or 0
+													)
+											end
+										else
+											-- Try to get the file from git if it's deleted or new
+											local git_file_handle = io.popen(
+												string.format("git show HEAD:%s 2>/dev/null", vim.fn.shellescape(filepath))
+											)
+											local git_content = git_file_handle and git_file_handle:read("*a") or ""
+											if git_file_handle then
+												git_file_handle:close()
+											end
+
+											if git_content ~= "" then
+												local extension = filepath:match("%.([^%.]+)$") or "text"
+												full_file_contents = full_file_contents
+													.. string.format(
+														"\n\n### File: %s (from git)\n```%s\n%s\n```",
+														filepath,
+														extension,
+														git_content
+													)
+												files_read = files_read + 1
+											else
+												full_file_contents = full_file_contents
+													.. string.format(
+														"\n\n### File: %s\n[Could not read file - may be deleted or new]",
+														filepath
+													)
+											end
+										end
+									end
+
+									-- Get branch comparison info
+									local branch_info = string.format("Branch: %s -> %s", current_branch, base_branch)
+
 									return string.format(
-										[[
-Generate a professional pull request description based on these changes:
+										[[Analyze the following changes and generate a comprehensive pull request description using the EXACT template structure provided below.
 
-### Commits
+## Git Information
+
+%s
+Files Changed: %d
+
+### Recent Commits
 ```
 %s
 ```
 
-### Statistics
+### Change Statistics
 ```
 %s
 ```
 
-### Diff
+### Git Diff
 ```diff
 %s
 ```
 
-Use this template:
+### Full File Contents
+%s
 
-## 🎯 Title
-[Generate a clear, descriptive PR title following conventional commits format]
+## REQUIRED TEMPLATE - FILL IN ALL SECTIONS:
 
-## 📋 Type of Change
+## Title
+[Generate a clear, descriptive PR title following conventional commits format: type(scope): description]
+
+## Type of Change
 - [ ] Bug fix (non-breaking change fixing an issue)
 - [ ] New feature (non-breaking change adding functionality)
 - [ ] Breaking change (fix or feature causing existing functionality to change)
 - [ ] Documentation update
 - [ ] Performance improvement
 - [ ] Code refactoring
+- [ ] Build/CI changes
+- [ ] Test additions or modifications
 
-## 🔍 Context
-[Why is this change necessary? What problem does it solve? Link to issue if applicable]
+## Context and Motivation
+[Explain why this change is necessary. What problem does it solve? What feature does it add? Link to related issues using #issue-number format if applicable]
 
-## 📝 Description
-[Detailed description of what was changed and how it works]
+## Description
+[Provide a detailed description of what was changed and how it works. Include the approach taken and why this solution was chosen over alternatives]
 
-## 🛠️ Technical Details
-[Explain the technical implementation, architecture decisions, and approach taken]
+## Technical Implementation Details
+
+### Architecture and Design Decisions:
+[Explain key architectural decisions, design patterns used, and why they were chosen]
 
 ### Key Changes:
-- [List major changes with brief explanations]
+- [List each major change with a brief explanation of what it does]
+- [Include file paths where significant changes occurred]
+- [Explain any complex logic or algorithms introduced]
 
-### Code Structure:
-[Describe any structural changes or new patterns introduced]
+### Code Structure Modifications:
+[Describe any structural changes, new modules, refactored components, or reorganization of existing code]
 
-## ✅ Testing
-- [ ] Unit tests pass
-- [ ] Integration tests pass
+### Dependencies:
+[List any new dependencies added or removed, with justification]
+
+## Testing
+
+### Test Strategy:
+- [ ] Unit tests added/updated
+- [ ] Integration tests added/updated
+- [ ] End-to-end tests added/updated
 - [ ] Manual testing completed
-- [ ] Performance testing (if applicable)
+- [ ] Performance testing completed (if applicable)
+- [ ] Security testing completed (if applicable)
 
 ### Test Coverage:
-[Describe what new tests were added and what they cover]
+[Specify current coverage percentage and delta. List what new tests were added and what scenarios they cover]
 
-### Manual Testing Steps:
-1. [Step-by-step QA instructions]
-2. [Include expected results]
+### Manual Testing Instructions:
+1. [Provide step-by-step instructions for QA/reviewers to test the changes]
+2. [Include test data or configuration needed]
+3. [Specify expected results for each test step]
+4. [Note any edge cases that were tested]
 
-## 📸 Screenshots/Videos
-[If UI changes, include before/after screenshots]
+## Screenshots and Examples
+[For UI changes: Include before/after screenshots or recordings]
+[For API changes: Include request/response examples]
+[For performance improvements: Include benchmark results]
 
-## 🚀 Deployment Notes
-[Any special deployment considerations, migrations, or configuration changes]
+## Security Considerations
 
-## 📊 Performance Impact
-[Describe any performance implications, benchmarks if available]
+### Security Review:
+[List any security implications, vulnerabilities addressed, or new attack surfaces introduced]
 
-## 🔒 Security Considerations
-[Any security implications or considerations for review]
+### Data Privacy:
+[Note any changes to data handling, storage, or transmission]
 
-## 📚 Documentation
-- [ ] Code comments updated
-- [ ] README updated (if needed)
-- [ ] API documentation updated (if needed)
-- [ ] Changelog updated
+### Authentication/Authorization:
+[Describe any changes to auth mechanisms or permissions]
 
-## ⚠️ Breaking Changes
-[List any breaking changes and migration guide if applicable]
+## Documentation Updates
 
-## 🔗 Related Issues/PRs
-[Link to related issues, PRs, or documentation]
+- [ ] Code comments and inline documentation added/updated
+- [ ] README updated with new features or changes
+- [ ] API documentation updated (OpenAPI/Swagger specs if applicable)
+- [ ] Architecture documentation updated
+- [ ] Configuration documentation updated
+- [ ] Changelog/Release notes updated
 
-## 👥 Reviewers Checklist
-- [ ] Code follows project style guidelines
-- [ ] Self-review completed
-- [ ] Comments added for complex logic
-- [ ] No unnecessary console.logs or debug code
-- [ ] All tests passing
-- [ ] Security implications considered
-- [ ] Performance impact assessed]],
+## Review Checklist
+
+### Code Quality:
+- [ ] Code follows project style guide and conventions
+- [ ] Self-review completed - checked own code for issues
+- [ ] No commented-out code or debug statements left
+- [ ] Error handling is comprehensive and appropriate
+- [ ] Code is DRY (Don't Repeat Yourself) and follows SOLID principles
+
+### Testing:
+- [ ] All new and existing tests pass
+- [ ] Edge cases are tested
+- [ ] Error scenarios are tested
+- [ ] Test coverage meets project standards
+
+### Documentation:
+- [ ] All public methods/functions have appropriate documentation
+- [ ] Complex logic has explanatory comments
+- [ ] README and other docs updated as needed
+
+### Security and Performance:
+- [ ] No sensitive data exposed in logs or responses
+- [ ] Input validation is comprehensive
+- [ ] No obvious performance bottlenecks introduced
+- [ ] Resource cleanup is handled properly
+
+## Additional Notes
+[Any additional context, caveats, future work, or things reviewers should pay special attention to]],
+										branch_info,
+										#changed_files,
 										commits,
 										stats,
-										diff
+										diff,
+										full_file_contents
 									)
 								end,
 							},
@@ -1197,7 +1421,7 @@ Use this template:
 						opts = {
 							mapping = "<leader>cC",
 							slash_cmd = "commit",
-							stop_context_insertion = true,
+							stop_context_insertion = false,
 							auto_submit = true,
 						},
 						prompts = {
