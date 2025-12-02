@@ -142,7 +142,7 @@ return {
 			end)
 
 			-- Configure server options from what was previously in nvim-lspconfig
-			local lspconfig = require("lspconfig")
+			local lspconfig = vim.lsp.config
 
 			-- -- Enable ts_ls instead of vtsls
 			-- lspconfig.vtsls.setup({ enabled = false })
