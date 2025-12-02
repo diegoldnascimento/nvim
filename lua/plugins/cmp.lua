@@ -7,7 +7,6 @@ return {
 			local luasnip = require("luasnip")
 			local compare = require("cmp.config.compare")
 			local lspkind = require("lspkind")
-			local cmp_action = require("lsp-zero").cmp_action()
 
 			require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -51,8 +50,16 @@ return {
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 					["<C-j>"] = cmp.mapping.select_next_item(),
-					["<C-f>"] = cmp_action.luasnip_jump_forward(),
-					["<C-b>"] = cmp_action.luasnip_jump_backward(),
+					["<C-f>"] = cmp.mapping(function()
+						if luasnip.jumpable(1) then
+							luasnip.jump(1)
+						end
+					end, { "i", "s" }),
+					["<C-b>"] = cmp.mapping(function()
+						if luasnip.jumpable(-1) then
+							luasnip.jump(-1)
+						end
+					end, { "i", "s" }),
 					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 					["<C-y>"] = cmp.mapping.confirm({
 						select = true,
@@ -166,3 +173,4 @@ return {
 		},
 	},
 }
+

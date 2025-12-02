@@ -20,41 +20,38 @@ return {
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
-		opts = function()
-			local lsp_zero = require("lsp-zero").preset("recommended")
-
-			local opts = {
-				ensure_installed = {
-					"astro",
-					"jsonls",
-					"terraformls",
-					"yamlls",
-					"lua_ls",
-					"ts_ls",
-					"svelte",
-					"bashls",
-					"sqlls",
-					"html",
-					"gopls",
-					-- "eslint",
-					"dockerls",
-					"cssls",
-					"cssmodules_ls",
-					"html",
-					"graphql",
-					"prismals",
-					"intelephense",
-					"pyright",
-					"nil_ls",
-				},
-				handlers = {
-					lsp_zero.default_setup,
-				},
-				automatic_enable = true,
-			}
-
-			return opts
-		end,
+		dependencies = {
+			"neovim/nvim-lspconfig",
+		},
+		opts = {
+			ensure_installed = {
+				"astro",
+				"jsonls",
+				"terraformls",
+				"yamlls",
+				"lua_ls",
+				"ts_ls",
+				"svelte",
+				"bashls",
+				"sqlls",
+				"html",
+				"gopls",
+				-- "eslint",
+				"dockerls",
+				"cssls",
+				"cssmodules_ls",
+				"graphql",
+				"prismals",
+				"intelephense",
+				"pyright",
+				"nil_ls",
+			},
+			handlers = {
+				function(server_name)
+					require("lspconfig")[server_name].setup({})
+				end,
+			},
+		},
 		init = function(_, opts)
 			require("mason-lspconfig").setup(opts)
 		end,
@@ -94,7 +91,6 @@ return {
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		opts = {
-
 			ensure_installed = {
 				"chrome",
 			},
@@ -104,3 +100,4 @@ return {
 		end,
 	},
 }
+
