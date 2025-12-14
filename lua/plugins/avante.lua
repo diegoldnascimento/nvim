@@ -1905,9 +1905,10 @@ Maintain original tone. Only fix errors.]],
 			{
 				"<leader>cy",
 				function()
-					vim.cmd("normal! ca")
+					require("avante.diff").choose_all_theirs()
 				end,
 				desc = "Avante: Aceitar todas mudanças",
+				mode = { "n" },
 			},
 		},
 	},
