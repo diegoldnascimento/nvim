@@ -79,13 +79,13 @@ return {
 				support_paste_from_clipboard = true,
 				minimize_diff = true,
 				enable_token_counting = true,
-				auto_approve_tool_permissions = true,
+				auto_approve_tool_permissions = false,
 			},
 
 			-- =================================================================
 			-- Instructions File (project-specific context)
 			-- =================================================================
-			instructions_file = "avante.md",
+			instructions_file = "GEMINI.md",
 
 			-- =================================================================
 			-- Rules Configuration (for .avanterules files)
@@ -163,8 +163,8 @@ return {
 					all_theirs = "ca",
 					both = "cb",
 					cursor = "cc",
-					next = "]x",
-					prev = "[x",
+					next = "]c",
+					prev = "[c",
 				},
 
 				-- Suggestion keybindings
@@ -717,6 +717,459 @@ Focus on practical improvements and real-world performance.]],
 			require("avante").setup(opts)
 
 			-- =================================================================
+			-- Avante Command Palette
+			-- =================================================================
+
+			-- Function to show all available Avante commands
+			local function show_avante_commands()
+				-- Define all available commands with their descriptions and actions
+				local commands = {
+					-- Main Chat Commands
+					{
+						name = "Ask",
+						desc = "Start a new chat with Avante",
+						key = "<leader>aa",
+						action = function()
+							require("avante.api").ask()
+						end,
+						mode = "n,v",
+					},
+					{
+						name = "Edit",
+						desc = "Edit selected code with Avante",
+						key = "<leader>ae",
+						action = function()
+							require("avante.api").edit()
+						end,
+						mode = "n,v",
+					},
+					{
+						name = "Refresh",
+						desc = "Refresh Avante response",
+						key = "<leader>ar",
+						action = function()
+							require("avante.api").refresh()
+						end,
+						mode = "v",
+					},
+					{
+						name = "Toggle Sidebar",
+						desc = "Toggle Avante sidebar",
+						key = "<leader>cc",
+						action = function()
+							require("avante.api").toggle()
+						end,
+						mode = "n,v",
+					},
+					{
+						name = "Focus",
+						desc = "Focus on Avante window",
+						key = "<leader>af",
+						action = function()
+							require("avante.api").focus()
+						end,
+						mode = "n,v",
+					},
+
+					-- Chat Management
+					{
+						name = "Chat History",
+						desc = "Show chat history",
+						key = "<leader>ah",
+						action = function()
+							vim.cmd("AvanteHistory")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Clear Chat",
+						desc = "Clear current chat",
+						key = "<leader>al",
+						action = function()
+							vim.cmd("AvanteClear")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Stop Generation",
+						desc = "Stop current AI generation",
+						key = "<leader>ax",
+						action = function()
+							vim.cmd("AvanteStop")
+						end,
+						mode = "n",
+					},
+
+					-- Model Management
+					{
+						name = "Switch Model",
+						desc = "Switch AI model",
+						key = "<leader>am",
+						action = function()
+							vim.cmd("AvanteModel")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Switch Provider",
+						desc = "Switch AI provider",
+						key = "<leader>ap",
+						action = function()
+							vim.cmd("AvanteProvider")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Zen Mode",
+						desc = "Enter zen mode",
+						key = "<leader>az",
+						action = function()
+							require("avante.api").zen_mode()
+						end,
+						mode = "n",
+					},
+
+					-- Code Analysis
+					{
+						name = "Explain Code",
+						desc = "Explain selected code",
+						key = "<leader>ce",
+						action = function()
+							require("avante.api").ask({
+								question = "Please explain how the selected code works",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Code Review",
+						desc = "Perform code review",
+						key = "<leader>cr",
+						action = function()
+							require("avante.api").ask({
+								question = "Perform a comprehensive code review",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Security Audit",
+						desc = "Perform security audit",
+						key = "<leader>cs",
+						action = function()
+							require("avante.api").ask({
+								question = "Perform a comprehensive security audit",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Generate Tests",
+						desc = "Generate unit tests",
+						key = "<leader>ct",
+						action = function()
+							require("avante.api").ask({
+								question = "Generate comprehensive tests",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Refactor Code",
+						desc = "Refactor selected code",
+						key = "<leader>cR",
+						action = function()
+							require("avante.api").ask({
+								question = "Refactor for improved clarity and maintainability",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Optimize Performance",
+						desc = "Optimize code performance",
+						key = "<leader>co",
+						action = function()
+							require("avante.api").ask({
+								question = "Analyze and optimize performance",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Fix Code",
+						desc = "Fix code issues",
+						key = "<leader>cf",
+						action = function()
+							require("avante.api").ask({
+								question = "Analyze and fix this code",
+							})
+						end,
+						mode = "n,v",
+					},
+					{
+						name = "Generate Documentation",
+						desc = "Generate code documentation",
+						key = "<leader>cD",
+						action = function()
+							require("avante.api").ask({
+								question = "Generate comprehensive documentation",
+							})
+						end,
+						mode = "v",
+					},
+
+					-- Git Integration
+					{
+						name = "Git Code Review",
+						desc = "Review git changes",
+						key = "<leader>cG",
+						action = function()
+							vim.cmd("AvanteGitReview")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Generate PR Description",
+						desc = "Generate pull request description",
+						key = "<leader>cP",
+						action = function()
+							vim.cmd("AvanteGeneratePR")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Generate Commit Message",
+						desc = "Generate commit message",
+						key = "<leader>cC",
+						action = function()
+							vim.cmd("AvanteGenerateCommit")
+						end,
+						mode = "n",
+					},
+
+					-- Memory Management
+					{
+						name = "Reload Memory Files",
+						desc = "Reload CLAUDE.md/GEMINI.md files",
+						key = "<leader>amr",
+						action = function()
+							vim.cmd("AvanteReloadMemory")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Show Memory Files",
+						desc = "Show loaded memory files",
+						key = "<leader>ams",
+						action = function()
+							vim.cmd("AvanteShowMemory")
+						end,
+						mode = "n",
+					},
+					{
+						name = "Clear Memory Files",
+						desc = "Clear memory files from context",
+						key = "<leader>amc",
+						action = function()
+							vim.cmd("AvanteClearMemory")
+						end,
+						mode = "n",
+					},
+
+					-- UML Diagrams
+					{
+						name = "Class Diagram",
+						desc = "Generate PlantUML class diagram",
+						key = "<leader>uc",
+						action = function()
+							require("avante.api").ask({
+								question = "Generate a PlantUML class diagram",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Sequence Diagram",
+						desc = "Generate PlantUML sequence diagram",
+						key = "<leader>us",
+						action = function()
+							require("avante.api").ask({
+								question = "Generate a PlantUML sequence diagram",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Activity Diagram",
+						desc = "Generate PlantUML activity diagram",
+						key = "<leader>ua",
+						action = function()
+							require("avante.api").ask({
+								question = "Generate a PlantUML activity diagram",
+							})
+						end,
+						mode = "v",
+					},
+
+					-- Text Processing
+					{
+						name = "Summarize Text",
+						desc = "Create a concise summary",
+						key = "<leader>ts",
+						action = function()
+							require("avante.api").ask({
+								question = "Summarize concisely",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Fix Grammar",
+						desc = "Fix grammar and spelling",
+						key = "<leader>tg",
+						action = function()
+							require("avante.api").ask({
+								question = "Fix grammar and spelling",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Improve Wording",
+						desc = "Improve clarity and professionalism",
+						key = "<leader>tw",
+						action = function()
+							require("avante.api").ask({
+								question = "Improve wording for clarity and professionalism",
+							})
+						end,
+						mode = "v",
+					},
+					{
+						name = "Make Concise",
+						desc = "Reduce text length while preserving meaning",
+						key = "<leader>tc",
+						action = function()
+							require("avante.api").ask({
+								question = "Make more concise",
+							})
+						end,
+						mode = "v",
+					},
+
+					-- Algorithm Analysis
+					{
+						name = "Algorithm Analysis",
+						desc = "Analyze algorithm complexity",
+						key = "<leader>ca",
+						action = function()
+							require("avante.api").ask({
+								question = "Analyze this algorithm",
+							})
+						end,
+						mode = "v",
+					},
+
+					-- Type Conversion
+					{
+						name = "Convert to TypeScript",
+						desc = "Convert JavaScript to TypeScript",
+						key = "<leader>cT",
+						action = function()
+							require("avante.api").ask({
+								question = "Convert to TypeScript with full type safety",
+							})
+						end,
+						mode = "v",
+					},
+
+					-- Utilities
+					{
+						name = "Quick Chat",
+						desc = "Quick chat with input prompt",
+						key = "<leader>cq",
+						action = function()
+							vim.ui.input({ prompt = "Ask Avante: " }, function(input)
+								if input and input ~= "" then
+									require("avante.api").ask({ question = input })
+								end
+							end)
+						end,
+						mode = "n,v",
+					},
+					{
+						name = "Add Buffer to Context",
+						desc = "Add current buffer to Avante context",
+						key = "<leader>cb",
+						action = function()
+							require("avante.api").add_buffer()
+						end,
+						mode = "n,v",
+					},
+				}
+
+				-- Check if telescope is available
+				local has_telescope, telescope = pcall(require, "telescope")
+				if has_telescope then
+					local pickers = require("telescope.pickers")
+					local finders = require("telescope.finders")
+					local conf = require("telescope.config").values
+					local actions = require("telescope.actions")
+					local action_state = require("telescope.actions.state")
+
+					pickers
+						.new({}, {
+							prompt_title = "Avante Commands",
+							finder = finders.new_table({
+								results = commands,
+								entry_maker = function(entry)
+									return {
+										value = entry,
+										display = string.format("%-25s %s (%s)", entry.name, entry.desc, entry.key),
+										ordinal = entry.name .. " " .. entry.desc .. " " .. entry.key,
+									}
+								end,
+							}),
+							sorter = conf.generic_sorter({}),
+							attach_mappings = function(prompt_bufnr, map)
+								actions.select_default:replace(function()
+									actions.close(prompt_bufnr)
+									local selection = action_state.get_selected_entry()
+									if selection and selection.value and selection.value.action then
+										selection.value.action()
+									end
+								end)
+								return true
+							end,
+						})
+						:find()
+				else
+					-- Fallback to vim.ui.select if telescope is not available
+					local items = {}
+					for _, cmd in ipairs(commands) do
+						table.insert(items, string.format("%-25s %s (%s)", cmd.name, cmd.desc, cmd.key))
+					end
+
+					vim.ui.select(items, {
+						prompt = "Select Avante Command:",
+						format_item = function(item)
+							return item
+						end,
+					}, function(choice, idx)
+						if choice and idx and commands[idx] and commands[idx].action then
+							commands[idx].action()
+						end
+					end)
+				end
+			end
+
+			-- Create the command palette user command
+			vim.api.nvim_create_user_command("AvanteCommandPalette", show_avante_commands, {
+				desc = "Show Avante command palette",
+			})
+
+			-- =================================================================
 			-- Custom Git Functions for PR/Commit generation
 			-- =================================================================
 
@@ -830,7 +1283,8 @@ Focus on practical improvements and real-world performance.]],
 					diff = run_command("git diff 2>/dev/null")
 				end
 				if diff == "" then
-					local compare_base = branch == base_branch:gsub("^origin/", "") and "HEAD~1" or base_branch
+					local compare_base = branch == base_branch:gsub("^origin/", "") and "HEAD~1"
+						or base_branch
 					diff = run_command(string.format("git diff %s...HEAD 2>/dev/null", compare_base))
 				end
 
@@ -843,13 +1297,15 @@ Focus on practical improvements and real-world performance.]],
 				end
 
 				-- Get stats
-				local stats = run_command(string.format("git diff --stat %s...HEAD 2>/dev/null", base_branch))
+				local stats =
+					run_command(string.format("git diff --stat %s...HEAD 2>/dev/null", base_branch))
 				if stats == "" then
 					stats = run_command("git diff --stat 2>/dev/null")
 				end
 
 				-- Get changed files
-				local files_raw = run_command(string.format("git diff --name-only %s...HEAD 2>/dev/null", base_branch))
+				local files_raw =
+					run_command(string.format("git diff --name-only %s...HEAD 2>/dev/null", base_branch))
 				if files_raw == "" then
 					files_raw = run_command("git diff --name-only 2>/dev/null")
 				end
@@ -1444,6 +1900,14 @@ Maintain original tone. Only fix errors.]],
 				end,
 				desc = "Avante/Clip: Paste image",
 				mode = { "n", "v" },
+			},
+			-- Aceitar todas as mudanças com <leader>cy (yes/aceitar)
+			{
+				"<leader>cy",
+				function()
+					vim.cmd("normal! ca")
+				end,
+				desc = "Avante: Aceitar todas mudanças",
 			},
 		},
 	},
