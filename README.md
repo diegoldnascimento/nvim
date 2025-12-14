@@ -142,10 +142,10 @@ Below the list of the current plugins used in this configuration and how we are 
 
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - Neo-tree is a Neovim plugin to browse the file system and other tree like structures in whatever style suits you, including sidebars, floating windows, netrw split style, or all of them at once
 
-### AI
+### AI 
 
-- [avante.nvim](https://github.com/yetone/avante.nvim) - Modern AI-powered coding assistant with Cursor-like functionality for Neovim. Features include real-time code editing, intelligent suggestions, comprehensive chat interface, code review, security audits, test generation, refactoring assistance, and extensive prompt library. Supports multiple LLM providers including Claude, with advanced diff handling and project-specific context via instructions files.
-- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Enhanced markdown rendering for Neovim with support for syntax highlighting, better formatting, and improved readability. Works seamlessly with AI chat interfaces.
+- [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim) - AI-powered coding companion for Neovim with support for multiple LLM providers including Anthropic's Claude. Features include chat interface, inline code assistance, code review, test generation, and comprehensive prompt library for various coding tasks.
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Enhanced markdown rendering for Neovim with support for syntax highlighting, better formatting, and improved readability. Works seamlessly with codecompanion chat interfaces.
 
 ### Others
 
@@ -179,4 +179,4 @@ Open nvim and enter the following:
 
 ### Todo
 
-
+- [x] Install the [nvim-dap](http://neovimcraft.com/plugin/mfussenegger/nvim-dap/index.html) which is a Debug Adapter Protocol client implementation for Nveovim, that allows to debug an application.

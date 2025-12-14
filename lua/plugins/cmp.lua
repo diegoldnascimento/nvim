@@ -65,7 +65,7 @@ return {
 						select = true,
 						behavior = cmp.ConfirmBehavior.Insert,
 					}),
-					["<CR>"] = cmp.config.disabled,
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<C-e>"] = cmp.mapping({
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
@@ -100,6 +100,7 @@ return {
 					}),
 				},
 				sources = {
+					{ name = "codecompanion" },
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "path" },
@@ -151,6 +152,30 @@ return {
 				}),
 			})
 
+			-- Configuração específica para CodeCompanion
+			cmp.setup.filetype("codecompanion", {
+				sources = {
+					{ name = "codecompanion" },
+					{ name = "buffer" },
+				},
+				mapping = {
+					["<C-k>"] = cmp.mapping.select_prev_item(),
+					["<C-j>"] = cmp.mapping.select_next_item(),
+					["<C-Space>"] = cmp.mapping.complete(),
+					["<C-e>"] = cmp.mapping.abort(),
+					["<C-y>"] = cmp.mapping.confirm({ select = true }),
+					["<Tab>"] = cmp.mapping.select_next_item(),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
+					["<CR>"] = cmp.mapping(function(fallback)
+						if cmp.visible() and cmp.get_selected_entry() then
+							cmp.confirm({ select = true })
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+				},
+			})
+
 			cmp.setup(opts)
 		end,
 		dependencies = {
@@ -173,4 +198,3 @@ return {
 		},
 	},
 }
-

@@ -14,13 +14,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local modules = {
-	{ import = "plugins.avante" },
 	{ import = "plugins.autopairs" },
 	{ import = "plugins.alpha" },
 	{ import = "plugins.bufferline" },
 	{ import = "plugins.bracketed" },
 	{ import = "plugins.comment" },
 	{ import = "plugins.colorizer" },
+	{ import = "plugins.codecompanion" },
 	{ import = "plugins.conform" },
 	{ import = "plugins.colorscheme" },
 	{ import = "plugins.cmp" },
