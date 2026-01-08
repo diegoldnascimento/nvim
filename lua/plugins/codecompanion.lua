@@ -43,12 +43,20 @@ return {
 					end,
 				},
 				memory = {
-					claude = {
-						description = "Memory files for Claude Code users",
+					default = {
+						description = "Collection of common files for all projects",
 						files = {
-							"~/.claude/CLAUDE.md",
-							"CLAUDE.md",
-							"CLAUDE.local.md",
+							".clinerules",
+							".cursorrules",
+							".goosehints",
+							".rules",
+							".windsurfrules",
+							".github/copilot-instructions.md",
+							"AGENT.md",
+							"AGENTS.md",
+							{ path = "CLAUDE.md", parser = "claude" },
+							{ path = "CLAUDE.local.md", parser = "claude" },
+							{ path = "~/.claude/CLAUDE.md", parser = "claude" },
 						},
 					},
 				},
@@ -1630,5 +1638,91 @@ Make it clear, specific, and informative.]],
 				mode = { "n", "v" },
 			},
 		},
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {
+			file_types = { "markdown", "codecompanion" },
+			heading = {
+				enabled = true,
+				sign = false,
+				icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+			},
+		},
+		ft = { "markdown", "codecompanion" },
+		config = function(_, opts)
+			-- Cores baseadas no seu tema Dracula customizado
+			local colors = {
+				bg = "#1E1D22",
+				fg = "#F8F8F2",
+				selection = "#44475A",
+				visual = "#3E4452",
+				gutter_fg = "#4B5263",
+				nontext = "#3B4048",
+				white = "#ABB2BF",
+				black = "#191A21",
+				-- Dracula padrão (para complementar)
+				purple = "#BD93F9",
+				pink = "#FF79C6",
+				cyan = "#8BE9FD",
+				green = "#50FA7B",
+				orange = "#FFB86C",
+				red = "#FF5555",
+				yellow = "#F1FA8C",
+			}
+
+			-- Headers com background
+			vim.api.nvim_set_hl(
+				0,
+				"RenderMarkdownH1Bg",
+				{ fg = colors.purple, bg = colors.selection, bold = true }
+			)
+			vim.api.nvim_set_hl(
+				0,
+				"RenderMarkdownH2Bg",
+				{ fg = colors.pink, bg = colors.selection, bold = true }
+			)
+			vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { fg = colors.cyan, bg = colors.visual })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { fg = colors.green, bg = colors.visual })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { fg = colors.orange, bg = colors.nontext })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH6Bg", { fg = colors.yellow, bg = colors.nontext })
+
+			-- Headers sem background (apenas foreground)
+			vim.api.nvim_set_hl(0, "RenderMarkdownH1", { fg = colors.purple, bold = true })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH2", { fg = colors.pink, bold = true })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH3", { fg = colors.cyan })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH4", { fg = colors.green })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH5", { fg = colors.orange })
+			vim.api.nvim_set_hl(0, "RenderMarkdownH6", { fg = colors.yellow })
+
+			-- Code blocks
+			vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = colors.black })
+			vim.api.nvim_set_hl(0, "RenderMarkdownCodeInline", { fg = colors.cyan, bg = colors.black })
+
+			-- Links
+			vim.api.nvim_set_hl(0, "RenderMarkdownLink", { fg = colors.cyan, underline = true })
+
+			-- Quotes
+			vim.api.nvim_set_hl(0, "RenderMarkdownQuote", { fg = colors.gutter_fg, italic = true })
+
+			-- Lists
+			vim.api.nvim_set_hl(0, "RenderMarkdownBullet", { fg = colors.purple })
+			vim.api.nvim_set_hl(0, "RenderMarkdownChecked", { fg = colors.green })
+			vim.api.nvim_set_hl(0, "RenderMarkdownUnchecked", { fg = colors.gutter_fg })
+
+			-- Tables
+			vim.api.nvim_set_hl(0, "RenderMarkdownTableHead", { fg = colors.purple, bold = true })
+			vim.api.nvim_set_hl(0, "RenderMarkdownTableRow", { fg = colors.fg })
+			vim.api.nvim_set_hl(0, "RenderMarkdownTableFill", { fg = colors.gutter_fg })
+
+			-- Dash/horizontal rule
+			vim.api.nvim_set_hl(0, "RenderMarkdownDash", { fg = colors.selection })
+
+			require("render-markdown").setup(opts)
+		end,
 	},
 }
