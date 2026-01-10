@@ -1,4 +1,5 @@
 return {
+	-- Formatter com Biome via conform.nvim
 	{
 		"stevearc/conform.nvim",
 		dependencies = { "mason.nvim" },
@@ -22,14 +23,16 @@ return {
 				lsp_fallback = true,
 			},
 			formatters_by_ft = {
+				typescript = { "biome" },
+				javascript = { "biome" },
+				typescriptreact = { "biome" },
+				javascriptreact = { "biome" },
+				json = { "biome" },
+				jsonc = { "biome" },
+				css = { "biome" },
+				-- Filetypes não suportados pelo Biome
 				lua = { "stylua" },
-				typescript = { "prettierd" },
-				javascript = { "prettierd" },
-				typescriptreact = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				css = { "prettierd" },
 				scss = { "prettierd" },
-				json = { "jq" },
 				go = { "goimports", "gofumpt" },
 				sh = { "shfmt" },
 				markdown = { "prettierd", "codespell" },
@@ -49,6 +52,30 @@ return {
 					command = "nixfmt",
 					stdin = true,
 				},
+			},
+		},
+	},
+
+	-- Biome LSP para linting
+	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				biome = {},
+			},
+		},
+		keys = {
+			{
+				"<leader>cf",
+				function()
+					vim.lsp.buf.code_action({
+						filter = function(action)
+							return action.isPreferred
+						end,
+						apply = true,
+					})
+				end,
+				desc = "Fix all (Biome)",
 			},
 		},
 	},
