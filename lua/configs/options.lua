@@ -37,6 +37,7 @@ local options = {
 
 vim.opt.shortmess:append("c")
 
+if vim.fn.has("linux") == 1 then
 vim.g.clipboard = {
 	name = 'xclip',
 	copy = {
@@ -48,6 +49,22 @@ vim.g.clipboard = {
 		['*'] = 'xclip -selection clipboard -o',
 	},
 }
+end
+
+if vim.fn.has("mac") == 1 then
+  vim.g.clipboard = {
+    name = "macOS-clipboard",
+    copy = {
+      ["+"] = "pbcopy",
+      ["*"] = "pbcopy",
+    },
+    paste = {
+      ["+"] = "pbpaste",
+      ["*"] = "pbpaste",
+    },
+    cache_enabled = 0,
+  }
+end
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
