@@ -3,12 +3,12 @@ return {
 		"nvimdev/lspsaga.nvim",
 		event = "LspAttach",
 		keys = {
-			{
-				"gd",
-				"<cmd>Lspsaga goto_definition<CR>",
-				mode = { "n", "v" },
-				desc = "Go to definition",
-			},
+			-- {
+			-- 	"gd",
+			-- 	"<cmd>Lspsaga goto_definition<CR>",
+			-- 	mode = { "n", "v" },
+			-- 	desc = "Go to definition",
+			-- },
 			{
 				"<leader>ca",
 				"<cmd>Lspsaga code_action<CR>",
@@ -83,12 +83,12 @@ return {
 				mode = { "n", "v" },
 				desc = "Show code actions preview",
 			},
-			{
-				"K",
-				"<cmd>Lspsaga hover_doc<CR>",
-				mode = { "n", "v" },
-				desc = "Show hover documentation",
-			},
+			-- {
+			-- 	"K",
+			-- 	"<cmd>Lspsaga hover_doc<CR>",
+			-- 	mode = { "n", "v" },
+			-- 	desc = "Show hover documentation",
+			-- },
 			{
 				"gx",
 				"<cmd>Lspsaga show_workspace_diagnostics<CR>",
