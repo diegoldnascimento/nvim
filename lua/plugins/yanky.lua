@@ -1,20 +1,30 @@
 return {
 	"gbprod/yanky.nvim",
 	enabled = true,
-	lazy = true,
+	event = "VeryLazy",
 	keys = {
 		{ "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
-		{ "P", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
-		{ "p", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+		{ "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put after cursor" },
+		{ "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put before cursor" },
 		{ "[y", "<Plug>(YankyCycleForward)", desc = "Cycle forward through yank history" },
 		{ "]y", "<Plug>(YankyCycleBackward)", desc = "Cycle backward through yank history" },
 	},
 	opts = {
-		preserve_cursor_position = {
-			enabled = true,
+		ring = {
+			history_length = 100,
+			storage = "shada",
+			sync_with_numbered_registers = true,
+		},
+		system_clipboard = {
+			sync_with_ring = false,  -- CRITICAL: Prevents wl-copy freezes
 		},
 		highlight = {
-			timer = 150,
+			on_put = true,
+			on_yank = true,
+			timer = 100,
+		},
+		preserve_cursor_position = {
+			enabled = true,
 		},
 	},
 }

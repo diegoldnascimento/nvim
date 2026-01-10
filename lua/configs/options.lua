@@ -37,6 +37,18 @@ local options = {
 
 vim.opt.shortmess:append("c")
 
+vim.g.clipboard = {
+	name = 'xclip',
+	copy = {
+		['+'] = 'xclip -selection clipboard',
+		['*'] = 'xclip -selection clipboard',
+	},
+	paste = {
+		['+'] = 'xclip -selection clipboard -o',
+		['*'] = 'xclip -selection clipboard -o',
+	},
+}
+
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
