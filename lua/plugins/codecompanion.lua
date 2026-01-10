@@ -29,18 +29,20 @@ return {
 					},
 				},
 				adapters = {
-					anthropic = function()
-						return require("codecompanion.adapters").extend("anthropic", {
-							env = {
-								api_key = api_key,
-							},
-							schema = {
-								model = {
-									default = "claude-sonnet-4-5-20250929",
+					http = {
+						anthropic = function()
+							return require("codecompanion.adapters").extend("anthropic", {
+								env = {
+									api_key = api_key,
 								},
-							},
-						})
-					end,
+								schema = {
+									model = {
+										default = "claude-sonnet-4-5-20250929",
+									},
+								},
+							})
+						end,
+					},
 				},
 				memory = {
 					default = {
