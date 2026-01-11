@@ -35,7 +35,7 @@ return {
 				scss = { "prettierd" },
 				go = { "goimports", "gofumpt" },
 				sh = { "shfmt" },
-				markdown = { "prettierd", "codespell" },
+				markdown = { "prettierd" },
 				yaml = { "yamlfix" },
 				php = { "php-cs-fixer" },
 				python = { "isort", "black" },
@@ -43,7 +43,7 @@ return {
 				terraform = { "terraform_fmt" },
 				tf = { "terraform_fmt" },
 				["terraform-vars"] = { "terraform_fmt" },
-				["*"] = { "codespell" },
+				["*"] = { "trim_whitespace" },
 				["_"] = { "trim_whitespace" },
 			},
 			notify_on_error = true,
@@ -51,6 +51,15 @@ return {
 				nix_fmt = {
 					command = "nixfmt",
 					stdin = true,
+				},
+				biome = {
+					args = {
+						"format",
+						"--stdin-file-path",
+						"$FILENAME",
+						"--format-with-errors",
+						"true", -- As a separate argument
+					},
 				},
 			},
 		},
