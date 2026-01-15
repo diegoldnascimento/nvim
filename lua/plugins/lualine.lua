@@ -56,7 +56,7 @@ return {
 						{
 							"diagnostics",
 							sources = { "nvim_diagnostic" },
-							symbols = { error = "🆇 ", warn = "⚠️ ", info = "ℹ️ ", hint = " " },
+							symbols = { error = "🆇 ", warn = "⚠️ ", info = "ℹ️ ", hint = " " },
 						},
 					},
 					lualine_c = {
@@ -66,18 +66,66 @@ return {
 						"encoding",
 						{
 							function()
-                local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+								local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
 
 								if next(clients) == nil then
 									return "No LSP"
 								end
 								local buf_client_names = {}
 								for _, client in pairs(clients) do
-									table.insert(buf_client_names, client.name)
+									-- Add buffer count for TypeScript servers
+									if client.name == "vtsls" or client.name == "typescript-tools" then
+										local buf_count = #vim.lsp.get_buffers_by_client_id(client.id)
+										table.insert(buf_client_names, string.format("%s(%d)", client.name, buf_count))
+									else
+										table.insert(buf_client_names, client.name)
+									end
 								end
 								return table.concat(buf_client_names, ", ")
 							end,
 							icon = "",
+						},
+						{
+							-- Memory usage indicator for TS server
+							function()
+								local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+								for _, client in pairs(clients) do
+									if client.name == "vtsls" or client.name == "typescript-tools" then
+										-- Try to get memory usage
+										local handle = io.popen(string.format(
+											"ps -p $(pgrep -f 'tsserver|vtsls' | head -1) -o rss= 2>/dev/null"
+										))
+										if handle then
+											local mem_kb = handle:read("*a")
+											handle:close()
+											if mem_kb and mem_kb ~= "" then
+												local mem_mb = tonumber(mem_kb) / 1024
+												if mem_mb then
+													-- Color code based on usage
+													local color = ""
+													if mem_mb > 3072 then
+														color = "%#DiagnosticError#" -- Red if > 3GB
+													elseif mem_mb > 2048 then
+														color = "%#DiagnosticWarn#" -- Yellow if > 2GB
+													end
+													return string.format("%s%.0fMB%%*", color, mem_mb)
+												end
+											end
+										end
+									end
+								end
+								return ""
+							end,
+							icon = "󰍛",
+							cond = function()
+								local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+								for _, client in pairs(clients) do
+									if client.name == "vtsls" or client.name == "typescript-tools" then
+										return true
+									end
+								end
+								return false
+							end,
 						},
 						"filetype",
 					},
@@ -100,8 +148,6 @@ return {
 
 			require("lualine").setup(opts)
 		end,
-		dependencies = {
-			{ "Davidyz/VectorCode" },
-		},
 	},
 }
+

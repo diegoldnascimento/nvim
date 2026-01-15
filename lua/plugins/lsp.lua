@@ -20,6 +20,8 @@ return {
 			{ "gl", vim.diagnostic.open_float, desc = "Line diagnostics" },
 			{ "]d", vim.diagnostic.goto_next, desc = "Next diagnostic" },
 			{ "[d", vim.diagnostic.goto_prev, desc = "Prev diagnostic" },
+			{ "<leader>cm", "<cmd>LspMemoryUsage<cr>", desc = "LSP memory usage" },
+			{ "<leader>ci", "<cmd>LspInfo<cr>", desc = "LSP info" },
 		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -37,6 +39,8 @@ return {
 					"typescript",
 					"typescriptreact",
 				},
+				cmd = { "vtsls", "--stdio", "--tsserver-max-memory=8192" }, -- Add this line
+
 				settings = {
 					complete_function_calls = true,
 					vtsls = {
@@ -77,6 +81,34 @@ return {
 			})
 
 			vim.lsp.enable("vtsls")
+
+			vim.api.nvim_create_user_command("LspMemoryUsage", function()
+				-- Find tsserver process
+				local handle = io.popen(
+					"ps aux | grep -E 'tsserver|vtsls' | grep -v grep | awk '{print $2, $4, $6, $11}'"
+				)
+				if not handle then
+					vim.notify("Could not check memory usage", vim.log.levels.ERROR)
+					return
+				end
+
+				local result = handle:read("*a")
+				handle:close()
+
+				if result == "" then
+					vim.notify("No TypeScript server process found", vim.log.levels.WARN)
+					return
+				end
+
+				local lines = {}
+				table.insert(lines, "PID  CPU%  MEM(KB)  COMMAND")
+				table.insert(lines, "---  ----  -------  -------")
+				for line in result:gmatch("[^\r\n]+") do
+					table.insert(lines, line)
+				end
+
+				vim.notify(table.concat(lines, "\n"), vim.log.levels.INFO)
+			end, { desc = "Show TS server memory usage" })
 
 			-- Keybinds específicos do vtsls
 			vim.api.nvim_create_autocmd("LspAttach", {

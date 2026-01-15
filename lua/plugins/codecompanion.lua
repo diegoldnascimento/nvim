@@ -1633,12 +1633,6 @@ Make it clear, specific, and informative.]],
 				desc = "CodeCompanion - Explain (alias)",
 				mode = { "v" },
 			},
-			{
-				"<leader>ci",
-				"<cmd>CodeCompanion /implement<cr>",
-				desc = "CodeCompanion - Implement feature",
-				mode = { "n", "v" },
-			},
 		},
 	},
 	{
