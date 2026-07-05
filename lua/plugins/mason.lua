@@ -30,7 +30,6 @@ return {
 				"terraformls",
 				"yamlls",
 				"lua_ls",
-				"ts_ls",
 				"biome",
 				"svelte",
 				"bashls",
@@ -99,4 +98,3 @@ return {
 		end,
 	},
 }
-
