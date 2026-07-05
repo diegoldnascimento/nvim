@@ -31,6 +31,20 @@ return {
 				capabilities = capabilities,
 			})
 
+			vim.lsp.config("lua_ls", {
+				root_markers = {
+					".emmyrc.json",
+					".luarc.json",
+					".luarc.jsonc",
+					".luacheckrc",
+					".stylua.toml",
+					"stylua.toml",
+					"selene.toml",
+					"selene.yml",
+					".git",
+				},
+			})
+
 			-- vtsls config (alternativa rápida ao ts_ls)
 			vim.lsp.config("vtsls", {
 				filetypes = {

@@ -64,6 +64,21 @@ if vim.fn.has("mac") == 1 then
     },
     cache_enabled = 0,
   }
+
+	local pyenv_root = vim.fn.expand("~/.pyenv")
+	if vim.fn.isdirectory(pyenv_root) == 1 then
+		vim.env.PYENV_ROOT = pyenv_root
+	end
+
+	local openjdk_bin = "/usr/local/opt/openjdk/bin"
+	if vim.fn.isdirectory(openjdk_bin) == 1 and not string.find(vim.env.PATH or "", openjdk_bin, 1, true) then
+		vim.env.PATH = openjdk_bin .. ":" .. vim.env.PATH
+	end
+
+	local python_host = vim.fn.expand("~/.local/share/nvim-python3/bin/python")
+	if vim.fn.executable(python_host) == 1 then
+		vim.g.python3_host_prog = python_host
+	end
 end
 
 for k, v in pairs(options) do

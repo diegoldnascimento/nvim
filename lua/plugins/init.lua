@@ -57,4 +57,8 @@ local modules = {
 	{ import = "plugins.yanky" },
 }
 
-return require("lazy").setup(modules)
+	return require("lazy").setup(modules, {
+		rocks = {
+			enabled = false,
+		},
+	})
