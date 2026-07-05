@@ -45,7 +45,7 @@ return {
 					'pidfile="$1"',
 					"shift",
 					'mkdir -p "$(dirname "$pidfile")"',
-					'printf "%s\n" "$$" > "$pidfile"',
+					'printf "%s\\n" "$$" > "$pidfile"',
 					'exec "$@"',
 				}, tsgo_wrapper_path)
 				vim.fn.setfperm(tsgo_wrapper_path, "rwxr-xr-x")
@@ -87,11 +87,21 @@ return {
 
 			vim.lsp.config("tsgo", {
 				cmd = function(dispatchers, config)
-					local cmd = "tsgo"
+					local base_cmd = "tsgo"
+					local cmd
 					if (config or {}).root_dir then
-						local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
+						local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", base_cmd)
 						if vim.fn.executable(local_cmd) == 1 then
 							cmd = local_cmd
+						end
+					end
+
+					if not cmd then
+						local mason_cmd = vim.fs.joinpath(vim.fn.stdpath("data"), "mason/bin", "tsgo")
+						if vim.fn.executable(mason_cmd) == 1 then
+							cmd = mason_cmd
+						else
+							cmd = base_cmd
 						end
 					end
 
